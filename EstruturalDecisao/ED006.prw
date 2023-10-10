@@ -24,6 +24,6 @@ USER FUNCTION ED006()
     endif
 
     FwAlertInfo("O maior número é: " + Alltrim(STR(nMaior)))
-
+    
 RETURN
 

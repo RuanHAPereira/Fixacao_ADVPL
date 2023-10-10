@@ -1,0 +1,90 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "TOTVS Language Debug",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:\\TOTVS12\\Protheus\\Protheus\\bin\\smartclient\\smartclient.exe",
+			"isMultiSession": true,
+			"enableTableSync": true
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "U_ES001"
+		},
+		{
+			"label": "U_ES002"
+		},
+		{
+			"label": "U_ES003"
+		},
+		{
+			"label": "U_ES004"
+		},
+		{
+			"label": "U_ES005"
+		},
+		{
+			"label": "U_ES006"
+		},
+		{
+			"label": "U_ES007"
+		},
+		{
+			"label": "U_ES008"
+		},
+		{
+			"label": "U_ex01"
+		},
+		{
+			"label": "U_ES10"
+		},
+		{
+			"label": "U_ex02"
+		},
+		{
+			"label": "U_teste02"
+		},
+		{
+			"label": "U_teste01"
+		},
+		{
+			"label": "U_ES11"
+		},
+		{
+			"label": "U_ES12"
+		},
+		{
+			"label": "U_ES13"
+		},
+		{
+			"label": "U_ES14"
+		},
+		{
+			"label": "U_ES15"
+		},
+		{
+			"label": "U_ES17"
+		},
+		{
+			"label": "U_ES18"
+		},
+		{
+			"label": "U_ED003"
+		},
+		{
+			"label": "U_ED004"
+		},
+		{
+			"label": "U_ED005"
+		},
+		{
+			"label": "U_ED006"
+		}
+	],
+	"lastProgramExecuted": "U_ED006"
+}

@@ -84,7 +84,13 @@
 		},
 		{
 			"label": "U_ED006"
+		},
+		{
+			"label": "U_ED007"
+		},
+		{
+			"label": "U_ED008"
 		}
 	],
-	"lastProgramExecuted": "U_ED006"
+	"lastProgramExecuted": "U_ED008"
 }

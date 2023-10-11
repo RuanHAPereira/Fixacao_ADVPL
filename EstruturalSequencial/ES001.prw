@@ -2,6 +2,28 @@
 
 user function ES001()
 
-    cMsg := FwAlertInfo("Hello World!!!")
+    local cMsg := ''
+    Private cVariavel := "Barra Mansa"
+
+    cMsg := FwInputBox('Escreva algo: ')
+
+    FwAlertInfo("O que vc escreveu foi: " + cMsg)
+
+    Qualquer("TENHA UM OTIMO DIA!", TIME(), cMsg)
+    Qualquer2()
+    
+return
+
+static function Qualquer(cTexto, cHora, cX)
+
+    FwAlertInfo(cTexto + SPACE( 2 ) + "São" + cHora )
+    FwAlertInfo(cX)
+    FwAlertInfo(cVariavel)
+
+return
+
+static function Qualquer2()
+
+    FwAlertInfo(cVariavel)
 
 return

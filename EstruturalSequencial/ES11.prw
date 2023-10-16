@@ -2,8 +2,12 @@
 
 user function ES11()
 
-    local nNumInt1, nNumInt2, nNumReal := 0
-    local nResultado1, nResultado2, nResultado3 := 0
+    local nNumInt1    := 0
+    local nNumInt2    := 0 
+    local nNumReal    := 0
+    local nResultado1 := 0 
+    local nResultado2 := 0
+    local nResultado3 := 0
 
     nNumInt1 := Val(FwInputBox("Digite o primeiro número inteiro: "))
     nNumInt2 := Val(FwInputBox("Digite o segundo número inteiro: "))

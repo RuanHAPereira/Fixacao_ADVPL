@@ -2,9 +2,13 @@
 
 user function ES15()
 
-    local nValorHora, nHoraTrab := 0
-    local nSalarioBruto, nSalarioLiquido := 0
-    local nDescINSS, nDescIR, nDescSindicato := 0
+    local nValorHora      := 0
+    local nHoraTrab       := 0
+    local nSalarioBruto   := 0 
+    local nSalarioLiquido := 0
+    local nDescINSS       := 0 
+    local nDescIR         := 0
+    local nDescSindicato  := 0
 
     nValorHora := val(FwInputBox("Informe o valor da hora trabalhada: "))
 

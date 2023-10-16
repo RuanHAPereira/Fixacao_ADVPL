@@ -2,8 +2,8 @@
 
 user function ES10()
 
-    local nCelsius    := ''
-    local nFahrenheit := ''
+    local nCelsius    := 0
+    local nFahrenheit := 0
 
     nCelsius := Val(FwInputBox("Digite a temperatura em Graus Celsius", nCelsius))
 

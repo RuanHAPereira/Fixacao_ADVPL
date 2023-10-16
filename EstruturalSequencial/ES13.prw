@@ -2,8 +2,9 @@
 
 user function ES13()
 
-    local nAltura := 0
-    local cSexo := ''
+    local nAltura    := 0
+    local cSexo      := ''
+    local nResultado := 0
 
     nAltura := Val(FwInputBox("Nos informe sua altura: "))
     cSexo := FwInputBox("Informe o sexo: ")

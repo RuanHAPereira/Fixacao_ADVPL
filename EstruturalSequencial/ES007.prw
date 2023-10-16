@@ -2,7 +2,9 @@
 
 user function ES007()
 
-    local nArea, nLado, nDobroA := 0
+    local nArea   := 0 
+    local nLado   := 0
+    local nDobroA := 0
 
     nLado := Val(FwinputBox("Digite o valor do lado do quadarado: ", nLado))
 

@@ -2,7 +2,9 @@
 
 user function ES14()
   
-    local nPeso, nExcesso, nMulta := 0 
+    local nPeso    := 0
+    local nExcesso := 0 
+    local nMulta   := 0 
 
     nPeso := Val(FwInputBox("Informe o peso de peixes em kg: "))
 

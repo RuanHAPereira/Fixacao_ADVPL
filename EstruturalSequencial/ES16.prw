@@ -2,7 +2,10 @@
 
 user function ES17()
 
-    local nArea := 0
+    local nArea        := 0
+    local nLatasTinta  := 0
+    local nLitrosTinta := 0
+    local nPrecoTotal  := 0
 
     nArea := val(FwInputbox("Informe a area, em metros quadrados, que será pintada: "))
 

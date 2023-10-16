@@ -2,7 +2,10 @@
 
 user function ES004()
 
-    local nNota1, nNota2, nNota3, nNota4 := SPACE( 2 )
+    local nNota1 := SPACE( 2 )
+    local nNota2 := SPACE( 2 )
+    local nNota3 := SPACE( 2 )
+    local nNota4 := SPACE( 2 )
     local nMedia := 0 
 
     nNota1 := VAL(FwInputBox("Informe sua primeira nota: ", nNota1))

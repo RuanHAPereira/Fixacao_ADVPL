@@ -4,6 +4,7 @@ user function ES18()
 
    local nTamanoArq := 0
    local nVelociNet := 0
+   local nDownload  := 0
 
    nTamanoArq := val(FwInputBox("Informe o tamanho do arquivo para download em MB: "))
 

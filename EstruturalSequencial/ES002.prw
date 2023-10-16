@@ -2,10 +2,10 @@
 
 user function ES002()
 
-    local cMsg := ""
+    local nMsg := 0
+    
+    nMsg := FwInputBox("Informe um numero: ")
 
-    cMsg := FwInputBox("Informe um numero: ", cMsg)
-
-    Alert("O numero informado foi " + CVALTOCHAR( cMsg ))
+    Alert("O numero informado foi " + CVALTOCHAR( nMsg ))
 
 return

@@ -2,9 +2,14 @@
 
 USER FUNCTION ES17()
 
-    local nArea := 0
-    local nLitroTinta := 0
-    local nTintaResto := MOD(nLitroTinta, 18) //! Funçao MOD que tem a mesma função do operador % (Modulo) no ADVPL
+    local nArea        := 0
+    local nLitroTinta  := 0
+    local nTintaResto  := MOD(nLitroTinta, 18) //! Funçao MOD que tem a mesma função do operador % (Modulo) no ADVPL
+    local nLatasTinta  := 0
+    local nGaloesTinta := 0
+    local nPrecoLata   := 0
+    local nPrecoMisto  := 0
+    local nPrecoGalao  := 0
     
     nArea := val(FwinputBox("Informe a área em metros quadrados a ser pintada: "))
 

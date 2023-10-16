@@ -2,9 +2,9 @@
 
 user function ES005()
 
-    local nMetro := ""
+    local nMetro      := 0
     local nCentimetro := 100
-    local nConvert := 0
+    local nConvert    := 0
 
     nMetro := Val(FwInputBox("Informe o Valor em metros: ", nMetro))
 

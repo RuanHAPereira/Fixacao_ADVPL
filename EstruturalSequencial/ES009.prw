@@ -2,8 +2,8 @@
 
 User Function RE006()
     
-    Local cFahrenh := ''
-    Local nCelsius := ''
+    Local cFahrenh := 0
+    Local nCelsius := 0
 
     cFahrenh := FwInputBox('Coloque aqui a temperatura em Fahrenheit que será transformada em Celsius', cFahrenh)
 

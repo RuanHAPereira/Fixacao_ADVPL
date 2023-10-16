@@ -2,7 +2,8 @@
 
 user function ES12()
 
-    local nAltura := 0
+    local nAltura    := 0
+    local nResultado := 0
 
     nAltura := Val(FwInputBox("Nos informe sua altura: "))
 

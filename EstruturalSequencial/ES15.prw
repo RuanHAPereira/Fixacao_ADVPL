@@ -16,7 +16,6 @@ user function ES15()
 
     nSalarioBruto = nValorHora * nHoraTrab
 
-
     nDescIR = nSalarioBruto * 0.11 
     nDescINSS = nSalarioBruto * 0.08 
     nDescSindicato = nSalarioBruto * 0.05  

@@ -5,8 +5,8 @@ user function ED007()
     local nNumero1 := 0
     local nNumero2 := 0
     local nNumero3 := 0
-    local nMaior := 0
-    local nMenor := 0
+    local nMaior   := 0
+    local nMenor   := 0
     
     nNumero1 := val(FwInputBox("Digite o primeiro numero: "))
     nNumero2 := val(FwInputBox("Digite o segundo numero: "))

@@ -17,6 +17,5 @@ user function ES13()
         nResultado = (62.1 * nAltura)-44.7
     endif
         
-
     FwAlertInfo("O peso ideial com base na sua altura é: " + Alltrim(str(nResultado)))
 return

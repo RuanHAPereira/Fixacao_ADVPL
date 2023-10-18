@@ -10,10 +10,11 @@ user function ED018()
 
     cData := (FwInputBox("Digite a data no formato dd/mm/aaaa: "))
 
-        //? Aqui começo a validação da data inserida, Len() só é valida se a String fo de tamanho 10
-        //? SubStr() valida se o terceiro e o sexto caracteres serao exatamente "/"
-        //? As variváveis nDia, nMes e nAno são para dividir essa String de acordo com o formato de data
-        if Len(cData) == 10 .AND. SubStr(cData, 3, 1) == "/" .AND. SubStr(cData, 6, 1) == "/"
+    //? Aqui começo a validação da data inserida, Len() só é valida se a String fo de tamanho 10
+    //? SubStr() valida se o terceiro e o sexto caracteres serao exatamente "/"
+    //? As variváveis nDia, nMes e nAno são para dividir essa String de acordo com o formato de data
+    if Len(cData) == 10 .AND. SubStr(cData, 3, 1) == "/" .AND. SubStr(cData, 6, 1) == "/"
+
         nDia := Val(SubStr(cData, 1, 2))
         nMes := Val(SubStr(cData, 4, 2))
         nAno := Val(SubStr(cData, 7, 4))
@@ -47,9 +48,9 @@ user function ED018()
     endif
 
     if lDataValida
-        FwAlertSucess("A data " + cData + " é válida.")
+        FwAlertSucess("A data " + Alltrim(Str(cData)) + " é válida.")
     else
-        FwAlertError("A data " + cData + " não é válida.")
+        FwAlertError("A data " + Alltrim(Str(cData)) + " não é válida.")
     endif
 
 return

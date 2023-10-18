@@ -27,15 +27,15 @@ user function ED014()
 
     // Verifica se o aluno está APROVADO ou REPROVADO
     IF cConceito == "A" .OR. cConceito == "B" .OR. cConceito == "C"
-        cMsg := FwAlertSuccess("APROVADO")
+        cMsg := "APROVADO!!"
     ELSE
-        cMsg := FwAlertError("REPROVADO")
+        cMsg := "REPROVADO!!"
     ENDIF
 
-    FwAlertInfo("Nota 1: " + Alltim(Str(nNota1)) + CRLF;
+    FwAlertInfo("Nota 1: " + Alltrim(Str(nNota1)) + CRLF;
     + "Nota 2: " + Alltrim(Str(nNota2)) + CRLF;
     + "Média: " + Alltrim(Str(nMedia)) + CRLF;
-    + "Conceito: " + Alltrim(Str(cConceito)) + CRLF;
-    + "Resultado: " + Alltrim(Str(cMsg)))
+    + "Conceito: " + Alltrim(cConceito) + CRLF;
+    + "Resultado: " + Alltrim(cMsg))
 
 return

@@ -32,6 +32,7 @@ user function ED016()
         FwAlertInfo("A equação possui uma raiz real: " + Alltrim(Str(nRaiz1)))
     ELSE
 
+        //? SQRT(nRadicand) -> função que calcula o valor do radicando(Indica o resultado da multiplicação do número que estamos procurando por ele mesmo.)
         nRaiz1 := (-nB + Sqrt(nDelta)) / (2 * nA)
         nRaiz2 := (-nB - Sqrt(nDelta)) / (2 * nA)
         FwAlertSuccess("A equação possui duas raízes reais:" + CRLF;

@@ -2,9 +2,9 @@
 
 user function ED011()
 
-    local nSalario := 0
-    local nAumentoSal := 0
-    local nValorAumento := 0
+    local nSalario       := 0
+    local nAumentoSal    := 0
+    local nValorAumento  := 0
     local nSalarioAjuste := 0
 
     nSalario := val(FwInputBox("Digite o salário do colaborador: "))
@@ -19,7 +19,7 @@ user function ED011()
         nAumentoSal := 5
     endif
 
-    nValorAumento := nSalario * (nAumentoSal / 100)
+    nValorAumento  := nSalario * (nAumentoSal / 100)
     nSalarioAjuste := nSalario + nValorAumento
 
     FwAlertSuccess("Salário antes do reajuste: " + Alltrim(Str(nSalario)) + CRLF;

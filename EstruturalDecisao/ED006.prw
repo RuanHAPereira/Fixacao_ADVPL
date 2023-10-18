@@ -5,7 +5,7 @@ USER FUNCTION ED006()
     local nNumero1 := 0
     local nNumero2 := 0
     local nNumero3 := 0
-    local nMaior := 0
+    local nMaior   := 0
     
     nNumero1 := Val(FwInputBox("Digite o primeiro número:"))
     nNumero2 := Val(FwInputBox("Digite o segundo número:"))

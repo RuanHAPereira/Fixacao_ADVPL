@@ -2,13 +2,13 @@
 
 user function ED012()
 
-    local nValorHora := 0
-    local nHorasTrab := 0
+    local nValorHora    := 0
+    local nHorasTrab    := 0
     local nSalarioBruto := 0
-    local nIR := 0
+    local nIR   := 0
     local nINSS := 0
     local nFGTS := 0
-    local nSindicato := 0
+    local nSindicato      := 0
     local nTotalDescontos := 0
     local nSalarioLiquido := 0
 
@@ -38,7 +38,7 @@ user function ED012()
 
     nSalarioLiquido := nSalarioBruto - nTotalDescontos
 
-    //? Usei Alltrim(Str() para formatar como o valor será exibido na mensagem
+    //? Usei Alltrim(Str()) para formatar como o valor será exibido na mensagem
     FwalertSuccess("Salário Bruto: " + Alltrim(Str(nSalarioBruto)) + CRLF;
     + "(-) IR: " + Alltrim(Str(nIR)) + CRLF;
     + "(-) INSS: " + Alltrim(Str(nINSS)) + CRLF;

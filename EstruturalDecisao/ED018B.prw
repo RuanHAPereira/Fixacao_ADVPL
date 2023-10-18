@@ -1,6 +1,15 @@
 #include 'Totvs.ch'
 
-user function ED018()
+/*/{Protheus.doc} ED018B
+Faça um Programa que peça uma data no formato dd/mm/aaaa e determine se a mesma é uma data válida.
+Variação utilizando a função MOD()
+@type function
+@version  
+@author Ruan Henrique
+@since 10/18/2023
+@return variant, return_description
+/*/
+user function ED018B()
 
     local cData := ""
     local nDia := 0
@@ -30,7 +39,7 @@ user function ED018()
 
             elseif nMes == 2
 
-                if (nAno % 4 == 0)
+                if (MOD(nAno, 4) == 0)
 
                     if nDia > 29
                         lDataValida := .F.

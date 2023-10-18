@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES004
+Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES004()
 
     local nNota1 := SPACE( 2 )

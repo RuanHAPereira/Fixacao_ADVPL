@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED007
+Faça um Programa que leia três números e mostre o maior e o menor deles.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED007()
 
     local nNumero1 := 0

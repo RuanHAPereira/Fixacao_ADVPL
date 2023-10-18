@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES003
+Faça um Programa que peça dois números e imprima a soma
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES003()
 
     local nNum1 := 0

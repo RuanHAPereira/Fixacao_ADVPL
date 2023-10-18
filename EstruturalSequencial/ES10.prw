@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES10
+Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES10()
 
     local nCelsius    := 0

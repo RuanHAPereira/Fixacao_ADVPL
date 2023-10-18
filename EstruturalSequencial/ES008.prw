@@ -1,5 +1,13 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES008
+Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+Calcule e mostre o total do seu salário no referido mês.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES008()
 
     local nHora    := 0 

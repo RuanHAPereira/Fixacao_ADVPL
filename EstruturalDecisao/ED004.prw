@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED004
+Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED004()
 
     local cLetra := ''

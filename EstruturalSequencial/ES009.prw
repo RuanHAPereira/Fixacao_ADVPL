@@ -1,5 +1,13 @@
 #INCLUDE 'TOTVS.CH'
 
+/*/{Protheus.doc} RE006
+Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
+C = 5 * ((F-32) / 9).
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 User Function RE006()
     
     Local cFahrenh := 0

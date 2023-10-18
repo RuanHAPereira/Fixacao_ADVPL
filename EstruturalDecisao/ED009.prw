@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED009
+Faça um Programa que leia três números e mostre-os em ordem decrescente.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED009()
 
     local aNumeros := {}

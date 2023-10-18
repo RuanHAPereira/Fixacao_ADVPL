@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED001
+Faça um Programa que peça dois números e imprima o maior deles.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED001()
 
     local nNum1, nNum2 := 0

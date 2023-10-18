@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES007
+Faça um Programa que calcule a área de um quadrado, em seguida mostre o dobro desta área para o usuário.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES007()
 
     local nArea   := 0 

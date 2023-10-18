@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES12
+Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal, usando a seguinte fórmula: (72.7*altura) - 58
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES12()
 
     local nAltura    := 0

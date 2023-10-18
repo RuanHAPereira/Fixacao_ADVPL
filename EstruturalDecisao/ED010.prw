@@ -1,5 +1,14 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED010
+Faça um Programa que pergunte em que turno você estuda. 
+Peça para digitar M-matutino ou V-Vespertino ou N- Noturno. 
+Imprima a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!" ou "Valor Inválido!", conforme o caso.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED010()
 
     local cTurno := ''

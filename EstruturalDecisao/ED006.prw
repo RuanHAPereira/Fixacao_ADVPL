@@ -1,5 +1,12 @@
 #INCLUDE "TOTVS.CH"
 
+/*/{Protheus.doc} ED006
+Faça um Programa que leia três números e mostre o maior deles.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 USER FUNCTION ED006()
 
     local nNumero1 := 0

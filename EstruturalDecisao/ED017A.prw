@@ -1,6 +1,14 @@
 #include 'Totvs.ch'
 
-user function ED017()
+/*/{Protheus.doc} ED017A
+Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
+Essa variação do exercicio é utilizando o operador logico %
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
+user function ED017A()
 
     local nAno := 0
 

@@ -1,5 +1,15 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES11
+Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
+o produto do dobro do primeiro com metade do segundo .
+a soma do triplo do primeiro com o terceiro.
+o terceiro elevado ao cubo.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES11()
 
     local nNumInt1    := 0

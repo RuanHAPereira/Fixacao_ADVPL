@@ -1,5 +1,13 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ED013
+Faça um Programa que leia um número e exiba o dia correspondente da semana. 
+(1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido.
+@type function
+@author Ruan Henrique
+@since 10/18/2023
+/*/
+
 user function ED013()
 
     local nNumero := 0

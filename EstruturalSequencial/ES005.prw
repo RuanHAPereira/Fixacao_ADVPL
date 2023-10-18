@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES005
+Faça um Programa que converta metros para centímetros.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES005()
 
     local nMetro      := 0

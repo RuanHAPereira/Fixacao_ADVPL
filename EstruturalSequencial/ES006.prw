@@ -1,5 +1,12 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ES006
+Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
+@type function
+@author Ruan Henrique
+@since 10/17/2023
+/*/
+
 user function ES006()
 
     local nRaio := 0

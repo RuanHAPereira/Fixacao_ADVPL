@@ -27,7 +27,8 @@ user function ED016()
 
     //!Valida se o valor será igual a 0, se for o programa encerra.
     IF nA == 0
-        Alert("A equação não é do segundo grau. Programa encerrado.")
+        FwAlertError("A equação não é do segundo grau. Programa encerrado.")
+        return
     ENDIF
 
     nB := Val(FwInputBox("Digite o valor de B: "))
@@ -38,7 +39,8 @@ user function ED016()
 
     // Verifica o valor do delta
     IF nDelta < 0
-        Alert("A equação não possui raízes reais. Programa encerrado.")
+        FwAlertInfo("A equação não possui raízes reais. Programa encerrado.")
+        return
         
     ELSEIF nDelta == 0
         nRaiz1 := -nB / (2 * nA)

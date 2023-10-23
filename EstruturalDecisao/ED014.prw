@@ -10,7 +10,8 @@ e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo:
   Entre 4.0 e 6.0         D
   Entre 4.0 e zero        E
 
-O algoritmo deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou 
+O algoritmo deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o 
+conceito for A, B ou C ou 
 “REPROVADO” se o conceito for D ou E.
 @type function
 @author Ruan Henrique
@@ -30,6 +31,8 @@ user function ED014()
 
     nMedia := (nNota1 + nNota2) / 2
 
+     cMsg := "APROVADO!!"
+
     IF nMedia >= 9.0
         cConceito := "A"
     ELSEIF nMedia >= 7.5
@@ -38,14 +41,9 @@ user function ED014()
         cConceito := "C"
     ELSEIF nMedia >= 4.0
         cConceito := "D"
+        cMsg := "REPROVADO!!"
     ELSE
         cConceito := "E"
-    ENDIF
-
-    // Verifica se o aluno está APROVADO ou REPROVADO
-    IF cConceito == "A" .OR. cConceito == "B" .OR. cConceito == "C"
-        cMsg := "APROVADO!!"
-    ELSE
         cMsg := "REPROVADO!!"
     ENDIF
 

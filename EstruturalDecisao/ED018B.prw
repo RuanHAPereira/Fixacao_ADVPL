@@ -56,9 +56,9 @@ user function ED018B()
     endif
 
     if lDataValida
-        FwAlertSucess("A data " + Alltrim(Str(cData)) + " é válida.")
+        FwAlertSucess("A data " + Alltrim(cData) + " é válida.")
     else
-        FwAlertError("A data " + Alltrim(Str(cData)) + " não é válida.")
+        FwAlertError("A data " + Alltrim(cData) + " não é válida.")
     endif
 
 return

@@ -23,18 +23,12 @@ user function ED015()
     nLado2 := val(FwInputBox("Digite o segundo lado do triângulo: "))
     nLado3 := val(FwInputBox("Digite o terceiro lado do triângulo: "))
 
-    IF (nLado1 + nLado2 > nLado3) .AND. (nLado1 + nLado3 > nLado2) .AND. (nLado2 + nLado3 > nLado1)
-
-        IF nLado1 == nLado2 .AND. nLado1 == nLado3
-            Alert("Os lados formam um triângulo equilátero.")
-        ELSEIF nLado1 == nLado2 .OR. nLado1 == nLado3 .OR. nLado2 == nLado3
-            Alert("Os lados formam um triângulo isósceles.")
-        ELSE
-            Alert("Os lados formam um triângulo escaleno.")
-        ENDIF
-
+    IF nLado1 == nLado2 .AND. nLado1 == nLado3
+        Alert("Os lados formam um triângulo equilátero.")
+    ELSEIF nLado1 == nLado2 .OR. nLado1 == nLado3 .OR. nLado2 == nLado3
+        Alert("Os lados formam um triângulo isósceles.")
     ELSE
-        Alert("Os lados não podem formar um triângulo.")
+        Alert("Os lados formam um triângulo escaleno.")
     ENDIF
 
 return

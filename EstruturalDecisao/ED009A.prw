@@ -1,13 +1,14 @@
 #include 'Totvs.ch'
 
-/*/{Protheus.doc} ED009
+/*/{Protheus.doc} ED009A
 Faça um Programa que leia três números e mostre-os em ordem decrescente.
+Variação do Exercicio usando a função ASORT().
 @type function
 @author Ruan Henrique
 @since 10/18/2023
 /*/
 
-user function ED009()
+user function ED009A()
 
     local aNumeros := {}
     local nCont := 0

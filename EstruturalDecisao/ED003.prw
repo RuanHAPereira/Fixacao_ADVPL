@@ -11,7 +11,7 @@ user function ED003()
 
     local cSexo := ''
 
-    cSexo := FwInputBox("Informe seu sexo, utilize M ou F: ")
+    cSexo := UPPER(FwInputBox("Informe seu sexo, utilize M ou F: "))
 
     if cSexo == "M"
         FwAlertInfo("Sexo MASCULINO!")

@@ -1,13 +1,15 @@
 #include 'Totvs.ch'
 
-/*/{Protheus.doc} ED008
-Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar, sabendo que a decisão é sempre pelo mais barato.
+/*/{Protheus.doc} ED008A
+Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar,
+sabendo que a decisão é sempre pelo mais barato.
+Exercicio feito usando FOR.
 @type function
 @author Ruan Henrique
 @since 10/18/2023
 /*/
 
-user function ED008()
+user function ED008A()
 
     local nMenorPreco := 0
     local nCont := 0

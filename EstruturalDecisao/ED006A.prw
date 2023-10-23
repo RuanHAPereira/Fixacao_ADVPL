@@ -1,13 +1,13 @@
 #INCLUDE "TOTVS.CH"
 
-/*/{Protheus.doc} ED006
+/*/{Protheus.doc} ED006A
 Faça um Programa que leia três números e mostre o maior deles.
 @type function
 @author Ruan Henrique
 @since 10/18/2023
 /*/
 
-USER FUNCTION ED006()
+USER FUNCTION ED006A()
 
     local nNumero1 := 0
     local nNumero2 := 0
@@ -18,17 +18,13 @@ USER FUNCTION ED006()
     nNumero2 := Val(FwInputBox("Digite o segundo número:"))
     nNumero3 := Val(FwInputBox("Digite o terceiro número:"))
 
-    if nNumero1 > nMaior
+    IF nNumero1 > nMaior
         nMaior := nNumero1
-    endif
-
-    if nNumero2 > nMaior
+    ELSEIF nNumero2 > nMaior
         nMaior := nNumero2
-    endif
-
-    if nNumero3 > nMaior
+    ELSEIF nNumero3 > nMaior
         nMaior := nNumero3
-    endif
+    ENDIF
 
     FwAlertInfo("O maior número é: " + Alltrim(STR(nMaior)))
     

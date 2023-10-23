@@ -26,11 +26,11 @@ user function ED011()
 
     nSalario := val(FwInputBox("Digite o salário do colaborador: "))
 
-    if nSalario <= 280
+    if nSalario <= 280.01
         nAumentoSal := 20
-    elseif nSalario <= 700
+    elseif nSalario <= 700.01
         nAumentoSal := 15
-    elseif nSalario <= 1500
+    elseif nSalario <= 1500.01
         nAumentoSal := 10
     else
         nAumentoSal := 5
@@ -39,9 +39,9 @@ user function ED011()
     nValorAumento  := nSalario * (nAumentoSal / 100)
     nSalarioAjuste := nSalario + nValorAumento
 
-    FwAlertSuccess("Salário antes do reajuste: " + Alltrim(Str(nSalario)) + CRLF;
+    FwAlertInfo("Salário antes do reajuste: " + Alltrim(Str(nSalario)) + CRLF;
     + "Percentual de aumento aplicado: " + Alltrim(Str(nAumentoSal)) + "%" + CRLF;
-    + "Valor do aumento: " + Alltrim(Str(nValorAumento)) + CRLF;
-    + "Novo salário após o aumento: " + Alltrim(Str(nSalarioAjuste)))
+    + "Valor do aumento: " + Alltrim(Str(nValorAumento)) + "R$" + CRLF;
+    + "Novo salário após o aumento: " + Alltrim(Str(nSalarioAjuste)) + "R$")
      
 return

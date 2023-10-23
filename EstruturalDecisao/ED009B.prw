@@ -39,6 +39,6 @@ user function ED009B()
         nMedio := nNum3
     endif
 
-    FwAlertInfo("Os números em ordem decrescente são: ", Alltrim(Str(nMaior)), ", ", + CRLF;
-    + Alltrim(Str(nMedio)), ", ", Alltrim(Str(nMenor)))
+    FwAlertInfo("Os números em ordem decrescente são: " + Alltrim(Str(nMaior)) + ", " + CRLF;
+    + Alltrim(Str(nMedio)) + ", " +  Alltrim(Str(nMenor)))
 return

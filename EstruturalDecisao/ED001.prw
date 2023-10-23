@@ -9,7 +9,8 @@ Faça um Programa que peça dois números e imprima o maior deles.
 
 user function ED001()
 
-    local nNum1, nNum2 := 0
+    local nNum1 := 0
+    local nNum2 := 0
 
     nNum1 := val(FwInputBox("Informe o primeiro número: "))
 

@@ -31,7 +31,7 @@ user function ED014()
 
     nMedia := (nNota1 + nNota2) / 2
 
-     cMsg := "APROVADO!!"
+    cMsg := "APROVADO!!"
 
     IF nMedia >= 9.0
         cConceito := "A"

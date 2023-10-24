@@ -150,7 +150,19 @@
 		},
 		{
 			"label": "U_ED004B"
+		},
+		{
+			"label": "U_ED024"
+		},
+		{
+			"label": "U_ED025"
+		},
+		{
+			"label": "U_ED021"
+		},
+		{
+			"label": "U_ED026"
 		}
 	],
-	"lastProgramExecuted": "U_ED019"
+	"lastProgramExecuted": "U_ED026"
 }

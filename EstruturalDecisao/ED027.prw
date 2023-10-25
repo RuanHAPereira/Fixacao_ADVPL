@@ -36,6 +36,7 @@ user function ED027()
         nDesconto := nValorTotal * 0.10
         nValorTotal := nValorTotal - nDesconto
     endif
+    
     FwAlertInfo("Valor a ser pago pelo cliente: R$" + Alltrim(Str(nValorTotal)))
 
 return

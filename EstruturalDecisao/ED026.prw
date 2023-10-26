@@ -17,12 +17,12 @@ pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,50 o preço 
 
 user function ED026()
 
-    local nLitros := 0
-    local cCombustivel := ""
+    local nLitros        := 0
+    local cCombustivel   := ""
     local nPrecoGasolina := 2.50
-    local nPrecoAlcool := 1.90
-    local nDesconto := 0
-    local nTotalPagar := 0
+    local nPrecoAlcool   := 1.90
+    local nDesconto      := 0
+    local nTotalPagar    := 0
 
     cCombustivel := UPPER(FwInputBox("Digite o tipo de combustível (A para álcool, G para gasolina): "))
     nLitros := val(FwInputBox("Digite o número de litros vendidos: "))

@@ -12,8 +12,8 @@ Exercicio feito usando FOR.
 user function ED008A()
 
     local nMenorPreco := 0
-    local nCont := 0
-    local nPreco := 0
+    local nCont       := 0
+    local nPreco      := 0
 
     for nCont := 1 to 3
         nPreco = val(FwInputBox("Digite um preço: "))

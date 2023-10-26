@@ -10,7 +10,7 @@ Variação utilizando o Operador Contido "$"
 
 user function ED004B()
 
-    local cLetra := ''
+    local cLetra   := ''
     local cPalavra := "AEIOU"
 
     cLetra := (FwInputBox("Digite uma letra do alfabeto: "))

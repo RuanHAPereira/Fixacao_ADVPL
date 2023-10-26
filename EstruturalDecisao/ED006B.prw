@@ -9,9 +9,9 @@ Faça um Programa que leia três números e mostre o maior deles.
 
 user function ED006B()
 
-    local nNum1 := 0
-    local nNum2 := 0
-    local nNum3 := 0 
+    local nNum1  := 0
+    local nNum2  := 0
+    local nNum3  := 0 
     local nMaior := 0
 
     nNum1 := val(FwInputBox("Digite o primeiro número: "))

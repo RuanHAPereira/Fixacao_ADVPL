@@ -21,6 +21,7 @@ user function ED016()
     local nDelta := 0
     local nRaiz1 := 0
     local nRaiz2 := 0
+    local lRet := .T.
 
     // Solicita os valores de a, b e c ao usuário
     nA := Val(FwInputBox("Digite o valor de A: "))
@@ -28,32 +29,34 @@ user function ED016()
     //!Valida se o valor será igual a 0, se for o programa encerra.
     IF nA == 0
         FwAlertError("A equação não é do segundo grau. Programa encerrado.")
-        return
+        lRet = .F.
     ENDIF
 
-    nB := Val(FwInputBox("Digite o valor de B: "))
-    nC := Val(FwInputBox("Digite o valor de C: "))
+    if lRet = .T.
+        nB := Val(FwInputBox("Digite o valor de B: "))
+        nC := Val(FwInputBox("Digite o valor de C: "))
 
-    //! Calculando o delta
-    nDelta := nB^2 - 4 * nA * nC
+        //! Calculando o delta
+        nDelta := nB^2 - 4 * nA * nC
 
-    // Verifica o valor do delta
-    IF nDelta < 0
-        FwAlertInfo("A equação não possui raízes reais. Programa encerrado.")
-        return
-        
-    ELSEIF nDelta == 0
-        nRaiz1 := -nB / (2 * nA)
-        FwAlertInfo("A equação possui uma raiz real: " + Alltrim(Str(nRaiz1)))
-    ELSE
+        // Verifica o valor do delta
+        IF nDelta < 0
+            FwAlertError("A equação não possui raízes reais. Programa encerrado.")
+            lRet = .F.
+            
+        ELSEIF nDelta == 0
+            nRaiz1 := -nB / (2 * nA)
+            FwAlertInfo("A equação possui uma raiz real: " + Alltrim(Str(nRaiz1)))
+        ELSE
 
-        //? SQRT(nRadicand) -> função que calcula o valor do radicando(Indica o resultado da multiplicação do número que estamos procurando por ele mesmo.)
-        nRaiz1 := (-nB + Sqrt(nDelta)) / (2 * nA)
-        nRaiz2 := (-nB - Sqrt(nDelta)) / (2 * nA)
-        FwAlertSuccess("A equação possui duas raízes reais:" + CRLF;
-        + "Raiz 1: " + Alltrim(Str(nRaiz1)) + CRLF;
-        + "Raiz 2: " + Alltrim(Str(nRaiz2)))
+            //? SQRT(nRadicand) -> função que calcula o valor do radicando(Indica o resultado da multiplicação do número que estamos procurando por ele mesmo.)
+            nRaiz1 := (-nB + Sqrt(nDelta)) / (2 * nA)
+            nRaiz2 := (-nB - Sqrt(nDelta)) / (2 * nA)
+            FwAlertSuccess("A equação possui duas raízes reais:" + CRLF;
+            + "Raiz 1: " + Alltrim(Str(nRaiz1)) + CRLF;
+            + "Raiz 2: " + Alltrim(Str(nRaiz2)))
 
-    ENDIF
-
-return
+        ENDIF
+    endif
+    
+return(lRet)

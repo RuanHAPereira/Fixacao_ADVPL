@@ -11,9 +11,9 @@ Variação utilizando a função MOD()
 user function ED018B()
 
     local cData := ""
-    local nDia := 0
-    local nMes := 0
-    local nAno := 0
+    local nDia  := 0
+    local nMes  := 0
+    local nAno  := 0
     local lDataValida := .F.
 
     cData := (FwInputBox("Digite a data no formato dd/mm/aaaa: "))

@@ -11,7 +11,7 @@ Variação do Exercicio usando a função ASORT().
 user function ED009A()
 
     local aNumeros := {}
-    local nCont := 0
+    local nCont    := 0
 
     FwAlertInfo("Informe três números a seguir!!")
 

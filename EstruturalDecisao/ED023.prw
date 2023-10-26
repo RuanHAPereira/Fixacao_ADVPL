@@ -10,7 +10,7 @@ Dica: utilize uma função de arredondamento.
 
 user function ED023()
 
-    local nNumero := 0
+    local nNumero    := 0
     local nResultado := 0
 
     nNumero := Val(FwInputBox("Informe um número: "))

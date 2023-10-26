@@ -13,8 +13,8 @@ inteiro ou decimal.
 
 user function ED024()
     
-    local nNumero1 := 0
-    local nNumero2 := 0
+    local nNumero1  := 0
+    local nNumero2  := 0
     local cOperacao := ""
     local cMsg1 := ''
     local cMsg2 := ''

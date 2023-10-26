@@ -10,9 +10,9 @@ Variação do Exercicio sem usar a função ASORT().
 
 user function ED009B()
 
-    local nNum1 := 0
-    local nNum2 := 0
-    local nNum3 := 0
+    local nNum1  := 0
+    local nNum2  := 0
+    local nNum3  := 0
     local nMaior := 0
     local nMedio := 0
     local nMenor := 0

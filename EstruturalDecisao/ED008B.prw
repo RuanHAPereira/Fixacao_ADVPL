@@ -3,7 +3,7 @@
 /*/{Protheus.doc} ED008A
 Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar,
 sabendo que a decisão é sempre pelo mais barato.
-Exercicio feito usando IF/Elseif.
+Exercicio feito usando if/Elseif.
 @type function
 @author Ruan Henrique
 @since 10/20/2023
@@ -20,15 +20,19 @@ user function ED008B()
     nPreco2 := val(FwInputbox("Digite o preço do segundo produto: "))
     nPreco3 := val(FwInputbox("Digite o preço do terceiro produto: "))
 
-    IF nPreco1 < nPreco2 .AND. nPreco1 < nPreco3
-        cBarato := "Produto 1"
-    ELSEIF nPreco2 < nPreco1 .AND. nPreco2 < nPreco3
-        cBarato := "Produto 2"
-    ELSE
-        cBarato := "Produto 3"
-    ENDIF
+    if nPreco1 = nPreco2 .AND. nPreco2 = nPreco3
+        FwAlertInfo("Os preços dos três produtos são iguais.")
+    elseif nPreco1 = nPreco2 .OR. nPreco2 = nPreco3 .OR. nPreco1 = nPreco3
+        FwAlertInfo("Dois dos preços são iguais, por favor, insira preços diferentes para todos os produtos.")
+    else
+        if nPreco1 <= nPreco2 .AND. nPreco1 <= nPreco3
+            cBarato := "Produto 1"
+        elseif nPreco2 <= nPreco1 .AND. nPreco2 <= nPreco3
+            cBarato := "Produto 2"
+        else
+            cBarato := "Produto 3"
+        endif
 
-    FwAlertInfo("Você deve comprar o " + Alltrim(cBarato) + " que é o mais barato")
-
-
+        FwAlertInfo("Você deve comprar o " + Alltrim(cBarato) + " que é o mais barato.")
+    endif
 return

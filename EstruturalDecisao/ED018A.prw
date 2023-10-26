@@ -18,7 +18,7 @@ user function ED018A()
 
     cData := (FwInputBox("Digite a data no formato dd/mm/aaaa: "))
 
-    //? Aqui começo a validação da data inserida, Len() só é valida se a String fo de tamanho 10
+    //? Aqui começo a validação da data inserida, Len() só é valida se a String for de tamanho 10
     //? SubStr() valida se o terceiro e o sexto caracteres serao exatamente "/"
     //? As variváveis nDia, nMes e nAno são para dividir essa String de acordo com o formato de data
     if Len(cData) == 10 .AND. SubStr(cData, 3, 1) == "/" .AND. SubStr(cData, 6, 1) == "/"

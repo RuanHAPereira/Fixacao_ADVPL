@@ -42,7 +42,7 @@ user function ED028()
             nPrecoKg := 6.90
         else
             FwAlertInfo("Tipo de carne inválido!")
-            lRet = .f.
+            lRet := .f.
         endif
     else
         if cTipoCarne == "File Duplo"
@@ -53,11 +53,11 @@ user function ED028()
             nPrecoKg := 7.80
         else
             FwAlertInfo("Tipo de carne inválido!") 
-            lRet = .f.
+            lRet := .f.
         endif
     endif
 
-    if lRet = .t.
+    if lRet == .t.
         // Calcula o valor total da compra
         nValorTotal := nKgCarne * nPrecoKg
 

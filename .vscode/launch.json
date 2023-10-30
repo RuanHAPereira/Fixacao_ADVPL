@@ -177,7 +177,19 @@
 		},
 		{
 			"label": "U_ER003"
+		},
+		{
+			"label": "U_ER005"
+		},
+		{
+			"label": "U_ER006"
+		},
+		{
+			"label": "U_ER004"
+		},
+		{
+			"label": "U_ER002"
 		}
 	],
-	"lastProgramExecuted": "U_ER003"
+	"lastProgramExecuted": "U_ER005"
 }

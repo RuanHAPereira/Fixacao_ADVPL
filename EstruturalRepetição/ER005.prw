@@ -10,15 +10,14 @@ taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
 
 user function ER005()
 
-    local nAnos := 0
-    local nPopulaA := 0
-    local nPopulaB := 0
-    local nTaxaA := 0 
-    local nTaxaB := 0
-    local cResposta := ''
+    local nAnos     := 0
+    local nPopulaA  := 0
+    local nPopulaB  := 0
+    local nTaxaA    := 0 
+    local nTaxaB    := 0
+    local cResposta := "S" //? inicio como S para que passe pelo laço a primeira vez.
 
-    
-    do while cResposta == '' .or. cResposta == "S"
+    do while cResposta == "S" //? aqui se a resposta for S vai recomeçar as perguntas.
 
         nPopulaA := val(FwInputBox("Informe a população inicial do país A: "))
         

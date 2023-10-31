@@ -15,12 +15,13 @@ Estado Civil: 's', 'c', 'v', 'd';
 user function ER003()
     
     local cNome        := ""
-    local cSexo        := ""
-    local cEstadoCivil := ""
+    local cSexo        := "mf"
+    local cEstadoCivil := "csdv"
     local nIdade       := 0
     local nSalario     := 0
+    local cMsg1        := ''
+    local cMsg2        := ''
    
-    
     do while .T.  
         cNome := FwInputBox("Nome (maior que 3 caracteres): ")
 
@@ -55,9 +56,9 @@ user function ER003()
     
     //?Validação para o sexo.
     do while .T.  
-        cSexo := FwInputBox("Sexo ('f' ou 'm'): ")
+        cMsg1 := FwInputBox("Sexo ('f' ou 'm'): ")
        
-        if cSexo == "f" .or. cSexo == "m"
+        if cMsg1 $ cSexo
             exit
         else
             FwAlertError("O sexo deve ser 'f' ou 'm'. Tente novamente." , "ERRO!")
@@ -68,7 +69,7 @@ user function ER003()
     do while .T.  
         cEstadoCivil := FwInputBox("Estado Civil ('s', 'c', 'v', 'd'): ")
         
-        if cEstadoCivil == "s" .or. cEstadoCivil == "c" .or. cEstadoCivil == "v" .or. cEstadoCivil == "d"
+        if cMsg2 $ cEstadoCivil
             exit
         else
             FwAlertError("O estado civil deve ser 's', 'c', 'v' ou 'd'. Tente novamente." , "ERRO!")
@@ -77,6 +78,6 @@ user function ER003()
     
     FwalertInfo("Informações válidas!" + CRLR + "Nome =" + alltrim(cNome) + CRLF;
     + " Idade = " + alltrim(STR(nIdade)) + CRLF + " Salário =" + alltrim(STR(nSalario)) + CRLF;
-    + " Sexo = " + alltrim(cSexo) + CRLF + " Estado Civil = " + alltrim(cEstadoCivil))
+    + " Sexo = " + alltrim(cMsg1) + CRLF + " Estado Civil = " + alltrim(cMsg2))
 
 return

@@ -67,7 +67,7 @@ user function ER003()
     
     //?Validação estado civil
     do while .T.  
-        cEstadoCivil := FwInputBox("Estado Civil ('s', 'c', 'v', 'd'): ")
+        cMsg2 := FwInputBox("Estado Civil ('s', 'c', 'v', 'd'): ")
         
         if cMsg2 $ cEstadoCivil
             exit
@@ -76,7 +76,7 @@ user function ER003()
         endif
     enddo
     
-    FwalertInfo("Informações válidas!" + CRLR + "Nome =" + alltrim(cNome) + CRLF;
+    FwalertInfo("Informações válidas!" + CRLF + "Nome =" + alltrim(cNome) + CRLF;
     + " Idade = " + alltrim(STR(nIdade)) + CRLF + " Salário =" + alltrim(STR(nSalario)) + CRLF;
     + " Sexo = " + alltrim(cMsg1) + CRLF + " Estado Civil = " + alltrim(cMsg2))
 

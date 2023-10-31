@@ -10,13 +10,13 @@ Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 user function ER009()
 
     local nNumero := 1
+    local nImpar  := 0
     local cMsg    := ''
 
-    for nNumero := 1 to 50
+    for nNumero := 1 to 15
         if Mod(nNumero, 2) <> 0
-            cMsg += (Alltrim(str(nNumero)) + ",")
-        else
-            cMsg += (Alltrim(str(nNumero)) + ".")
+            nImpar := nNumero
+            cMsg := (Alltrim(str(nImpar)))
         endif
     next
 

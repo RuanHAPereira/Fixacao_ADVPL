@@ -10,7 +10,7 @@ ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informa
 
 user function ER002()
     
-    local cUser := ""
+    local cUser     := ""
     local cPassword := ""
     
     do while .T.  //? Loop infinito

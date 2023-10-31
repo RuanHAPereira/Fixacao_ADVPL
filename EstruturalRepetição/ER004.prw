@@ -13,8 +13,8 @@ ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
 user function ER004()
 
     local nAnos := 0
-    local nPopulacaoA := 169000
-    local nPopulacaoB := 230000
+    local nPopulacaoA   := 169000
+    local nPopulacaoB   := 230000
     local nTaxaAumentoA := 0.03
     local nTaxaAumentoB := 0.015
 

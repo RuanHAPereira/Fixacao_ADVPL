@@ -1,19 +1,18 @@
 #include 'Totvs.ch'
 
-/*/{Protheus.doc} ER010
-Faça um programa que receba dois números inteiros e gere os números inteiros que estão
- no intervalo compreendido por eles.
+/*/{Protheus.doc} ER011
+Altere o programa anterior para mostrar no final a soma dos números.
 @type function
 @author Ruan Henrique
-@since 10/30/2023
+@since 10/31/2023
 /*/
 
-User Function ER010()
+user function ER011()
 
     Local nPrimeiro := 0
     Local nSegundo  := 0
     Local nValor    := 0
-    local cMsg      := ''
+    Local nSoma     := 0
 
     nPrimeiro := Val(FwInputBox("Digite o primeiro número inteiro: "))
     nSegundo := Val(FwInputBox("Digite o segundo número inteiro: "))
@@ -23,14 +22,10 @@ User Function ER010()
     Else
         FwAlertInfo("Números no intervalo entre " + AllTrim(Str(nPrimeiro)) + " e " + AllTrim(Str(nSegundo)) + ":")
         For nValor := nPrimeiro to nSegundo
-            cMsg += (AllTrim(str(nValor) + ' , '))
-            
+            nSoma := nSoma + nValor
         Next
+
+        FwAlertInfo("A soma dos números no intervalo é: " + AllTrim(Str(nSoma)))
     EndIf
-
-    FwAlertInfo('São :' + cMsg)
-    
-Return
-
-
+return
 

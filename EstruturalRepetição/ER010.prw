@@ -22,7 +22,7 @@ User Function ER010()
         FwAlertInfo("O segundo número deve ser maior que o primeiro.")
     Else
         FwAlertInfo("Números no intervalo entre " + AllTrim(Str(nPrimeiro)) + " e " + AllTrim(Str(nSegundo)) + ":")
-        For nValor := nPrimeiro to nSegundo
+        For nValor := nPrimeiro + 1 to nSegundo - 1
             cMsg += (AllTrim(str(nValor) + ' , '))
             
         Next

@@ -9,18 +9,13 @@ Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 
 user function ER009()
 
-    local nNumero := 1
-    local nImpar  := 0
-    local cMsg    := ''
+    local nCont := 0
 
-    for nNumero := 1 to 15
-        if Mod(nNumero, 2) <> 0
-            nImpar := nNumero
-            cMsg := (Alltrim(str(nImpar)))
+    for nCont := 1 to 50 
+        if nCont % 2 <> 0
+            FwAlertInfo(Alltrim(str(nCont))) 
         endif
     next
-
-    FwAlertInfo("Os numeros impares são: " + cMsg)
 
 return
 

@@ -10,36 +10,34 @@ Depois modifique o programa para que ele mostre os números um ao lado do outro.
 
 user function ER006B()
 
-    local nNumero := 0
-    local nCont   := 0
-    local cMsg1   := ''
+    Local nNumero := 0
+    Local nCont   := 0
+    Local cMsg1   := ''
     local cMsg2   := ''
-    local aArray1 := {}
+    Local aArray1 := {}
 
-    for nCont := 1 to 20
+    For nCont := 1 to 20
         nNumero := nCont
         AADD(aArray1, nNumero)
-    next
+    Next
 
-    for nCont := 1 to 20
-        if nCont < 20
-            cMsg1 += (ALLTRIM(STR(aArray1[nCont])) + ',' + CHR(13) + CHR(10))
-        else
-            cMsg1 += (ALLTRIM(STR(aArray1[nCont])) + '.')
-        endif
-    next
+    For nCont := 1 to 20
+        If nCont < 20
+            cMsg1 += (ALLTRIM(STR(aArray1[nCont])) + ' ')
+        Else
+            cMsg1 += (ALLTRIM(STR(aArray1[nCont])))
+        Endif
+    Next
 
-    for nCont := 1 to 20
-        if nCont < 20
-            cMsg2 += (ALLTRIM(STR(aArray1[nCont])) + ',')
-        else
-            cMsg2 += (ALLTRIM(STR(aArray1[nCont])) + '.')
-        endif
-    next
+    For nCont := 1 to 20
+        If nCont < 20
+            cMsg2 += (ALLTRIM(STR(aArray1[nCont])))
+        Else
+            cMsg2 += (ALLTRIM(STR(aArray1[nCont])))
+        Endif
+    Next
 
-    FwAlertSuccess('Os numeros em sequencia: ' + cMsg1 + "Os numeros a cada linha: " + cMsg2)   
+    FwAlertSuccess('Os numeros em sequencia: ' + cMsg1 + ' Os numeros a cada linha: ' + cMsg2)   
 
-    FWLogMsg("INFO",,"Teste 1",,,,"Teste 2",,,,)
-return
-
-
+    //FWLogMsg("INFO",, "Teste 1",,, "Teste 2",,,,)
+Return

@@ -21,11 +21,13 @@ user function ER015()
 
     if nTermos < 1
         FwAlertInfo("O número de termos deve ser maior ou igual a 1.")
-        lRet = .F.
+        lRet := .F.
     elseIf nTermos == 1
         FwAlertInfo("Série de Fibonacci com 1 termo: 1")
     else
         FwAlertInfo("Série de Fibonacci com " + AllTrim(Str(nTermos)) + " termos:")
+        FwAlertInfo("1") //? O primeiro e segundo termos da serie de Fibonnacci são 1,1,...
+        FwAlertInfo("1")
 
         for nCont := 3 to nTermos
             nFibo := nFibonn1 + nFibonn2

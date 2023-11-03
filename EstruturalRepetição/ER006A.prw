@@ -40,3 +40,4 @@ user function ER006A()
     FwAlertSuccess('Os numeros em sequencia: ' + cMsg1 + CRLF + "Os numeros a cada linha: " + CRLF + cMsg2)   
 
 return
+

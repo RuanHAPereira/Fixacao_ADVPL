@@ -9,23 +9,23 @@ Altere o programa anterior para mostrar no final a soma dos números.
 
 user function ER011()
 
-    Local nPrimeiro := 0
-    Local nSegundo  := 0
-    Local nValor    := 0
-    Local nSoma     := 0
+    local nPrimeiro := 0
+    local nSegundo  := 0
+    local nValor    := 0
+    local nSoma     := 0
 
     nPrimeiro := Val(FwInputBox("Digite o primeiro número inteiro: "))
     nSegundo := Val(FwInputBox("Digite o segundo número inteiro: "))
 
-    If nSegundo < nPrimeiro
+    if nSegundo < nPrimeiro
         FwAlertInfo("O segundo número deve ser maior que o primeiro.")
-    Else
+    else
         FwAlertInfo("Números no intervalo entre " + AllTrim(Str(nPrimeiro)) + " e " + AllTrim(Str(nSegundo)) + ":")
-        For nValor := nPrimeiro to nSegundo
+        For nValor := nPrimeiro + 1 to nSegundo - 1
             nSoma := nSoma + nValor
         Next
 
         FwAlertInfo("A soma dos números no intervalo é: " + AllTrim(Str(nSoma)))
-    EndIf
+    endif
 return
 

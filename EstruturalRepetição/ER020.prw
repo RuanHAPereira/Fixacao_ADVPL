@@ -19,7 +19,7 @@ user function ER020()
         FwAlertInfo("Digite um numero inteiro, de 0 a 15, ou -1 para finalizar.")
         nNumero := Val(FwInputBox("Digite um número inteiro: "))
 
-        if nNumero = -1
+        if nNumero == -1
             lRet := .F.
         elseif nNumero < 0 .or. nNumero > 15
             FwAlertInfo("Por favor, digite um número inteiro positivo no intervalo de 0 a 15.")

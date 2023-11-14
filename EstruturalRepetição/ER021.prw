@@ -10,16 +10,16 @@ Um número primo é aquele que é divisível somente por ele mesmo e por 1
 
 user function ER021()
 
-    local nNumero := 0
+    local nNumero    := 0
     local nDivisores := 0
-    local nCont   := 0
+    local nCont      := 0
 
     nNumero := Val(FwInputBox("Digite um número inteiro para verificar se é primo: "))
 
     if nNumero <= 1
         FwAlertInfo("Um número primo deve ser maior que 1.")
     else
-        for nCont := 2 to Int(Sqrt(nNumero)) // Verifica divisores até a raiz quadrada do número
+        for nCont := 1 to Int(Sqrt(nNumero)) // Verifica divisores até a raiz quadrada do número
             if nNumero % nCont == 0
                 nDivisores := nDivisores + 1
                 exit

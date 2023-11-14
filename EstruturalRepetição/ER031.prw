@@ -23,4 +23,44 @@ Troco: R$ 11.00
 
 user function ER031()
 
+    local nProduto     := 0
+    local nTotalCompra := 0
+    local nDinheiro    := 0 
+    local nTroco       := 0
+    local nPreco       := 0
+    local cContinuar   := ''
+
+    FwAlertInfo("Lojas Tabajara")
+
+    do while .T. 
+        nProduto := 1
+        nTotalCompra := 0
+
+        do while .T. 
+            nPreco := Val(FwInputBox("Produto " + AllTrim(Str(nProduto)) + ": R$ "))
+            if nPreco = 0
+                exit
+            endif
+
+            nTotalCompra := nTotalCompra + nPreco
+            nProduto := nProduto + 1
+        enddo
+
+        FwAlertInfo("Total: R$ " + Transform(nTotalCompra, "999.99"))
+
+        nDinheiro := Val(FwInputBox("Dinheiro: R$ "))
+
+        if nDinheiro >= nTotalCompra
+            nTroco := nDinheiro - nTotalCompra
+            FwAlertInfo("Troco: R$ " + Transform(nTroco, "999.99"))
+        ELSE
+            FwAlertError("Dinheiro insuficiente. Venda cancelada.")
+        endif
+
+        cContinuar := FwInputBox("Deseja registrar outra compra? (S/N)")
+        if Upper(cContinuar) != "S"
+            exit
+        endif
+    enddo
+
 return

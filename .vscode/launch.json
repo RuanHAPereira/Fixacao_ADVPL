@@ -264,7 +264,25 @@
 		},
 		{
 			"label": "U_ER030"
+		},
+		{
+			"label": "U_ER031"
+		},
+		{
+			"label": "U_ER032"
+		},
+		{
+			"label": "U_ER021"
+		},
+		{
+			"label": "U_ER015B"
+		},
+		{
+			"label": "U_ER15B"
+		},
+		{
+			"label": "U_ER033"
 		}
 	],
-	"lastProgramExecuted": "U_ER030"
+	"lastProgramExecuted": "U_ER033"
 }

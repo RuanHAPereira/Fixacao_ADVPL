@@ -21,7 +21,7 @@ user function ER027()
     nAlunos := Val(FwInputBox("Digite a quantidade de alunos: "))
 
     for nCont := 1 to nTurmas
-        // Garantindo que a turma não tenha mais de 40 alunos
+        
         while nAlunos < 40
             nAlunos := Val(FwInputBox("Digite a quantidade de alunos na turma " + AllTrim(Str(nCont)) + ": "))
             if nAlunos > 40
@@ -30,13 +30,13 @@ user function ER027()
         enddo
 
         nSomaAlunos := nSomaAlunos + nAlunos
-    NEXT
+    next
 
-    IF nTurmas > 0
+    if nTurmas > 0
         nMediaAlunos := nSomaAlunos / nTurmas
         FwAlertInfo("A média de alunos por turma é: " + AllTrim(Str(nMediaAlunos)))
-    ELSE
+    else
         FwAlertInfo("Nenhuma turma foi inserida.")
-    ENDIF
+    endif
 
 return

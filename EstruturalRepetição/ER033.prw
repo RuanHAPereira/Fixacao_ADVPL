@@ -1,7 +1,8 @@
 #include 'Totvs.ch'
 
 /*/{Protheus.doc} ER033
-O Departamento Estadual de Meteorologia lhe contratou para desenvolver um programa que leia um conjunto indeterminado de temperaturas, 
+O Departamento Estadual de Meteorologia lhe contratou para desenvolver um programa que leia um conjunto 
+indeterminado de temperaturas, 
 e informe ao final a menor e a maior temperaturas informadas, bem como a média das temperaturas.
 @type function
 @author Ruan Henrique
@@ -10,49 +11,48 @@ e informe ao final a menor e a maior temperaturas informadas, bem como a média d
 
 user function ER033()
 
-    local aTemp   := {}
-    local cTemper := ''
-    local nMenor  := 0
-    local nMaior  := 0
-    local nSoma   := 0
-    local nMedia  := 0
-    local nCont   := 0
-
+    local nTemp  := 0
+    local cTemp  := ''
+    local nMenor := 0
+    local nMaior := 0
+    local nSoma  := 0
+    local nMedia := 0
+    local nCont  := 0
+    
     do while .T.
-        cTemper := Upper(FwInputBox("Digite a temperatura (ou 'N' para encerrar): "))
+        cTemp := Upper(FwInputBox("Digite a temperatura (ou 'N' para encerrar): "))
 
-        if cTemper == 'N'
+        if cTemp == 'N'
             exit
         else
-            aTemp := AAdd(aTemp, Val(cTemper))
+            nTemp := Val(cTemp)
+
+            if nCont == 0
+                nMenor := nTemp
+                nMaior := nTemp
+            else
+                if nTemp < nMenor
+                    nMenor := nTemp
+                endif
+
+                if nTemp > nMaior
+                    nMaior := nTemp
+                endif
+            endif
+
+            nSoma := nSoma + nTemp
+            nCont := nCont + 1
         endif
     enddo
 
-    if aTemp > 0
-        nMenor := aTemp[1]
-        nMaior := aTemp[1]
-        nSoma := 0
+    if nCont > 0
+        nMedia := nSoma / nCont
 
-        for nCont := 1 to aTemp
-            if aTemp[nCont] < nMenor
-                nMenor := aTemp[nCont]
-            endif
-
-            if aTemp[nCont] > nMaior
-                nMaior := aTemp[nCont]
-            endif
-
-            nSoma := nSoma + aTemp[nCont]
-        next
-
-        nMedia := nSoma / aTemp
-
-        FwAlertInfo("Menor temperatura: " + AllTrim(Str(nMenor)))
-        FwAlertInfo("Maior temperatura: " + AllTrim(Str(nMaior)))
-        FwAlertInfo("Média das temperaturas: " + AllTrim(Str(nMedia)))
+        FwAlertInfo("Menor temperatura: " + AllTrim(Str(nMenor)) + "ºC")
+        FwAlertInfo("Maior temperatura: " + AllTrim(Str(nMaior)) + "ºC")
+        FwAlertInfo("Média das temperaturas: " + AllTrim(Str(nMedia)) + "ºC")
     else
         FwAlertInfo("Nenhuma temperatura informada.")
     endif
 
 return
-

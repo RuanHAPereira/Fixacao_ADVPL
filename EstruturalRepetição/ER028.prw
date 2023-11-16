@@ -26,8 +26,8 @@ user function ER028()
 
     if nCDs > 0
         nMediaInvest := nTotalInvest / nCDs
-        FwAlertInfo("O valor total investido na coleção de CDs é: " + AllTrim(Str(nTotalInvest)))
-        FwAlertInfo("O valor médio gasto em cada CD é: " + AllTrim(Str(nMediaInvest)))
+        FwAlertInfo("O valor total investido na coleção de CDs é: R$ " + transform(nTotalInvest, "999.99"))
+        FwAlertInfo("O valor médio gasto em cada CD é: R$ " + transform(nMediaInvest, "999.99"))
     else
         FwAlertError("Nenhum CD foi inserido.")
     endif

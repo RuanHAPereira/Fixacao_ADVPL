@@ -7,7 +7,6 @@ e a quantidade de alunos para cada turma. As turmas não podem ter mais de 40 alu
 @author Ruan Henrique
 @since 11/8/2023
 /*/
-//! arrumar laço
 
 user function ER027()
 
@@ -18,14 +17,17 @@ user function ER027()
     local nCont        := 0
 
     nTurmas := Val(FwInputBox("Digite a quantidade de turmas: "))
-    nAlunos := Val(FwInputBox("Digite a quantidade de alunos: "))
 
     for nCont := 1 to nTurmas
-        
-        while nAlunos < 40
+        nAlunos := 0
+
+        do while .T.
             nAlunos := Val(FwInputBox("Digite a quantidade de alunos na turma " + AllTrim(Str(nCont)) + ": "))
-            if nAlunos > 40
-                FwAlertError("Uma turma não pode ter mais de 40 alunos. Digite novamente.")
+
+            if nAlunos < 0 .and. nAlunos > 40
+                FwAlertError("Uma turma não pode ser menor que 0 alunos ou ter mais de 40 alunos. Digite novamente.")
+            else
+                exit
             endif
         enddo
 

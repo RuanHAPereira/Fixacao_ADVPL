@@ -20,14 +20,14 @@ Lojas Quase Dois - Tabela de preços
 user function ER029()
 
     local nNumeroItens := 0
-    local nPreco := 0
-    local cMsg := ""
+    local nPreco       := 0
+    local cMsg         := ""
 
     FwAlertInfo("Lojas Quase Dois - Tabela de preços")
 
     for nNumeroItens := 1 to 50
         nPreco := nNumeroItens * 1.99
-        cMsg += (AllTrim(Str(nNumeroItens)) + "Produtos - R$ " + alltrim(str(nPreco))) + CRLF
+        cMsg += (AllTrim(Str(nNumeroItens)) + " - Produtos - R$ " + transform(nPreco, "999.99")) + CRLF
     next
 
     FwAlertInfo(cMsg)

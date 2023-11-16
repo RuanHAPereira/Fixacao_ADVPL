@@ -28,11 +28,11 @@ user function ER025()
         nMediaIdade := nSomaIdades / nQuantidade
 
         if nMediaIdade >= 0 .and. nMediaIdade <= 25
-            FwAlertInfo("A média de idade da turma é " + alltrim(str(nMediaIdade)) + ". A turma é jovem.")
+            FwAlertInfo("A média de idade da turma é " + transform(nMediaIdade, "99") + ". A turma é jovem.")
         elseif nMediaIdade >= 26 .and. nMediaIdade <= 60
-            FwAlertInfo("A média de idade da turma é " + alltrim(str(nMediaIdade)) + ". A turma é adulta.")
+            FwAlertInfo("A média de idade da turma é " + transform(nMediaIdade, "99") + ". A turma é adulta.")
         else
-            FwAlertInfo("A média de idade da turma é " + alltrim(str(nMediaIdade)) + ". A turma é idosa.")
+            FwAlertInfo("A média de idade da turma é " + transform(nMediaIdade, "99") + ". A turma é idosa.")
         endif
     else
         FwAlertInfo("Nenhuma idade foi inserida.")

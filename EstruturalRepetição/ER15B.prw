@@ -1,5 +1,13 @@
 #include 'Totvs.ch'
 
+/*/{Protheus.doc} ER015
+A série de Fibonacci é formada pela seqüência 1,1,2,3,5,8,13,21,34,55,... 
+Faça um programa capaz de gerar a série até o n?ésimo termo.
+@type function
+@author Ruan Henrique
+@since 10/31/2023
+
+/*/
 user function ER15B()
 
     local nTermos  := 0

@@ -6,36 +6,43 @@ O programa deverá mostrar também o número de divisões que ele executou para enco
 Serão avaliados o funcionamento, o estilo e o número de testes (divisões) executados.
 @type function
 @author Ruan Henrique
-@since 11/8/2023
+@since 11/16/2023
 /*/
+
 user function ER023()
 
-    local nNumero := 0
-    local nCont := 0
-    local nDivisoes := 0
-    local nDivisor := 0
+    local nNum         := 0
+    local cMsg         := ""
+    local nDivisoes    := 0
+    local nCont        := 0
+    local nDivisor     := 0
+    local lRet         := .T.
 
-    nNumero := Val(FwInputBox("Digite o valor de N: "))
+    nNum := Val(FwInputBox("Digite o valor de N: "))
 
-    for nCont := 2 to nNumero
-        //nDivisor := 2
-        do while nDivisor <= nCont / 2
+    for nCont := 2 to nNum
+        lRet := .T.
+        nDivisor := 2
+
+        do while nDivisor <= Int(Sqrt(nCont))
             nDivisoes := nDivisoes + 1
-            IF Mod(nCont, nDivisor) == 0
+            if Mod(nCont, nDivisor) == 0
                 // nCont não é primo
-                BREAK
+                lRet := .F.
+                Exit
             endif
             nDivisor := nDivisor + 1
         enddo
 
-        IF nDivisor > nCont / 2
-            // nCont é primo
-            FwAlertInfo("Numeros primos: " + alltrim(str(nCont)))
+        if lRet
+            if !Empty(cMsg)
+                cMsg += ", "
+            endif
+            cMsg += AllTrim(Str(nCont))
         endif
     next
 
-    FwAlertInfo("Número total de divisões: " + alltrim(str(nDivisoes)))
+    cMsg += CRLF + "Número total de divisões: " + AllTrim(Str(nDivisoes))
+    FwAlertInfo("Numeros primos encontrados entre 1 e " + alltrim(str(nNum)) + ": " + cMsg)
 
 return
-
-

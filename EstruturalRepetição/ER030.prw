@@ -36,7 +36,7 @@ user function ER030()
 
         for nPaes := 1 to 50
             nPrecoTotal := nPaes * nPrecoPao
-            cMsg += (AllTrim(Str(nPaes)) + " Pães - R$ " + alltrim(str(nPrecoTotal))) + CRLF
+            cMsg += (AllTrim(Str(nPaes)) + " Pães - R$ " + transform(nPrecoTotal, "999.99")) + CRLF
 
         next
         FwAlertInfo(cMsg)

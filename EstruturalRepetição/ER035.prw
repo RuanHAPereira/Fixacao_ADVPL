@@ -16,6 +16,7 @@ user function ER035()
     local cMsg    := ""
 
     nLimite := Val(FwInputBox("Digite um número inteiro para encontrar os números primos até esse limite: "))
+    nLimite := INT( nLimite )
 
     if nLimite < 2
         FwAlertInfo("Não existem números primos até " + AllTrim(Str(nLimite)))

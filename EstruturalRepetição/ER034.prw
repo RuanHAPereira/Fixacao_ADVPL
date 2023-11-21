@@ -15,6 +15,7 @@ user function ER034()
     local nDivisor := 0
 
     nNum := Val(FwInputBox("Digite um número inteiro para verificar se é primo: "))
+    nNum := INT( nNum )
 
     if nNum <= 1
         FwAlertInfo("Um número primo deve ser maior que 1.")

@@ -52,13 +52,12 @@ user function ER046()
         nSalto4 := Val(FwInputBox("Digite a distância do quarto salto (em metros): "))
         nSalto5 := Val(FwInputBox("Digite a distância do quinto salto (em metros): "))
 
-        // Encontrar o melhor salto
+        //? Encontrar o melhor salto
         nMelhorSalto := Max(nSalto1, Max(nSalto2, Max(nSalto3, Max(nSalto4, nSalto5))))
 
-        // Encontrar o pior salto
+        //? Encontrar o pior salto
         nPiorSalto := Min(nSalto1, Min(nSalto2, Min(nSalto3, Min(nSalto4, nSalto5))))
 
-        // Calcular a média dos demais saltos
         nMedia := (nSalto1 + nSalto2 + nSalto3 + nSalto4 + nSalto5 - nMelhorSalto - nPiorSalto) / 3
 
         FwAlertInfo("Atleta: " + cNome)

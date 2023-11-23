@@ -65,17 +65,14 @@ user function ER044()
             FwAlertError("Código de voto inválido. Tente novamente.")
         endif
 
-        // Atualiza o total geral de votos
         nTotalVotos := nTotalVotos + 1
     enddo
 
-    // Calcula as percentagens
     if nTotalVotos > 0
         nNulosPerc := (nTotalNulos / nTotalVotos) * 100
         nBrancoPerc := (nTotalBrancos / nTotalVotos) * 100
     endif
 
-    // Exibe os resultados
     FwAlertInfo("Total de votos para cada candidato:")
     FwAlertInfo("Candidato 1: " + cNome1 + AllTrim(Str(nTotalC1)) + " votos.")
     FwAlertInfo("Candidato 2: " + cNome2 + AllTrim(Str(nTotalC2)) + " votos.")

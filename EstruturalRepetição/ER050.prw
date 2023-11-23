@@ -8,17 +8,24 @@ Sendo H = 1 + 1/2 + 1/3 + 1/4 + ... + 1/N, faça um programa que calcule o valor 
 /*/
 
 user function ER050()
+
     local nTermos := 0
     local nCont   := 0
     local nSoma   := 0
+    local cMsg    := ""
 
     nTermos := Val(FwInputBox("Digite o número de termos (N) da série: "))
 
     for nCont := 1 to nTermos
         nSoma := nSoma + 1 / nCont
+
+        cMsg += "1/" + AllTrim(Str(nCont))
+
+        if nCont < nTermos
+            cMsg += " + "
+        endif
     next
 
-    // Exibir o valor de H com N termos
-    FwAlertInfo("Valor de H com " + AllTrim(Str(nTermos)) + " termos: " + AllTrim(Str(nSoma)))
+    fwalertinfo("Sendo H = " + cMsg + ", o valor de H com " + AllTrim(Str(nTermos)) + " termos é: " + AllTrim(Str(nSoma)))
 
 return

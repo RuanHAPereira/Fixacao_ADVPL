@@ -26,9 +26,9 @@ user function ER043()
     local nTotalItem     := 0
     local nTotalGeral    := 0
     local lRet           := .T.
-
+    local cMsg           := ""
+    
     do while lRet
-
         nCodigo := Val(FwInputBox("Digite o código do item (ou zero = finalizar): "))
 
         if nCodigo == 0
@@ -59,19 +59,18 @@ user function ER043()
                 nPreco := 1.00
             otherwise
                 FwAlertError("Código de item inválido. Tente novamente.")
-                    lRet := .F.
+                lRet := .F.
                 exit
         endcase
 
         nTotalItem := nQuantidade * nPreco
-
         nTotalGeral := nTotalGeral + nTotalItem
 
+        cMsg += "Item: " + cEspecif + " - Quantidade: " + AllTrim(Str(nQuantidade)) + " - Valor a Pagar: R$ " + AllTrim(Transform(nTotalItem, "999,999,999.99")) + Chr(13) + Chr(10)
     enddo
-    
-    FwAlertInfo("Item: " + cEspecif + CRLF +;
-    " - Quantidade: " + AllTrim(Str(nQuantidade)) + CRLF +;
-    " - Valor a Pagar: R$ " + alltrim(Transform(nTotalItem, "999,999,999.99")) + CRLF +;
-    "Total Geral do Pedido: R$ " + alltrim(Transform(nTotalGeral, "999,999,999.99")))
 
-return(lRet)
+    cMsg += "Total Geral do Pedido: R$ " + AllTrim(Transform(nTotalGeral, "999,999,999.99"))
+
+    FwAlertInfo(cMsg)
+
+    return lRet

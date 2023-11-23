@@ -23,8 +23,8 @@ Gabarito da Prova:
 Após concluir isto você poderia incrementar o programa permitindo que o professor digite 
 o gabarito da prova antes dos alunos usarem o programa.
 @type function
-@author [Seu Nome]
-@since [Data]
+@author Ruan Henrique
+@since 11/21/2023
 /*/
 
 user function ER045()
@@ -37,59 +37,58 @@ user function ER045()
     local nMaiorAcerto := 0
     local nMenorAcerto := nTotalQuestoes + 1
     local nSomaNotas := 0
-    local cRespostasAluno := ""
-    local cContinuar := "S"
-    local i := 0
+    local cResposta := ""
+    local cPergunta := "S"
+    local nCont := 0
+    local lRet := .T.
 
-    // Pergunta ao professor se deseja informar um novo gabarito
-    if FwInputBox("Deseja informar um novo gabarito da prova? (S/N)") == "S"
-        cGabarito := FwInputBox("Digite o novo gabarito da prova (10 caracteres): ")
-        if Len(cGabarito) <> nTotalQuestoes
-            FwAlertError("O novo gabarito deve conter exatamente 10 caracteres.")
-            return
-        endif
-    endif
-
-    do while cContinuar == "S"
-        cRespostasAluno := FwInputBox("Digite as respostas do aluno (10 caracteres): ")
-
-        // Verifica se o número de respostas está correto
-        if Len(cRespostasAluno) <> nTotalQuestoes
-            FwAlertError("O número de respostas deve ser igual a 10.")
-            continue
-        endif
-
-        // Calcula a nota do aluno
-        nNota := 0
-        for i := 1 to nTotalQuestoes
-            if Upper(Substring(cRespostasAluno, i, 1)) == Upper(Substring(cGabarito, i, 1))
-                nNota := nNota + 1
+    while lRet := .T.
+        if FwInputBox("Deseja informar um novo gabarito da prova? (S/N)") == "S"
+            cGabarito := FwInputBox("Digite o novo gabarito da prova (10 caracteres): ")
+            if Len(cGabarito) <> nTotalQuestoes
+                FwAlertError("O novo gabarito deve conter exatamente 10 caracteres.")
+                lRet := .F.
             endif
-        next
-
-        // Atualiza estatísticas
-        nTotalAlunos := nTotalAlunos + 1
-        nSomaNotas := nSomaNotas + nNota
-
-        // Verifica se é a maior ou menor nota
-        if nNota > nMaiorAcerto
-            nMaiorAcerto := nNota
-        endif
-        if nNota < nMenorAcerto
-            nMenorAcerto := nNota
         endif
 
-        cContinuar := FwInputBox("Outro aluno vai utilizar o sistema? (S/N)")
+        do while cPergunta == "S"
+            cResposta := FwInputBox("Digite as respostas do aluno (10 caracteres): ")
+
+            // Verifica se o número de respostas está correto
+            if Len(cResposta) <> nTotalQuestoes
+                FwAlertError("O número de respostas deve ser igual a 10.")
+                
+            endif
+
+            // Calcula a nota do aluno
+            nNota := 0
+            for nCont := 1 to nTotalQuestoes
+                if Upper(Substring(cResposta, nCont, 1)) == Upper(Substring(cGabarito, nCont, 1))
+                    nNota := nNota + 1
+                endif
+            next
+
+            // Atualiza estatísticas
+            nTotalAlunos := nTotalAlunos + 1
+            nSomaNotas := nSomaNotas + nNota
+
+            // Verifica se é a maior ou menor nota
+            if nNota > nMaiorAcerto
+                nMaiorAcerto := nNota
+            endif
+            if nNota < nMenorAcerto
+                nMenorAcerto := nNota
+            endif
+
+            cPergunta := FwInputBox("Outro aluno vai utilizar o sistema? (S/N)")
+        enddo
     enddo
 
-    // Calcula a média das notas
     nMediaNotas := nSomaNotas / nTotalAlunos
-
-    // Exibe os resultados
-    FwAlertInfo("Resultados:")
-    FwAlertInfo("Maior Acerto: " + AllTrim(Str(nMaiorAcerto)))
-    FwAlertInfo("Menor Acerto: " + AllTrim(Str(nMenorAcerto)))
-    FwAlertInfo("Total de Alunos: " + AllTrim(Str(nTotalAlunos)))
-    FwAlertInfo("Média das Notas da Turma: " + Transform(nMediaNotas, "999.99"))
+    
+    FwAlertInfo("Maior Acerto: " + AllTrim(Str(nMaiorAcerto)) + CRLF +;
+    "Menor Acerto: " + AllTrim(Str(nMenorAcerto)) + CRLF +;
+    "Total de Alunos: " + AllTrim(Str(nTotalAlunos)) + CRLF+;
+    "Média das Notas da Turma: " + Transform(nMediaNotas, "999.99"), "Resultados")
 
 return

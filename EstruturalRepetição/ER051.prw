@@ -13,23 +13,29 @@ user function ER051()
     local nTermos      := 0
     local nCont        := 0
     local nNumerador   := 1
-    local nDenominador := 1
+    local nDenomin     := 1
     local nSoma        := 0
+    local cMsg         := ""
 
     nTermos := Val(FwInputBox("Digite o número de termos da série: "))
 
+    
     for nCont := 1 to nTermos
-        nSoma := nSoma + nNumerador / nDenominador
+        nSoma := nSoma + (nNumerador / nDenomin)
+
+        cMsg += AllTrim(Str(nCont)) + ": " + AllTrim(Str(nNumerador)) + "/" + AllTrim(Str(nDenomin))
+
+        if nCont < nTermos
+            cMsg += " + "
+        endif
+
+        
+
         nNumerador := nNumerador + 1
-        nDenominador := nDenominador + 2
+        nDenomin := nDenomin + 2
     next
 
-    // Exibir os N termos da série
-    FwAlertInfo("Termos da série S:")
-    for nCont := 1 to nTermos
-        FwAlertInfo(AllTrim(Str(nCont)) + ": " + AllTrim(Str(nCont)) + "/" + AllTrim(Str(nCont * 2 - 1)))
-    next
-
+    FwAlertInfo("Termos da série S:" + cMsg)
     FwAlertInfo("Soma da série S: " + AllTrim(Str(nSoma)))
 
 return

@@ -327,7 +327,28 @@
 		},
 		{
 			"label": "U_VE001"
+		},
+		{
+			"label": "U_ER045"
+		},
+		{
+			"label": "U_ER046"
+		},
+		{
+			"label": "U_ER047"
+		},
+		{
+			"label": "U_ER048"
+		},
+		{
+			"label": "U_ER049"
+		},
+		{
+			"label": "U_ER050"
+		},
+		{
+			"label": "U_ER051"
 		}
 	],
-	"lastProgramExecuted": "U_ER043"
+	"lastProgramExecuted": "U_ER051"
 }

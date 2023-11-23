@@ -16,15 +16,23 @@ user function ER049()
     local nNumera := 1
     local nDenomi := 1
     local nSoma   := 0
+    local cMsg    := ""
 
     nTermos := Val(FwInputBox("Digite o número de termos (n) da série: "))
 
     for nCont := 1 to nTermos
         nSoma := nSoma + (nNumera / nDenomi)
+        cMsg += AllTrim(Str(nNumera)) + "/" + AllTrim(Str(nDenomi))
+
+        if nCont < nTermos
+            cMsg += " + "
+        endif
+
         nNumera := nNumera + 1
         nDenomi := nDenomi + 2
     next
 
-    FwAlertInfo("Série com " + AllTrim(Str(nTermos)) + " termos: " + AllTrim(Str(nSoma)))
+    fwalertinfo("Série com " + AllTrim(Str(nTermos)) + " termos: " + cMsg)
 
 return
+

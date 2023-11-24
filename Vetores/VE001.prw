@@ -11,16 +11,22 @@ user function VE001()
 
     local aNumeros := {}
     local nCont    := 0
+    local nNum     := 0
+    local cMsg     := ""
 
     // Lê os 5 números inteiros e armazena no vetor
     for nCont := 1 to 5
-        aNumeros := AAdd(aNumeros, Val(FwInputBox("Digite o número " + AllTrim(Str(nCont)) + ": ")))
+        nNum := Val(FwInputBox("Digite o número " + AllTrim(Str(nCont)) + ": "))
+        AAdd(aNumeros, nNum)
     next
 
     // Mostra os números do vetor
-    FwAlertInfo("Números do vetor:")
-    for nCont := 1 to 5
-        FwAlertInfo(AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])))
+    for nCont := 1 to Len(aNumeros)
+        cMsg += "Elemento " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])) + ", "
     next
 
+    FwAlertInfo("Números do vetor: " + cMsg)
+    
 return
+
+

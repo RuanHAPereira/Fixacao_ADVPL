@@ -348,7 +348,13 @@
 		},
 		{
 			"label": "U_ER051"
+		},
+		{
+			"label": "U_VE002"
+		},
+		{
+			"label": "U_VE004"
 		}
 	],
-	"lastProgramExecuted": "U_ER051"
+	"lastProgramExecuted": "U_VE004"
 }

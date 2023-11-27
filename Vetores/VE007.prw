@@ -17,7 +17,7 @@ user function VE007()
 
     for nCont := 1 to 5
         nNum := Val(FwInputBox("Digite o número inteiro " + AllTrim(Str(nCont)) + ": "))
-        INT(nNum)
+        nNum := INT(nNum)
         AAdd(aNumeros, nNum)
     next
 

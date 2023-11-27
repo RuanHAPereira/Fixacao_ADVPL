@@ -19,7 +19,6 @@ user function ER051()
 
     nTermos := Val(FwInputBox("Digite o número de termos da série: "))
 
-    
     for nCont := 1 to nTermos
         nSoma := nSoma + (nNumerador / nDenomin)
 
@@ -34,6 +33,6 @@ user function ER051()
     next
 
     FwAlertInfo("Termos da série S:" + cMsg)
-    FwAlertInfo("Soma da série S: " + AllTrim(Str(nSoma)))
+    FwAlertInfo("Soma da série S: " + AllTrim(Str(nSoma,4,2)))
 
 return

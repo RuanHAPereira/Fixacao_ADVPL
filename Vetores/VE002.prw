@@ -14,12 +14,11 @@ user function VE002()
     local nNum     := 0
     local cMsg     := ''
 
-    for nCont := 1 to 5
+    for nCont := 1 to 10
         nNum := Val(FwInputBox("Digite o número real " + AllTrim(Str(nCont)) + ": "))
         AAdd(aNumeros, nNum)
     next
 
-    
     for nCont := Len(aNumeros) to 1 step -1
         cMsg += AllTrim(Str(nCont)) + "º número é: " + AllTrim(Str(aNumeros[nCont])) + CRLF
     next

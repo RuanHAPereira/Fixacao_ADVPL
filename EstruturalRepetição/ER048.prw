@@ -15,7 +15,7 @@ user function ER048()
     local cNumero        := ""
     local cNumInvert     := ""
     local lRet           := .T.
-    local nI := 0
+    local nI             := 0
 
     cNumero := FwInputBox("Digite um número inteiro positivo: ")
 

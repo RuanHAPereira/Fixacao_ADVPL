@@ -18,14 +18,15 @@ user function VE005()
     local cImpar   := ""
     local cPar     := ""
     
-    for nCont := 1 to 3
+    for nCont := 1 to 6
         nNum := Val(FwInputBox("Digite o número inteiro " + AllTrim(Str(nCont)) + ": "))
-        INT(nNum)
+        nNum := INT(nNum)
         AAdd(aNumeros, nNum)
     next
 
     //? Separar números pares e ímpares
     for nCont := 1 to Len(aNumeros)
+        cMsg1 += "Elemento " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])) + CRLF
         if Mod(aNumeros[nCont], 2) == 0
             AAdd(aPares, aNumeros[nCont])
             cPar += AllTrim(Str(aNumeros[nCont])) + CRLF
@@ -33,11 +34,6 @@ user function VE005()
             AAdd(aImpares, aNumeros[nCont])
             cImpar += AllTrim(Str(aNumeros[nCont])) + CRLF
         endif
-    next
-
-    //? Mostrar os vetores
-    for nCont := 1 to Len(aNumeros)
-        cMsg1 += "Elemento " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])) + CRLF
     next
 
     FwAlertInfo(cMsg1,"Números digitados:")

@@ -16,7 +16,7 @@ user function VE001()
 
     for nCont := 1 to 5
         nNum := Val(FwInputBox("Digite o número " + AllTrim(Str(nCont)) + ": "))
-        INT(nNum)
+        nNum := INT(nNum)
         AAdd(aNumeros, nNum)
     next
     

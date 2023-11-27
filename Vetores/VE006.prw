@@ -28,7 +28,7 @@ user function VE006()
         nMedia := SomaArray(aNotas) / Len(aNotas)
         AAdd(aMedias, nMedia)
 
-        // Verificar se o aluno foi aprovado
+        //? Verificar se o aluno foi aprovado
         if nMedia >= 7.0
             nAprovados++
         endif

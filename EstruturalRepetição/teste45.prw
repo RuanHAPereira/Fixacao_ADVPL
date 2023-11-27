@@ -2,17 +2,17 @@
 
 user function teste45()
 
-    local cGabarito := ""
+    local cGabarito      := ""
     local nTotalQuestoes := 10
-    local nAlunos := 0
-    local nCont   := 0
-    local nMaiorAcerto := 0
-    local nMenorAcerto := 10
-    local nSomaNotas := 0
-    local cContinuar := "S"
-    local cResposta  := ""
-    local nAcertos := 0
-    local nMedia   := 0
+    local nAlunos        := 0
+    local nCont          := 0
+    local nMaiorAcerto   := 0
+    local nMenorAcerto   := 10
+    local nSomaNotas     := 0
+    local cContinuar     := "S"
+    local cResposta      := ""
+    local nAcertos       := 0
+    local nMedia         := 0
 
     FwAlertInfo("Digite o gabarito da prova (10 caracteres, ex: ABCDEEDCBAA):")
     cGabarito := Upper(FwInputBox("Gabarito: "))
@@ -44,10 +44,9 @@ user function teste45()
 
     nMedia := nSomaNotas / nAlunos
 
-    FwAlertInfo("Resultados:")
-    FwAlertInfo("Maior Acerto: " + AllTrim(Str(nMaiorAcerto)))
-    FwAlertInfo("Menor Acerto: " + AllTrim(Str(nMenorAcerto)))
-    FwAlertInfo("Total de Alunos: " + AllTrim(Str(nAlunos)))
-    FwAlertInfo("Média das Notas: " + AllTrim(Str(nMedia)))
+    FwAlertInfo("Maior Acerto: " + AllTrim(Str(nMaiorAcerto)) + CRLF +;
+    "Menor Acerto: " + AllTrim(Str(nMenorAcerto)) + CRLF +;
+    "Total de Alunos: " + AllTrim(Str(nAlunos)) + CRLF +;
+    "Média das Notas: " + AllTrim(Str(nMedia)), "Resultados:")
 
 return

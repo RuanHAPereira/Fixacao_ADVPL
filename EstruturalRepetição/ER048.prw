@@ -12,32 +12,25 @@ Exemplo:
 
 user function ER048()
 
-    local nNumero        := 0
-    local nNumInvert     := 0
-    local nDigito        := 0
+    local cNumero        := ""
+    local cNumInvert     := ""
     local lRet           := .T.
-    
-    nNumero := Val(FwInputBox("Digite um número inteiro positivo: "))
+    local nI := 0
 
-    do while .T.
-        if nNumero < 0
-            FwAlertError("Por favor, digite um número inteiro positivo.")
-            lRet := .F.
-        endif
+    cNumero := FwInputBox("Digite um número inteiro positivo: ")
 
+    if Val(cNumero) < 0
+        FwAlertError("Por favor, digite um número inteiro positivo.")
+        lRet := .F.
+    else
         // Inverter o número manualmente
-        nNumInvert := 0
-        while nNumero > 0
-            nDigito := Mod(nNumero, 10)
-            nNumInvert := nNumInvert * 10 + nDigito
-            nNumero := Int(nNumero / 10)
-        enddo
+        for nI := Len(cNumero) to 1 step -1
+            cNumInvert += SubStr(cNumero, nI, 1)
+        next
 
-    
-    enddo
+        FwAlertInfo("Número invertido: " + cNumInvert)
+    endif
 
-    FwAlertInfo("Número invertido: " + AllTrim(Str(nNumInvert)))
-
-return(lRet)
+return lRet
 
 

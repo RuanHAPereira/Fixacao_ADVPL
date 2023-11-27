@@ -17,9 +17,10 @@ user function VE005()
     local cMsg1    := ""
     local cImpar   := ""
     local cPar     := ""
-
+    
     for nCont := 1 to 3
         nNum := Val(FwInputBox("Digite o número inteiro " + AllTrim(Str(nCont)) + ": "))
+        INT(nNum)
         AAdd(aNumeros, nNum)
     next
 
@@ -27,10 +28,10 @@ user function VE005()
     for nCont := 1 to Len(aNumeros)
         if Mod(aNumeros[nCont], 2) == 0
             AAdd(aPares, aNumeros[nCont])
-            cPar += AllTrim(Str(aNumeros[nCont])) + ", "
+            cPar += AllTrim(Str(aNumeros[nCont])) + CRLF
         else
             AAdd(aImpares, aNumeros[nCont])
-            cImpar += AllTrim(Str(aNumeros[nCont])) + ", "
+            cImpar += AllTrim(Str(aNumeros[nCont])) + CRLF
         endif
     next
 
@@ -39,10 +40,9 @@ user function VE005()
         cMsg1 += "Elemento " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])) + CRLF
     next
 
-    FwAlertInfo("Números digitados:")
-    FwAlertInfo(cMsg1)
-    FwAlertInfo("Números Pares: " + AllTrim(cPar) + " .")
-    FwAlertInfo("Números Ímpares: " + AllTrim(cImpar) + " .")
+    FwAlertInfo(cMsg1,"Números digitados:")
+    FwAlertInfo(AllTrim(cPar),"Números Pares: ")
+    FwAlertInfo(AllTrim(cImpar),"Números Ímpares: ")
 
 return
 

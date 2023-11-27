@@ -26,10 +26,10 @@ user function VE003()
     endif
    
     for nCont := 1 to Len(aNotas)
-        cMsg += "Nota " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNotas[nCont]))
+        cMsg += "Nota " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNotas[nCont])) + CRLF
     next
 
-    FwAlertInfo("Média das notas: " + AllTrim(Str(nMedia)))
-    FwAlertInfo("Notas digitadas:" + AllTrim(aNotas))
+    FwAlertInfo(cMsg, "Notas digitadas:")
+    FwAlertInfo(AllTrim(Str(nMedia, 4, 2)),"Média das notas:" )
+    
 return
-

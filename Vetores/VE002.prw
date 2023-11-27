@@ -21,8 +21,8 @@ user function VE002()
 
     
     for nCont := Len(aNumeros) to 1 step -1
-        cMsg += AllTrim(Str(nCont)) + "º= " + AllTrim(Str(aNumeros[nCont])) + CRLF
+        cMsg += AllTrim(Str(nCont)) + "º número é: " + AllTrim(Str(aNumeros[nCont])) + CRLF
     next
 
-    FwAlertInfo("Números do vetor na ordem inversa:" + CRLF + cMsg)
+    FwAlertInfo(cMsg, "Números do vetor na ordem inversa:")
 return

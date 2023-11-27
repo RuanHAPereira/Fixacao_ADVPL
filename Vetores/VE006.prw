@@ -17,6 +17,7 @@ user function VE006()
     local nI         := 0
     local nMedia     := 0
     local nAprovados := 0
+    local cMsg       := ""
 
     for nCont := 1 to nAlunos
         aNotas := {}
@@ -24,7 +25,6 @@ user function VE006()
             AAdd(aNotas, Val(FwInputBox("Digite a nota " + AllTrim(Str(nI)) + " do aluno " + AllTrim(Str(nCont)) + ": ")))
         next
 
-        // Calcular a média do aluno
         nMedia := SomaArray(aNotas) / Len(aNotas)
         AAdd(aMedias, nMedia)
 
@@ -33,14 +33,13 @@ user function VE006()
             nAprovados++
         endif
     next
-
     
-    FwAlertInfo("Médias dos alunos:")
+    
     for nCont := 1 to nAlunos
-        FwAlertInfo("Aluno " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aMedias[nCont])))
+        cMsg += "Aluno " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aMedias[nCont],4,2)) + CRLF
     next
-
-    FwAlertInfo("Número de alunos aprovados: " + AllTrim(Str(nAprovados)))
+    FwAlertInfo(cMsg, "Médias dos alunos:")
+    FwAlertInfo(AllTrim(Str(nAprovados)), "Número de alunos aprovados:")
 
 return
 

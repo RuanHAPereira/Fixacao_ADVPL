@@ -16,14 +16,15 @@ user function VE001()
 
     for nCont := 1 to 5
         nNum := Val(FwInputBox("Digite o número " + AllTrim(Str(nCont)) + ": "))
+        INT(nNum)
         AAdd(aNumeros, nNum)
     next
-
+    
     for nCont := 1 to Len(aNumeros)
-        cMsg += "Elemento " + AllTrim(Str(nCont)) + ": " + AllTrim(Str(aNumeros[nCont])) + ", "
+        cMsg += AllTrim(Str(nCont)) + "º número: " + AllTrim(Str(aNumeros[nCont])) + ". " + CRLF
     next
 
-    FwAlertInfo("Números do vetor: " + cMsg)
+    FwAlertInfo(cMsg, "Números do vetor: ")
     
 return
 

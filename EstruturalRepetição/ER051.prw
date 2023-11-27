@@ -29,8 +29,6 @@ user function ER051()
             cMsg += " + "
         endif
 
-        
-
         nNumerador := nNumerador + 1
         nDenomin := nDenomin + 2
     next

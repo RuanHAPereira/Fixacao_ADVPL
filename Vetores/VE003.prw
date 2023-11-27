@@ -30,6 +30,6 @@ user function VE003()
     next
 
     FwAlertInfo("Média das notas: " + AllTrim(Str(nMedia)))
-    FwAlertInfo("Notas digitadas:")
+    FwAlertInfo("Notas digitadas:" + AllTrim(aNotas))
 return
 

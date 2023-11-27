@@ -22,7 +22,7 @@ user function ER040()
     local nTotalVeiculos  := 0
     local nTotalAcidentes := 0
     local nMediaVeiculos  := 0
-    local nMediaAcidentes := 0
+    local nTotAc2000      := 0
     local nMedia2000      := 0
     local nMenorIndice    := 0
     local nMaiorIndice    := 0
@@ -57,7 +57,7 @@ user function ER040()
 
         // Conta cidades com menos de 2.000 veículos
         if nVeiculos < 2000
-            nMediaAcidentes := nMediaAcidentes + nAcidentes
+            nTotAc2000 := nTotAc2000 + nAcidentes
             nCity2000 := nCity2000 + 1
         endif
     next
@@ -66,7 +66,7 @@ user function ER040()
 
     // Verifica se há cidades com menos de 2.000 veículos para evitar divisão por zero
     if nCity2000 > 0
-        nMedia2000 := nMediaAcidentes / nCity2000
+        nMedia2000 := nTotAc2000 / nCity2000
     endif
 
     FwAlertInfo("Menor índice de acidentes: Cidade " + AllTrim(Str(nCidadeMenor)) + ", Índice: " + AllTrim(Str(nMenorIndice)))

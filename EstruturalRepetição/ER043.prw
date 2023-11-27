@@ -59,7 +59,7 @@ user function ER043()
                 nPreco := 1.00
             otherwise
                 FwAlertError("Código de item inválido. Tente novamente.")
-                lRet := .F.
+                    lRet := .F.
                 exit
         endcase
 

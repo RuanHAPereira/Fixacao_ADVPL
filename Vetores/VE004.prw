@@ -1,5 +1,11 @@
 #INCLUDE "totvs.ch"
 
+/*/{Protheus.doc} VE004
+Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
+@type function
+@author Ruan Henrique
+@since 11/23/2023
+/*/
 user function VE004()
 
     local aCaracteres := {}

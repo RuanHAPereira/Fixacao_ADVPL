@@ -417,7 +417,16 @@
 		},
 		{
 			"label": "U_teste005"
+		},
+		{
+			"args": [
+				"$B"
+			],
+			"label": "U_VE00"
+		},
+		{
+			"label": "U_VE004B"
 		}
 	],
-	"lastProgramExecuted": "U_teste005"
+	"lastProgramExecuted": "U_VE006"
 }

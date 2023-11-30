@@ -16,7 +16,7 @@ $900 - $999
 $1000 em diante
 @type function
 @author Ruan Henrique
-@since 11/25/2023
+@since 11/29/2023
 /*/
 
 user function VE016A()

@@ -4,8 +4,8 @@
 Faça um Programa que determine quantos alunos com mais de 13 anos possuem altura inferior
  à média de altura desses alunos.
 @type function
-@author Seu Nome
-@since 11/25/2023
+@author Ruan Henrique
+@since 11/28/2023
 /*/
 
 user function VE012()

@@ -15,7 +15,7 @@ $1000 em diante
 Desafio: Crie ma fórmula para chegar na posição da lista a partir do salário, sem fazer vários ifs aninhados.
 @type function
 @author Ruan Henrique
-@since 11/25/2023
+@since 11/29/2023
 /*/
 
 user function VE016B()
@@ -36,18 +36,16 @@ user function VE016B()
             exit
         endif
 
-        // Calcula o salário do vendedor
         nSalario := 200 + (0.09 * nVendaBruta)
 
         AAdd(aSalarios, nSalario)
 
-        // Calcula a posição na lista diretamente
         nPosicao := Int(nSalario / 100) + 1
         if nPosicao > Len(aContadores)
             nPosicao := Len(aContadores)
         endif
 
-        // Adiciona o salário ao contador correspondente
+        //? Adiciona o salário ao contador correspondente
         aContadores[nPosicao]++
 
         nVendedores++

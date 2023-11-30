@@ -12,8 +12,8 @@ Sua equipe foi contratada para desenvolver este programa, utilizando a linguagem
 
 user function VE018()
 
-    local aVotos      := {}   // Array para armazenar os votos de cada jogador
-    local nTotalVotos := 0  // Contador total de votos
+    local aVotos      := {} 
+    local nTotalVotos := 0  
     local nCamisa     := 0
     local nCont       := 0
     local lEncontrado := .F.
@@ -26,7 +26,7 @@ user function VE018()
         endif
 
         if nCamisa >= 1 .and. nCamisa <= 23
-            // Verifica se já existe voto para o jogador
+            
             for nCont := 1 to Len(aVotos)
                 if aVotos[nCont][1] == nCamisa
                     aVotos[nCont][2]++
@@ -36,7 +36,6 @@ user function VE018()
                 endif
             next
 
-            // Se não encontrou, adiciona um novo voto
             if !lEncontrado
                 AAdd(aVotos, {nCamisa, 1})
                 nTotalVotos++
@@ -46,7 +45,6 @@ user function VE018()
         endif
     enddo
 
-    // Exibição dos resultados
     FwAlertInfo("Resultado da votação:" + CRLF + Enquete(aVotos, nTotalVotos))
 
 return

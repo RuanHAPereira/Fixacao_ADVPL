@@ -12,8 +12,8 @@ O programa deve no final emitir uma classificação sobre a participação da pessoa
 Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita",
 entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ela será classificada como "Inocente".
 @type function
-@author Seu Nome
-@since 11/25/2023
+@author Ruan Henrique
+@since 11/28/2023
 /*/
 
 user function VE014()

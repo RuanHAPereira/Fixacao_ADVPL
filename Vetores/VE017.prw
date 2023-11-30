@@ -20,8 +20,8 @@ Atleta: Rodrigo Curvêllo
 Saltos: 6.5 - 6.1 - 6.2 - 5.4 - 5.3
 Média dos saltos: 5.9 m
 @type function
-@author Seu Nome
-@since 11/25/2023
+@author Ruan Henrique
+@since 11/30/2023
 /*/
 
 user function VE017()
@@ -31,19 +31,17 @@ user function VE017()
     local aSaltos := {}
     local nCont   := 1
     local nMedia  := 0.0
-    local cPrompt := ""
+    local cPerg   := ""
     local cMsg    := ''
 
     cNome := FwInputBox("Digite o nome do atleta:")
 
     while !Empty(cNome)
         for nCont := 1 to 5
-                cPrompt := "Digite a distância do " + alltrim(Str(nCont)) + "º salto (em metros): "
-            nSalto := Val(FwInputBox(cPrompt))
+                cPerg := "Digite a distância do " + alltrim(Str(nCont)) + "º salto (em metros): "
+            nSalto := Val(FwInputBox(cPerg))
             AAdd(aSaltos, nSalto)
         next
-
-        
 
         for nCont := 1 to 5
             cMsg += "Salto " + alltrim(Str(nCont)) + ": " + AllTrim(Str(aSaltos[nCont])) + CRLF

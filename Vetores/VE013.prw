@@ -5,19 +5,8 @@ Faça um programa que receba a temperatura média de cada mês do ano e armazene-as
 Após isso, calcule a média anual das temperaturas e mostre todas as temperaturas acima da média anual,
 e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro, . . . ).
 @type function
-@author Seu Nome
-@since 11/25/2023
-/*/
-
-#include 'totvs.ch'
-
-/*/{Protheus.doc} VE013
-Faça um programa que receba a temperatura média de cada mês do ano e armazene-as em uma lista.
-Após isso, calcule a média anual das temperaturas e mostre todas as temperaturas acima da média anual,
-e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro, . . . ).
-@type function
-@author Seu Nome
-@since 11/25/2023
+@author Ruan Henrique
+@since 11/28/2023
 /*/
 
 user function VE013()
@@ -45,7 +34,7 @@ user function VE013()
         endif
     next
 
-    FwAlertInfo("Temperaturas acima da média anual:" + CRLF + cMsg)
-    FwAlertInfo("Média anual: " + AllTrim(Str(nMediaAnual,4,1)) + "ºC")
+    FwAlertInfo("Temperaturas acima da média anual:" + CRLF + cMsg + CRLF +;
+    "Média anual: " + AllTrim(Str(nMediaAnual,4,1)) + "ºC")
 
 return

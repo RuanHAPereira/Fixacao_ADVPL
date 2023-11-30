@@ -17,7 +17,7 @@ user function VE009()
     // Ler 10 números inteiros e armazenar no vetor
     for nCont := 1 to 10
         nNum := Val(FwInputBox("Digite o número inteiro " + AllTrim(Str(nCont)) + ": "))
-        INT(nNum)
+        nNum := INT(nNum)
         AAdd(aNumeros, nNum)
     next
 

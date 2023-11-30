@@ -7,7 +7,7 @@ Armazene os números pares no vetor PAR e os números ÍMPARES no vetor ímpar. Impr
 @author Ruan Henrique
 @since 11/24/2023
 /*/
-user function teste005()
+user function VE005B()
 
     local aNumeros := {}
     local aPares   := {}

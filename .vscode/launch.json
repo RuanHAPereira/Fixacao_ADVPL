@@ -378,7 +378,46 @@
 		},
 		{
 			"label": "U_VE010"
+		},
+		{
+			"label": "U_VE011"
+		},
+		{
+			"label": "U_VE012"
+		},
+		{
+			"label": "U_VE0123"
+		},
+		{
+			"label": "U_VE013"
+		},
+		{
+			"label": "U_VE014"
+		},
+		{
+			"label": "U_VE015"
+		},
+		{
+			"label": "U_VE016A"
+		},
+		{
+			"label": "U_VE017"
+		},
+		{
+			"label": "U_VE018"
+		},
+		{
+			"label": "U_VE019"
+		},
+		{
+			"label": "U_VE020"
+		},
+		{
+			"label": "U_VE021"
+		},
+		{
+			"label": "U_teste005"
 		}
 	],
-	"lastProgramExecuted": "U_VE008"
+	"lastProgramExecuted": "U_teste005"
 }

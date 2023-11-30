@@ -13,9 +13,10 @@ user function VE010()
     local aVetorA  := {}
     local aVetorB  := {}
     local aVetorC  := {}
-    local nElement := 10
+    local nElement := 4
     local nCont    := 0
     local nNum     := 0
+    local cMsg     := ''
 
     // Ler 10 números inteiros para o vetor A
     for nCont := 1 to nElement
@@ -35,8 +36,13 @@ user function VE010()
         AAdd(aVetorC, aVetorB[nCont])
     next
 
-    // Mostrar o vetor C
-    FwAlertInfo("Vetor C (elementos intercalados de A e B): " + AllTrim(CValToChar(aVetorC)))
+    // Construir a string formatada
+    for nCont := 1 to Len(aVetorC)
+        cMsg += AllTrim(Str(aVetorC[nCont])) + " "
+    next
 
+    // Mostrar o vetor C
+    FwAlertInfo("Vetor C (elementos intercalados de A e B): " + cMsg)
 
 return
+

@@ -45,4 +45,3 @@ static function Consoante(cCaracter)
     endif
 
 return (lRet)
-

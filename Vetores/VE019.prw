@@ -37,6 +37,8 @@ O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 4
 @since 11/30/2023
 /*/
 
+#INCLUDE "totvs.ch"
+
 user function VE019()
 
     local aVotos      := {}
@@ -44,7 +46,7 @@ user function VE019()
     local nVoto       := 0
     local nCont       := 0
 
-    //? Inicializa o array com zeros
+    // Inicializa o array com zeros
     for nCont := 1 to 6
         AAdd(aVotos, 0)
     next
@@ -79,34 +81,33 @@ static function Result(aVotos, nTotalVotos)
     local nVencedor   := 1
     local cResult     := ""
 
-    cResult += "Sistema Operacional ------ Votos   %" + CRLF
-    cResult += "---------------------------------" + CRLF
- 
+    cResult += "Sistema Operacional   Votos   %" + CRLF
+    cResult += "---------------------  -----  ---" + CRLF
+
     for nCont := 1 to Len(aVotos)
         if aVotos[nCont] > 0
             nPercentual := (aVotos[nCont] / nTotalVotos) * 100
             cResult += SO(nCont) + AllTrim(Str(aVotos[nCont])) + "   " + AllTrim(Str(nPercentual, 6, 2)) + "%" + CRLF
 
-            //? Verifica o vencedor
+            // Verifica o vencedor
             if aVotos[nCont] > aVotos[nVencedor]
                 nVencedor := nCont
             endif
         endif
     next
 
-    cResult += "---------------------------------" + CRLF
-    cResult += "Total                    " + AllTrim(Str(nTotalVotos)) + CRLF + CRLF
-    cResult += "O Sistema Operacional mais votado foi o     " + SO(nVencedor) + ", com    " +;
+    cResult += "---------------------  -----" + CRLF
+    cResult += "Total                  " + AllTrim(Str(nTotalVotos)) + CRLF + CRLF
+    cResult += "O Sistema Operacional mais votado foi o " + SO(nVencedor) + ", com " +;
     AllTrim(Str(aVotos[nVencedor])) + " votos, correspondendo a " + AllTrim(Str(nPercentual, 6, 2)) + "% dos votos."
 
 return(cResult)
-
 
 static function SO(nOpcao)
 
     local cMsg := ''
 
-    //? Função para retornar o nome do Sistema Operacional de acordo com a opção
+    // Função para retornar o nome do Sistema Operacional de acordo com a opção
     do case
         case nOpcao == 1
             cMsg := "Windows Server"
@@ -125,4 +126,5 @@ static function SO(nOpcao)
     endcase
 
 return(cMsg)
+
 

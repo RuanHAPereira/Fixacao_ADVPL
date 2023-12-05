@@ -4,7 +4,7 @@
 Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
 @type function
 @author Ruan Henrique
-@since 11/23/2023
+@since 11/30/2023
 /*/
 user function VE004B()
 

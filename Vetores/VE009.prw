@@ -15,7 +15,7 @@ user function VE009()
     local nSomaQuadrados := 0
 
     // Ler 10 números inteiros e armazenar no vetor
-    for nCont := 1 to 10
+    for nCont := 1 to 5
         nNum := Val(FwInputBox("Digite o número inteiro " + AllTrim(Str(nCont)) + ": "))
         nNum := INT(nNum)
         AAdd(aNumeros, nNum)

@@ -1,9 +1,11 @@
+#INCLUDE "totvs.ch"
+
 /*/{Protheus.doc} VE016B
 Uma empresa paga seus vendedores com base em comissões. 
 O vendedor recebe $200 por semana mais 9 por cento de suas vendas brutas daquela semana. 
 Escreva um programa (usando um array de contadores) que determine quantos vendedores receberam 
 salários nos seguintes intervalos de valores:
-$200 - $299
+$200 - $299 
 $300 - $399
 $400 - $499
 $500 - $599
@@ -18,45 +20,52 @@ Desafio: Crie ma fórmula para chegar na posição da lista a partir do salário, se
 @since 11/29/2023
 /*/
 
-user function VE016B()
+User Function VE016B()
 
-    local aSalarios   := {}
-    local nSalario    := 0
-    local nVendedores := 0
-    local aContadores := {0,0,0,0,0,0,0,0,0}
-    local nVendaBruta := 0
-    local cFaixa      := ''
-    local nCont       := 0
-    local cMsg        := ''
-    local nPosicao    := 0
+    //Local aSalarios   := {}
+    Local nSalario    := 0
+    Local nVendedores := 0
+    Local aContadores := {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Local nVendaBruta := 0
+    Local cFaixa      := ''
+    Local nCont       := 0
+    Local nPosicao    := 0
+    Local nSemanas    := 0
+    Local cMsg        := ''
 
-    do while .T.
+    nSemanas := Val(FwInputBox("Número de semanas que o vendedor trabalhou no mês: "))
+
+    Do While .T.
         nVendaBruta := Val(FwInputBox("Digite o valor das vendas brutas (-1 para encerrar): "))
-        if nVendaBruta == -1
-            exit
-        endif
+        If nVendaBruta == -1
+            Exit
+        EndIf
 
+        // Calcula o salário semanal
         nSalario := 200 + (0.09 * nVendaBruta)
 
-        AAdd(aSalarios, nSalario)
+        // Calcula o salário mensal
+        nSalario := nSalario * nSemanas
 
-        nPosicao := Int(nSalario / 100) + 1
-        if nPosicao > Len(aContadores)
-            nPosicao := Len(aContadores)
-        endif
+        // Determina a posição da lista a partir do salário
+        nPosicao := Min(10, Int(nSalario / 100) + 1)
 
-        //? Adiciona o salário ao contador correspondente
+        // Adiciona o salário ao contador correspondente
         aContadores[nPosicao]++
 
         nVendedores++
-    enddo
+    EndDo
 
-    for nCont := 1 to Len(aContadores)
-        cFaixa := "$" + alltrim(str(200 + (100 * (nCont - 1)))) + " - $" + alltrim(str(299 + (100 * (nCont - 1))))
+    // Gera a mensagem final com os resultados
+    For nCont := 1 To 9
+        cFaixa := "$" + AllTrim(Str(200 + (100 * (nCont - 1)))) + " - $" + AllTrim(Str(299 + (100 * (nCont - 1))))
         cMsg += cFaixa + ": " + AllTrim(Str(aContadores[nCont])) + CRLF
-    next
-    
-    FwAlertInfo("Quantidade de vendedores com salários nos intervalos:"+ CRLF + cMsg)
+    Next
+    // Última faixa ($1000 em diante)
+    cMsg += "$1000 em diante: " + AllTrim(Str(aContadores[10])) + CRLF
+
+    // Exibe os resultados
+    FwAlertInfo("Quantidade de vendedores com salários nos intervalos:" + CRLF + cMsg)
     FwAlertInfo("Total de vendedores: " + AllTrim(Str(nVendedores)), "Fim da operação.")
 
-return
+Return

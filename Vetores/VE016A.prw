@@ -5,12 +5,12 @@ Uma empresa paga seus vendedores com base em comissões.
 O vendedor recebe $200 por semana mais 9 por cento de suas vendas brutas daquela semana. 
 Escreva um programa (usando um array de contadores) que determine quantos vendedores receberam 
 salários nos seguintes intervalos de valores:
-$200 - $299
+$200 - $299 -
 $300 - $399
 $400 - $499
 $500 - $599
 $600 - $699
-$700 - $799
+$700 - $799 -
 $800 - $899
 $900 - $999
 $1000 em diante

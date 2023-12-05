@@ -51,8 +51,8 @@ user function VE019()
 
     do while .T.
         FwAlertInfo("Vote com o numero equivalente ao SO." + CRLF +;
-        "1 = Windows Server" + CRLF + "2 - Unix" + CRLF + "3 - Linux" + CRLF +;
-        "4 - Netware" + CRLF + "5 - Mac OS" + CRLF + "6 - Outros")
+        "1 - Windows Server" + CRLF + "2 - Unix" + CRLF + "3 - Linux" + CRLF +;
+        "4 - Netware" + CRLF + "5 - Mac OS" + CRLF + "6 - Outros" + CRLF + "0 - Sair")
 
         nVoto := Val(FwInputBox("Digite o número correspondente ao melhor Sistema Operacional(0 para encerrar): "))
 

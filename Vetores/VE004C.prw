@@ -3,20 +3,18 @@
 /*/{Protheus.doc} ContaConsoantes
 Função que lê um vetor de 10 caracteres e conta quantas consoantes foram lidas. Imprime as consoantes.
 @type function
-@author Terminal de Informação
+@author Ruan Henrique 
 @since 01/12/2023
-@version 1.0
-    @example
-    u_ContaConsoantes()
 /*/
 
 User Function VE004C()
+
     Local aCaracteres := {}
-    Local aVogais := {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    Local cCarac := ""
-    Local nCont := 0
+    Local aVogais     := {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
+    Local cCarac      := ""
+    Local nCont       := 0
     Local nConsoantes := 0
-    Local cMsg := ''
+    Local cMsg        := ''
 
     For nCont := 1 To 4
         cCarac := Upper(FwInputBox("Digite o caracter " + AllTrim(Str(nCont)) + ": "))

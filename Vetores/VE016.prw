@@ -20,9 +20,8 @@ Desafio: Crie ma fórmula para chegar na posição da lista a partir do salário, se
 @since 11/29/2023
 /*/
 
-User Function VE016B()
+User Function VE016()
 
-    //Local aSalarios   := {}
     Local nSalario    := 0
     Local nVendedores := 0
     Local aContadores := {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}

@@ -1,5 +1,6 @@
 #INCLUDE "totvs.ch"
 
+//! FAZER EM OUTRO MOMENTO
 /*/{Protheus.doc} LevantamentoSuporte
 Sua organização acaba de contratar um estagiário para trabalhar no Suporte de Informática, com a intenção de fazer um 
 levantamento nas sucatas encontradas nesta área. A primeira tarefa dele é testar todos os cerca de 200 mouses que se encontram lá, 

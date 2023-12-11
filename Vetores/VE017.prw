@@ -26,7 +26,7 @@ Média dos saltos: 5.9 m
 
 User Function VE017()
 
-    local cNome   := ""
+    local cNome   := "."
     local nSalto  := 0.0
     local aSaltos := {}
     local nCont   := 1
@@ -34,30 +34,29 @@ User Function VE017()
     local cPerg   := ""
     local cMsg    := ''
 
-    cNome := FwInputBox("Digite o nome do atleta:")
+    //cNome := FwInputBox("Digite o nome do atleta:")
 
     while !Empty(cNome)
-        // Zera o vetor aSaltos para o novo atleta
-        
-
-        for nCont := 1 to 5
-            cPerg := "Digite a distância do " + alltrim(Str(nCont)) + "º salto (em metros): "
-            nSalto := Val(FwInputBox(cPerg))
-            AAdd(aSaltos, nSalto)
-            cMsg += "Salto " + alltrim(Str(nCont)) + ": " + AllTrim(Str(aSaltos[nCont])) + CRLF
-        next
-
-        nMedia := (aSaltos[1] + aSaltos[2] + aSaltos[3] + aSaltos[4] + aSaltos[5]) / 5
-
-        FwAlertInfo("Atleta: " + cNome + CRLF + cMsg + CRLF +;
-        "Média dos saltos: " + AllTrim(Str(nMedia)) + " m", "Resultado")
 
         //? Limpa o nome, a variavel cMsg e o array aSaltos para garantir que o loop funcione corretamente
         cNome   := ""
         cMsg    := ""
         aSaltos := {}
 
-        cNome := FwInputBox("Digite o nome do próximo atleta (ou deixe em branco para encerrar):")
+        cNome := FwInputBox("Digite o nome do atleta (ou deixe em branco para encerrar):")
+        if !Empty(cNome)
+            for nCont := 1 to 5
+                cPerg := "Digite a distância do " + alltrim(Str(nCont)) + "º salto (em metros): "
+                nSalto := Val(FwInputBox(cPerg))
+                AAdd(aSaltos, nSalto)
+                cMsg += "Salto " + alltrim(Str(nCont)) + ": " + AllTrim(Str(aSaltos[nCont])) + CRLF
+            next
+
+            nMedia := (aSaltos[1] + aSaltos[2] + aSaltos[3] + aSaltos[4] + aSaltos[5]) / 5
+
+            FwAlertInfo("Atleta: " + cNome + CRLF + cMsg + CRLF +;
+            "Média dos saltos: " + AllTrim(Str(nMedia)) + " m", "Resultado")
+        endif
     enddo
 
     FwAlertInfo("Programa encerrado.")

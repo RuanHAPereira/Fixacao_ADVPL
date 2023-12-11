@@ -432,7 +432,28 @@
 		},
 		{
 			"label": "U_VE004C"
+		},
+		{
+			"label": "U_VE0016"
+		},
+		{
+			"label": "U_TESTE16"
+		},
+		{
+			"label": "U_VE0018"
+		},
+		{
+			"label": "U_TESTE18"
+		},
+		{
+			"label": "U_FUN01"
+		},
+		{
+			"label": "U_FUN02"
+		},
+		{
+			"label": "U_FUN03"
 		}
 	],
-	"lastProgramExecuted": "U_VE019"
+	"lastProgramExecuted": "U_VE018"
 }

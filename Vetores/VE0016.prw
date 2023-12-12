@@ -1,4 +1,4 @@
-#INCLUDE "totvs.ch"
+#include "totvs.ch"
 
 /*/{Protheus.doc} VE016B
 Uma empresa paga seus vendedores com base em comissões. 
@@ -24,7 +24,7 @@ User Function VE0016()
 
     Local nSalario    := 0
     Local nVendedores := 0
-    Local aContadores := {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Local aContadores := {}
     Local nVendaBruta := 0
     Local cFaixa      := ''
     Local nCont       := 0
@@ -33,6 +33,11 @@ User Function VE0016()
     Local cMsg        := ''
 
     nSemanas := Val(FwInputBox("Número de semanas que o vendedor trabalhou no mês: "))
+
+    // Inicializa o array de contadores
+    For nCont := 1 To 10
+        AAdd(aContadores, {})
+    Next
 
     Do While .T.
         nVendaBruta := Val(FwInputBox("Digite o valor das vendas brutas (-1 para encerrar): "))
@@ -50,7 +55,7 @@ User Function VE0016()
         nPosicao := Min(10, Int(nSalario / 100) + 1)
 
         // Adiciona o salário ao contador correspondente
-        aContadores[nPosicao]++
+        AAdd(aContadores[nPosicao], 1)
 
         nVendedores++
     EndDo
@@ -58,10 +63,10 @@ User Function VE0016()
     // Gera a mensagem final com os resultados
     For nCont := 1 To 9
         cFaixa := "$" + AllTrim(Str(200 + (100 * (nCont - 1)))) + " - $" + AllTrim(Str(299 + (100 * (nCont - 1))))
-        cMsg += cFaixa + ": " + AllTrim(Str(aContadores[nCont])) + CRLF
+        cMsg += cFaixa + ": " + AllTrim(Str(LEN(aContadores[nCont]))) + CRLF
     Next
     // Última faixa ($1000 em diante)
-    cMsg += "$1000 em diante: " + AllTrim(Str(aContadores[10])) + CRLF
+    cMsg += "$1100 em diante: " + AllTrim(Str(LEN(aContadores[10]))) + CRLF
 
     // Exibe os resultados
     FwAlertInfo("Quantidade de vendedores com salários nos intervalos:" + CRLF + cMsg)

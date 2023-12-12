@@ -34,8 +34,6 @@ User Function VE017()
     local cPerg   := ""
     local cMsg    := ''
 
-    //cNome := FwInputBox("Digite o nome do atleta:")
-
     while !Empty(cNome)
 
         //? Limpa o nome, a variavel cMsg e o array aSaltos para garantir que o loop funcione corretamente

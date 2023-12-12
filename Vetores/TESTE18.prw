@@ -2,16 +2,16 @@
 
 User Function TESTE18()
 
-    Local aVotos         := {}
-    Local aResultados    := {}
-    Local nTotalVotos    := 0
-    Local nVoto          := 0
-    Local nCont          := 0
-    Local nMelhorJogador := 0
-    Local nMelhorVotos   := 0
-    Local nPercentual    := 0
-    LOCAL aResult        := 0
-    Local cResultado     := ""
+    local aVotos         := {}
+    local aResultados    := {}
+    local nTotalVotos    := 0
+    local nVoto          := 0
+    local nCont          := 0
+    local nMelhorJogador := 0
+    local nMelhorVotos   := 0
+    local nPercentual    := 0
+    local aResult        := 0
+    local cResultado     := ""
 
     Do While .T.
         nVoto := Val(FwInputBox("Número do jogador (0=fim): "))

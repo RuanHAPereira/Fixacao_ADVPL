@@ -37,94 +37,89 @@ O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 4
 @since 11/30/2023
 /*/
 
-#INCLUDE "totvs.ch"
+User Function VE019()
 
-user function VE019()
+    Local aVotos      := {}
+    Local nTotalVotos := 0
+    Local nVoto       := 0
+    Local nCont       := 0
 
-    local aVotos      := {}
-    local nTotalVotos := 0
-    local nVoto       := 0
-    local nCont       := 0
-
-    // Inicializa o array com zeros
-    for nCont := 1 to 6
+    For nCont := 1 To 6
         AAdd(aVotos, 0)
-    next
+    Next
 
-    do while .T.
+    Do While .T.
         FwAlertInfo("Vote com o numero equivalente ao SO." + CRLF +;
         "1 - Windows Server" + CRLF + "2 - Unix" + CRLF + "3 - Linux" + CRLF +;
         "4 - Netware" + CRLF + "5 - Mac OS" + CRLF + "6 - Outros" + CRLF + "0 - Sair")
 
         nVoto := Val(FwInputBox("Digite o número correspondente ao melhor Sistema Operacional(0 para encerrar): "))
 
-        if nVoto == 0
-            exit
-        endif
+        If nVoto == 0
+            Exit
+        EndIf
 
-        if nVoto >= 1 .and. nVoto <= 6
+        If nVoto >= 1 .And. nVoto <= 6
             aVotos[nVoto]++
             nTotalVotos++
-        else
+        Else
             FwAlertInfo("Número inválido. Por favor, digite um número de 0 a 6.")
-        endif
-    enddo
+        EndIf
+    EndDo
 
-    FwAlertInfo(Result(aVotos, nTotalVotos))
+    Result(aVotos, nTotalVotos)
 
-return
+Return
 
-static function Result(aVotos, nTotalVotos)
+Static Function Result(aVotos, nTotalVotos)
 
-    local nCont       := 0
-    local nPercentual := 0
-    local nVencedor   := 1
-    local cResult     := ""
+    Local nCont       := 0
+    Local nPercentual := 0
+    Local nVencedor   := 1
+    Local cResult     := ""
 
-    cResult += "Sistema Operacional   Votos   %" + CRLF
-    cResult += "---------------------  -----  ---" + CRLF
+    cResult += "Resultado da votação:" + CRLF + CRLF;
 
-    for nCont := 1 to Len(aVotos)
-        if aVotos[nCont] > 0
+    For nCont := 1 To Len(aVotos)
+        If aVotos[nCont] > 0
             nPercentual := (aVotos[nCont] / nTotalVotos) * 100
-            cResult += SO(nCont) + AllTrim(Str(aVotos[nCont])) + "   " + AllTrim(Str(nPercentual, 6, 2)) + "%" + CRLF
+            cResult += "Sistema Operacional " + SO(nCont) + ": " + AllTrim(Str(nPercentual, 6, 2)) + "%" + CRLF
+            cResult += "Total de votos: " + AllTrim(Str(aVotos[nCont])) + CRLF + CRLF
 
-            // Verifica o vencedor
-            if aVotos[nCont] > aVotos[nVencedor]
+            //? Verifica o vencedor
+            If aVotos[nCont] > aVotos[nVencedor]
                 nVencedor := nCont
-            endif
-        endif
-    next
+            EndIf
+        EndIf
+    Next
 
-    cResult += "---------------------  -----" + CRLF
-    cResult += "Total                  " + AllTrim(Str(nTotalVotos)) + CRLF + CRLF
     cResult += "O Sistema Operacional mais votado foi o " + SO(nVencedor) + ", com " +;
-    AllTrim(Str(aVotos[nVencedor])) + " votos, correspondendo a " + AllTrim(Str(nPercentual, 6, 2)) + "% dos votos."
+               AllTrim(Str(aVotos[nVencedor])) + " votos, correspondendo a " + AllTrim(Str(nPercentual, 6, 2)) + "% dos votos."
 
-return(cResult)
+    FwAlertInfo(cResult)
 
-static function SO(nOpcao)
+Return
 
-    local cMsg := ''
+Static Function SO(nOpcao)
 
-    // Função para retornar o nome do Sistema Operacional de acordo com a opção
-    do case
-        case nOpcao == 1
+    Local cMsg := ""
+
+    Do Case
+        Case nOpcao == 1
             cMsg := "Windows Server"
-        case nOpcao == 2
+        Case nOpcao == 2
             cMsg := "Unix"
-        case nOpcao == 3
+        Case nOpcao == 3
             cMsg := "Linux"
-        case nOpcao == 4
+        Case nOpcao == 4
             cMsg := "Netware"
-        case nOpcao == 5
+        Case nOpcao == 5
             cMsg := "Mac OS"
-        case nOpcao == 6
+        Case nOpcao == 6
             cMsg := "Outro"
-        otherwise
+        Otherwise
             cMsg := "Desconhecido"
-    endcase
+    EndCase
 
-return(cMsg)
-
+Return(cMsg)
 

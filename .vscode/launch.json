@@ -453,7 +453,100 @@
 		},
 		{
 			"label": "U_FUN03"
+		},
+		{
+			"label": "U_VE022"
+		},
+		{
+			"label": "U_TESTE20"
+		},
+		{
+			"label": "U_TESTE19"
+		},
+		{
+			"label": "U_VE024"
+		},
+		{
+			"label": "U_TESTE21"
+		},
+		{
+			"label": "U_FUN04"
+		},
+		{
+			"label": "U_FUN05"
+		},
+		{
+			"label": "U_FUN06"
+		},
+		{
+			"label": "U_FUN07"
+		},
+		{
+			"label": "U_FUN08"
+		},
+		{
+			"label": "U_FUN09"
+		},
+		{
+			"label": "U_FUN10"
+		},
+		{
+			"label": "U_FUN11"
+		},
+		{
+			"label": "U_FUN12"
+		},
+		{
+			"label": "U_FUN13"
+		},
+		{
+			"label": "U_FUN14"
+		},
+		{
+			"label": "U_STRI01"
+		},
+		{
+			"label": "U_STRI02"
+		},
+		{
+			"label": "U_STRI03"
+		},
+		{
+			"label": "U_STRI04"
+		},
+		{
+			"label": "U_STRI05"
+		},
+		{
+			"label": "U_STRI06"
+		},
+		{
+			"label": "U_STRI07"
+		},
+		{
+			"label": "U_STRI08"
+		},
+		{
+			"label": "U_STRI09"
+		},
+		{
+			"label": "U_STRI10"
+		},
+		{
+			"label": "U_STRI11"
+		},
+		{
+			"label": "U_STRI12"
+		},
+		{
+			"label": "U_STRI13"
+		},
+		{
+			"label": "U_STRI14"
+		},
+		{
+			"label": "U_Stri10B"
 		}
 	],
-	"lastProgramExecuted": "U_VE020"
+	"lastProgramExecuted": "U_STRI13"
 }

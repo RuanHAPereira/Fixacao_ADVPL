@@ -1,6 +1,5 @@
 #INCLUDE "totvs.ch"
 
-//! RETIRADA O ARRAY DE PERCENTUAIS
 /*/{Protheus.doc} VE019
 Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a um grande quantidade de 
 organizações:
@@ -38,16 +37,17 @@ O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 4
 @since 11/30/2023
 /*/
 
-User Function VE019()
+User Function TESTE19()
 
     Local aVotos := {}
+    Local aPercentuais := {}
     Local nTotalVotos := 0
     Local nVoto := 0
     Local nCont := 0
 
-    // Inicializa o array com zeros para cada opção
     For nCont := 1 To 6
         AAdd(aVotos, 0)
+        AAdd(aPercentuais, 0)
     Next
 
     Do While .T.
@@ -62,7 +62,6 @@ User Function VE019()
         EndIf
 
         If ASCAN({1, 2, 3, 4, 5, 6}, nVoto) > 0
-            // Incrementa o voto para a opção escolhida
             aVotos[nVoto]++
             nTotalVotos++
         Else
@@ -70,16 +69,22 @@ User Function VE019()
         EndIf
     EndDo
 
-    Result(aVotos, nTotalVotos)
+    For nCont := 1 To Len(aVotos)
+        If aVotos[nCont] > 0
+            aPercentuais[nCont] := (aVotos[nCont] / nTotalVotos) * 100
+        EndIf
+    Next
+
+    Result(aVotos, nTotalVotos, aPercentuais)
 
 Return
 
-Static Function Result(aVotos, nTotalVotos)
+Static Function Result(aVotos, nTotalVotos, aPercentuais)
 
-    Local nCont := 0
+    Local nCont       := 0
     Local nPercentual := 0
-    Local nVencedor := 1
-    Local cResult := ""
+    Local nVencedor   := 1
+    Local cResult     := ""
 
     cResult += "Resultado da votação:" + CRLF + CRLF
 
@@ -99,11 +104,12 @@ Static Function Result(aVotos, nTotalVotos)
 
     cResult += "O Sistema Operacional mais votado foi o " + SO(nVencedor) + ", com " +;
                 AllTrim(Str(aVotos[nVencedor])) + " votos, correspondendo a " +;
-                AllTrim(Str((aVotos[nVencedor] / nTotalVotos) * 100, 6, 2)) + "% dos votos."
+                AllTrim(Str(aPercentuais[nVencedor], 6, 2)) + "% dos votos."
 
     FwAlertInfo(cResult)
 
 Return
+
 
 Static Function SO(nOpcao)
 
@@ -127,4 +133,3 @@ Static Function SO(nOpcao)
     EndCase
 
 Return(cMsg)
-

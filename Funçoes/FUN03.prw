@@ -4,22 +4,23 @@
 Faça um programa, com uma função que necessite de três argumentos, e que forneça a soma desses três argumentos.
 @type function
 @author Ruan Henrique
-@since 12/11/2023
+@since 12/18/2023
 /*/
-User Function FUN03()
-    Local nX := 1
-    Local nY := 0
-    local n  := 0
 
-    do While nX <= n
-        nY := 0
-        While nY < nX
-            FwAlertInfo(AllTrim(Str(nX)), 0)
-            nY++
-        enddo
+user function FUN03()
 
-        nX++
-        FwAlertInfo("", 0)  // Adiciona uma nova linha
-    enddo
+    local nNumero1 := Val(FwInputBox("Digite o primeiro número: "))
+    local nNumero2 := Val(FwInputBox("Digite o segundo número: "))
+    local nNumero3 := Val(FwInputBox("Digite o terceiro número: "))
 
-Return
+    local nSoma := SomaTres(nNumero1, nNumero2, nNumero3)
+
+    FwAlertInfo("A soma dos três números é: " + AllTrim(Str(nSoma)))
+
+return
+
+static function SomaTres(nNum1, nNum2, nNum3)
+
+    local nResultado := nNum1 + nNum2 + nNum3
+
+return nResultado

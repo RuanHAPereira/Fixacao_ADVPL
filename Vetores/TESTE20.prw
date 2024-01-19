@@ -1,6 +1,4 @@
-#INCLUDE "totvs.ch"
-
-//! refazer, utilizando array e concatenar a mensagem final 
+#INCLUDE "TOTVS.CH"
 
 /*/{Protheus.doc} VE020
 As Organizações Tabajara resolveram dar um abono aos seus colaboradores em reconhecimento ao bom resultado 
@@ -46,43 +44,50 @@ Valor mínimo pago a 3 colaboradores
 @since 11/30/2023
 /*/
 
-user function VE020()
+User Function TESTE20()
 
-    local nSalario  := 0
-    local nAbono    := 0
-    local nTotColab := 0
-    local nTotAbono := 0
-    local nMinimoPago := 0
-    local nMaiorAbono := 0
+    Local aColab         := {}
+    Local nSalario       := 0
+    Local nAbono         := 0
+    Local nTotAbono      := 0
+    Local nMinimoPago    := 0
+    Local nMaiorAbono    := 0
+    Local nTotColab      := 0
+    Local cMsg           :=""
 
     FwAlertInfo("Projeção de Gastos com Abono")
 
-    do while .T.
+    Do While .T.
         nSalario := Val(FwInputBox("Salário (0 para encerrar): "))
 
-        if nSalario == 0
-            exit
-        endif
+        If nSalario == 0
+            Exit
+        EndIf
 
         nAbono := Max(nSalario * 0.2, 100) // Cálculo do abono
 
+        // Adiciona os dados ao array
+        AAdd(aColab, {nSalario, nAbono})
+
         // Atualiza estatísticas
-        nTotColab++
         nTotAbono += nAbono
-        if nAbono == 100
+        If nAbono == 100
             nMinimoPago++
-        endif
-        if nAbono > nMaiorAbono
+        EndIf
+        If nAbono > nMaiorAbono
             nMaiorAbono := nAbono
-        endif
+        EndIf
 
         FwAlertInfo("Salário: R$ " + AllTrim(Str(nSalario, 15, 2)) + " - Abono: R$ " + AllTrim(Str(nAbono, 15, 2)))
-    enddo
+    EndDo
 
     // Apresenta os resultados finais
-    FwAlertInfo("Foram processados " + AllTrim(Str(nTotColab)) + " colaboradores")
-    FwAlertInfo("Total gasto com abonos: R$ " + AllTrim(Str(nTotAbono, 15, 2)))
-    FwAlertInfo("Valor mínimo pago a " + AllTrim(Str(nMinimoPago)) + " colaboradores")
-    FwAlertInfo("Maior valor pago como abono: R$ " + AllTrim(Str(nMaiorAbono, 15, 2)))
+    nTotColab := Len(aColab)
+    cMsg := "Foram processados " + AllTrim(Str(nTotColab)) + " colaboradores" + CRLF
+    cMsg += "Total gasto com abonos: R$ " + AllTrim(Str(nTotAbono, 15, 2)) + CRLF
+    cMsg += "Valor mínimo pago a " + AllTrim(Str(nMinimoPago)) + " colaboradores"
+    //cMsg += "Maior valor pago como abono: R$ " + AllTrim(Str(nMaiorAbono, 15, 2))
 
-return
+    FwAlertInfo(cMsg)
+
+Return

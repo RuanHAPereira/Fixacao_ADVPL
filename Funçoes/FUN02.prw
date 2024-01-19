@@ -26,7 +26,7 @@ User Function FUN02()
             cMsg += AllTrim(Str(nNum)) + ", "
         next
         FwAlertInfo(cMsg)
-        cMsg := ""  // Limpar a mensagem para a próxima linha
+        cMsg := ""  //? Limpar a mensagem para a próxima linha
     next
 
 Return

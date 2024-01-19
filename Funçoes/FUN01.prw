@@ -23,6 +23,7 @@ User Function FUN01()
 
     For nCont := 1 To nNum
         //? Replicate é usada para repetir uma sequencia de caracter em um determinado numero de vezes
+        //? Gera uma string repetida a partir de outra.
         cMsg := cMsg + AllTrim(Str(nCont)) + Replicate(" " + AllTrim(Str(nCont)), nCont - 1) + CRLF
     Next
 

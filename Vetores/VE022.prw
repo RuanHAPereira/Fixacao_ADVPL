@@ -1,6 +1,5 @@
 #INCLUDE "totvs.ch"
 
-//! FAZER EM OUTRO MOMENTO
 /*/{Protheus.doc} LevantamentoSuporte
 Sua organização acaba de contratar um estagiário para trabalhar no Suporte de Informática, com a intenção de fazer um 
 levantamento nas sucatas encontradas nesta área. A primeira tarefa dele é testar todos os cerca de 200 mouses que se encontram lá, 
@@ -22,68 +21,55 @@ Situação                        Quantidade              Percentual
 @author Ruan Henrique
 @since 11/30/2023
 /*/
-/*
-user function LevantamentoSuporte()
 
-    local nIdentificacao := 0
-    local aDefeitos      := {}
-    local nTotalMouses   := 0
-    local nPercentual    := 0
-    local nCont          := 0
-    local cSituacao      := ""
+User Function VE022()
 
-    // Inicializa o array de defeitos com zeros
-    for nCont := 1 to 4
-        AAdd(aDefeitos, 0)
-    next
+    Local aMouses      := {}
+    Local nQtdMouse    := 0
+    Local nQtdEsfera   := 0
+    Local nQtdLimpeza  := 0
+    Local nQtdTroca    := 0
+    Local nQtdQuebrado := 0
+    Local cSituacao    := ""
+    Local nPercentual  := 0
 
-    do while .T.
-        nIdentificacao := Val(FwInputBox("Digite o número de identificação do mouse (0 para encerrar): "))
+    Do While .T.
+        FwAlertInfo("Informe a seguir qual defeito a partir de seu código:" + CRLF +;
+        "1 - necessita da esfera" + CRLF +;
+        "2 - necessita de limpeza" + CRLF + "3 - necessita troca do cabo ou conector" + CRLF +;
+        "4 - quebrado ou inutilizado" + CRLF + "0 - para encerrar")
+        
+        cSituacao := FwInputBox("Digite o tipo de defeito do mouse: ")
 
-        if nIdentificacao == 0
-            exit
-        endif
+        If cSituacao == "0"
+            Exit
+        EndIf
 
-        cSituacao := FwInputBox("Digite o tipo de defeito (1 - necessita da esfera, 2 - necessita de limpeza, 3 - necessita troca do cabo ou conector, 4 - quebrado ou inutilizado): ")
+        nQtdMouse := Val(FwInputBox("Digite a quantidade de mouses com esse defeito: "))
 
-        do case cSituacao <> 0
-            case == 1
-                aDefeitos[1]++
-            case == 2
-                aDefeitos[2]++
-            case == 3
-                aDefeitos[3]++
-            case == 4
-                aDefeitos[4]++
-            otherwise
-                FwAlertInfo("Opção inválida. Por favor, digite um número de 1 a 4.")
-            next
-        endcase
+        AAdd(aMouses, {cSituacao, nQtdMouse})
 
-        nTotalMouses++
-    enddo
+        If cSituacao == "1"
+            nQtdEsfera += nQtdMouse
+        ElseIf cSituacao == "2"
+            nQtdLimpeza += nQtdMouse
+        ElseIf cSituacao == "3"
+            nQtdTroca += nQtdMouse
+        ElseIf cSituacao == "4"
+            nQtdQuebrado += nQtdMouse
+        else
+            FwAlertError("Número inválido.")
+        EndIf
+    EndDo
 
-    // Exibe o relatório final
-    FwAlertInfo("Quantidade de mouses: " + AllTrim(Str(nTotalMouses)) + CRLF)
-    FwAlertInfo("Situação                        Quantidade              Percentual")
+    // Calcula o percentual
+    nPercentual := 100 / (nQtdEsfera + nQtdLimpeza + nQtdTroca + nQtdQuebrado)
 
-    for nCont := 1 to Len(aDefeitos)
-        cSituacao := ""
-        do case nCont
-            case 1
-                cSituacao := "necessita da esfera         "
-            case 2
-                cSituacao := "necessita de limpeza        "
-            case 3
-                cSituacao := "necessita troca do cabo ou conector"
-            case 4
-                cSituacao := "quebrado ou inutilizado     "
-        endcase
+    FwAlertInfo("Quantidade de mouses com defeito:" + CRLF +;
+                "1- Esfera   : " + AllTrim(Str(nQtdEsfera)) + " mouses, corresponde a " + AllTrim(Str(nQtdEsfera * nPercentual, 6, 1)) + "% dos defeitos." + CRLF +;
+                "2- Limpeza  : " + AllTrim(Str(nQtdLimpeza)) + "  mouses, corresponde a  " + AllTrim(Str(nQtdLimpeza * nPercentual, 6, 1)) + "% dos defeitos." + CRLF +;
+                "3- Troca    : " + AllTrim(Str(nQtdTroca)) + "  mouses, corresponde a  " + AllTrim(Str(nQtdTroca * nPercentual, 6, 1)) + "% dos defeitos." + CRLF +;
+                "4- Quebrado : " + AllTrim(Str(nQtdQuebrado)) + "  mouses, corresponde a  " + AllTrim(Str(nQtdQuebrado * nPercentual, 6, 1)) + "% dos defeitos." + CRLF + CRLF +;
+                "Total de mouses informados: " + AllTrim(Str(nQtdEsfera + nQtdLimpeza + nQtdTroca + nQtdQuebrado)), "Relatório de Mouses")
 
-        nPercentual := (aDefeitos[nCont] / nTotalMouses) * 100
-        FwAlertInfo(AllTrim(Str(nCont)) + "- " + cSituacao + AllTrim(Str(aDefeitos[nCont])) + AllTrim(Str(nPercentual, 10, 2)) + "%")
-    next
-
-return*/
-
-
+Return

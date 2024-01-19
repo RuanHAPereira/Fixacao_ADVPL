@@ -1,6 +1,5 @@
 #INCLUDE "totvs.ch"
 
-//! FAZER EM OUTRO MOMENTO
 /*/{Protheus.doc} ComparativoConsumo
 Faça um programa que carregue uma lista com os modelos de cinco carros (exemplo de modelos: 
 FUSCA, GOL, VECTRA etc). Carregue uma outra lista com o consumo desses carros, isto é, quantos 
@@ -38,57 +37,59 @@ O menor consumo é do peugeout.
 @author Ruan Henrique
 @since 11/30/2023
 /*/
-user function VE021()
 
-    local aModelos      := {"Fusca", "Gol", "Uno", "Vectra", "Peugeout"}
-    local aConsumo      := {7, 10, 12.5, 9, 14.5}
-    local aRelatorio    := {}
-    local nCont         := 0
-    local nIndVeiculo   := 0
-    //local nMenorConsumo := aConsumo[1]
-    local nIndMenor     := 1
-    local nDistancia    := 1000
-    local nLitros       := 0
-    local nCusto        := 0
-    local nCustoGasolina:= 2.25
+User Function VE021()
 
-    // Solicita ao usuário que digite o veículo
-    local cVeiculo := FwInputBox("Digite o modelo do veículo que você utiliza:")
+    Local aCarros := {}
+    Local nCont := 0
+    Local cNomeCarro := ""
+    Local nConsumoCarro := 0
+    Local nLitros := 0
+    Local nIndMenor := 0
 
-    // Encontra o índice do veículo digitado
-    for nCont := 1 to Len(aModelos)
-        if Upper(aModelos[nCont]) == Upper(cVeiculo)
-            nIndVeiculo := nCont
-            break
-        endif
-    next
+    Local cVeicEcon := ""
+    Local nCusto := 0
+    Local cRelatorio := ""
 
-    // Se o veículo não estiver na lista, informa ao usuário e encerra o programa
-    if nIndVeiculo == 0
-        FwAlertInfo("Veículo não encontrado na lista.")
-        return
-    endif
+    // Loop para obter dados dos carros
+    For nCont := 1 To 5
+        cNomeCarro := FwInputBox("Digite o nome do carro " + AllTrim(Str(nCont)) + ": ")
+        nConsumoCarro := Val(FwInputBox("Digite o consumo do carro " + AllTrim(Str(nCont)) + " (Km por litro): "))
+        
+        // Adiciona os dados aos arrays
+        AAdd(aCarros, {cNomeCarro, nConsumoCarro})
+    Next
 
-    // Preenche o relatório apenas com o veículo escolhido
-    AAdd(aRelatorio, {"Veículo " + AllTrim(Str(nIndVeiculo)), aModelos[nIndVeiculo], aConsumo[nIndVeiculo], 0, 0})
+    // Inicializa o menor consumo com o consumo do primeiro carro
+    nIndMenor := 1
 
-    // Calcula o consumo para 1000 km e o custo
-    nLitros := nDistancia / aConsumo[nIndVeiculo]
-    nCusto := nLitros * nCustoGasolina
-    aRelatorio[1][4] := nLitros
-    aRelatorio[1][5] := nCusto
+    // Loop para encontrar o veículo mais econômico
+    For nCont := 2 To Len(aCarros)
+        If aCarros[nCont][2] > aCarros[nIndMenor][2]
+            nIndMenor := nCont
+        EndIf
+    Next
 
-    // Apresenta o relatório final
-    FwAlertInfo("Comparativo de Consumo de Combustível para " + cVeiculo + CRLF)
 
-    for nCont := 1 to Len(aRelatorio)
-        FwAlertInfo(AllTrim(Str(nCont)) + " - " + aRelatorio[nCont][2] + " - " +;
-                    AllTrim(Str(aRelatorio[nCont][3], 10, 2)) + " litros - R$ " +;
-                    AllTrim(Str(aRelatorio[nCont][4], 10, 2)))
-    next
+    // Monta a string do relatório
+    For nCont := 1 To Len(aCarros)
+        nLitros := (1000 / aCarros[nCont][2])
+        nCusto := nLitros * 2.25
+        cRelatorio += AllTrim(Str(nCont)) + " - " + AllTrim(aCarros[nCont][1]) + " - " + AllTrim(Str(aCarros[nCont][2], 5, 1)) + " - " +;
+                    AllTrim(Str(nLitros, 5, 1)) + " litros - R$ " + AllTrim(Str(nCusto, 8, 2)) + CRLF
+    Next
 
-    FwAlertInfo("O menor consumo é do " + aModelos[nIndMenor] + ".")
+    // Obtém o nome do carro mais econômico
+    cVeicEcon := aCarros[nIndMenor][1]
 
-return
+    // Adiciona o resultado ao relatório final
+    cRelatorio += CRLF + "Relatório Final" + CRLF + "O menor consumo é do " + cVeicEcon + "."
+
+
+
+    // Exibe o relatório
+    FwAlertInfo(cRelatorio, "Comparativo de Consumo de Combustível")
+
+Return
 
 

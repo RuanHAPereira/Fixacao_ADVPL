@@ -34,7 +34,7 @@ User Function VE0016()
 
     nSemanas := Val(FwInputBox("Número de semanas que o vendedor trabalhou no mês: "))
 
-    // Inicializa o array de contadores
+    //? Inicializa o array de contadores
     For nCont := 1 To 10
         AAdd(aContadores, {})
     Next
@@ -45,30 +45,26 @@ User Function VE0016()
             Exit
         EndIf
 
-        // Calcula o salário semanal
+        //? Calcula o salário semanal
         nSalario := 200 + (0.09 * nVendaBruta)
 
-        // Calcula o salário mensal
+        //? Calcula o salário mensal
         nSalario := nSalario * nSemanas
 
-        // Determina a posição da lista a partir do salário
+        //? Determina a posição da lista a partir do salário
         nPosicao := Min(10, Int(nSalario / 100) + 1)
 
-        // Adiciona o salário ao contador correspondente
         AAdd(aContadores[nPosicao], 1)
 
         nVendedores++
     EndDo
 
-    // Gera a mensagem final com os resultados
     For nCont := 1 To 9
         cFaixa := "$" + AllTrim(Str(200 + (100 * (nCont - 1)))) + " - $" + AllTrim(Str(299 + (100 * (nCont - 1))))
         cMsg += cFaixa + ": " + AllTrim(Str(LEN(aContadores[nCont]))) + CRLF
     Next
-    // Última faixa ($1000 em diante)
     cMsg += "$1100 em diante: " + AllTrim(Str(LEN(aContadores[10]))) + CRLF
 
-    // Exibe os resultados
     FwAlertInfo("Quantidade de vendedores com salários nos intervalos:" + CRLF + cMsg)
     FwAlertInfo("Total de vendedores: " + AllTrim(Str(nVendedores)), "Fim da operação.")
 

@@ -24,13 +24,13 @@ Digite uma letra: S
 
 user function STRI11()
 
-    local aPalavras := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"}
-    local cPalavra := aPalavras[Random(1, Len(aPalavras))]
+    local aPalavras   := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"} //? Aqui uso array para as palavras ja que nao usei arquivo txt.
+    local cPalavra    := aPalavras[Random(1, Len(aPalavras))]
     local cPalavraAdivinhada := Replicate("_", Len(cPalavra))
     local nTentativas := 6
-    local cLetra := ""
-    local lEncontrou := .F.
-    local i := 0
+    local cLetra      := ""
+    local lEncontrou  := .F.
+    local nCont       := 0
 
     // Loop principal do jogo
     do while nTentativas > 0
@@ -45,11 +45,11 @@ user function STRI11()
             lEncontrou := .F.
 
             // Verifica se a letra está na palavra
-            for i := 1 to Len(cPalavra)
-                if Substr(cPalavra, i, 1) == cLetra
+            for nCont := 1 to Len(cPalavra)
+                if Substr(cPalavra, nCont, 1) == cLetra
                     lEncontrou := .T.
                     // Atualiza a palavra adivinhada com a letra correta
-                    cPalavraAdivinhada := Substr(cPalavraAdivinhada, 1, i - 1) + cLetra + Substr(cPalavraAdivinhada, i + 1)
+                    cPalavraAdivinhada := Substr(cPalavraAdivinhada, 1, nCont - 1) + cLetra + Substr(cPalavraAdivinhada, nCont + 1)
                 endif
             next
 

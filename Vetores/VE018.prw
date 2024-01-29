@@ -56,7 +56,7 @@ User Function VE018()
 
         //? Verifica se o voto é válido (entre 1 e 23)
         If nVoto >= 1 .And. nVoto <= 23
-            nCont := aScan(aVotos, {|x| x[1] == nVoto})
+            nCont := aScan(aVotos, {|linha| linha[1] == nVoto})
 
             If nCont > 0
                 //? Se encontrou, incrementa os votos

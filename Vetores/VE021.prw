@@ -46,7 +46,6 @@ User Function VE021()
     Local nConsumoCarro := 0
     Local nLitros := 0
     Local nIndMenor := 0
-
     Local cVeicEcon := ""
     Local nCusto := 0
     Local cRelatorio := ""
@@ -70,7 +69,6 @@ User Function VE021()
         EndIf
     Next
 
-
     // Monta a string do relatório
     For nCont := 1 To Len(aCarros)
         nLitros := (1000 / aCarros[nCont][2])
@@ -84,8 +82,6 @@ User Function VE021()
 
     // Adiciona o resultado ao relatório final
     cRelatorio += CRLF + "Relatório Final" + CRLF + "O menor consumo é do " + cVeicEcon + "."
-
-
 
     // Exibe o relatório
     FwAlertInfo(cRelatorio, "Comparativo de Consumo de Combustível")

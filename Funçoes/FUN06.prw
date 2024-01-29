@@ -1,6 +1,7 @@
 #include "totvs.ch"
 
 //? Testado e ok.
+//? ALTEREI ESSE.
 /*/{Protheus.doc} FUN06
 Faça um programa que converta da notação de 24 horas para a notação de 12 horas. Por exemplo, o programa deve 
 converter 14:25 em 2:25 P.M. A entrada é dada em dois inteiros. Deve haver pelo menos duas funções: uma para 
@@ -12,47 +13,54 @@ que permita que o usuário repita esse cálculo para novos valores de entrada toda
 @since 12/20/2023
 /*/
 
-user function FUN06()
+User Function FUN06()
 
-    local nMinutos := 0
-    local nHora    := 0
-    local cRepetir := ''
+    Local nMinutos := 0
+    Local nHora    := 0
+    Local cRepetir := ''
 
-    do while .T.
+    Do While .T.
         nHora := Val(FwInputBox("Digite a hora (formato 24 horas): "))
         nMinutos := Val(FwInputBox("Digite os minutos: "))
 
-        // Converte e exibe a saída
-        exibeSaida(Conversao(nHora, nMinutos))
+        //? Verifica se a hora e os minutos estão dentro dos limites válidos
+        If nHora >= 0 .And. nHora <= 23 .And. nMinutos >= 0 .And. nMinutos <= 59
+            //? Converte e exibe a saída
+            ExibeSaida(Conversao(nHora, nMinutos))
+        Else
+            //? Mensagem de erro para entrada inválida
+            FwAlertInfo("Hora ou minutos fornecidos são inválidos. Por favor, tente novamente.")
+            loop  // Volta para o início do loop para nova entrada
+        EndIf
 
-        // Pergunta se o usuário deseja repetir o cálculo
+        //? Pergunta se o usuário deseja repetir o cálculo
         cRepetir := Upper(FwInputBox("Deseja converter outra hora? (S/N)"))
-        if cRepetir <> "S"
-            exit
-        endif
-    enddo
+        If cRepetir <> "S"
+            Exit
+        EndIf
+    EndDo
 
-return
+Return
 
-static function Conversao(nHora, nMinutos)
+Static Function Conversao(nHora, nMinutos)
 
-    local cPeriodo := ''
+    Local cPeriodo := ""
 
     cPeriodo := "A"
-    if nHora >= 12
+    If nHora >= 12
         cPeriodo := "P"
-    endif
+    EndIf
 
-    if nHora > 12
+    If nHora > 12
         nHora := nHora - 12
-    endif
+    EndIf
 
-    return {nHora, nMinutos, cPeriodo}
+    Return {nHora, nMinutos, cPeriodo}
 
-return
+Return
 
-static function exibeSaida(aResultado)
+Static Function ExibeSaida(aResultado)
 
     FwAlertInfo("Hora convertida: " + AllTrim(Str(aResultado[1])) + ":" + AllTrim(Str(aResultado[2])) + " " + aResultado[3] + ".")
-    
-return
+
+Return

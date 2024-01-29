@@ -21,12 +21,10 @@ user function STRI02()
     cNome := FwInputBox("Digite o seu nome: ")
     nTamanho := Len(cNome)
 
-    // Loop para inverter a string
     for nI := nTamanho to 1 step -1
         cNomeInvert += SubStr(cNome, nI, 1)
     next
 
-    // Mostra o nome original e o invertido
     FwAlertInfo("Nome original: " + cNome + CRLF + "Nome invertido: " + cNomeInvert)
 return
 

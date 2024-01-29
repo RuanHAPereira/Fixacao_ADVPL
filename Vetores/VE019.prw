@@ -61,8 +61,8 @@ User Function VE019()
             Exit
         EndIf
 
-        If ASCAN({1, 2, 3, 4, 5, 6}, nVoto) > 0
-            // Incrementa o voto para a opção escolhida
+        If nVoto >= 1 .And. nVoto <= 6
+        
             aVotos[nVoto]++
             nTotalVotos++
         Else

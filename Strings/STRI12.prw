@@ -24,30 +24,26 @@ user function STRI12()
     local cTelFormat := ""
     local i := 0
 
-    // Solicita ao usuário um número de telefone
     cTelefone := FwInputBox("Digite o número de telefone: ")
 
-    // Remove caracteres não numéricos manualmente
     for i := 1 to Len(cTelefone)
         if Substr(cTelefone, i, 1) >= "0" .and. Substr(cTelefone, i, 1) <= "9"
             cTelNum += Substr(cTelefone, i, 1)
         endif
     next
 
-    // Verifica se o telefone tem 7 dígitos
     if Len(cTelNum) == 7
-        // Acrescenta '3' na frente do número
+        //? Acrescenta '3' na frente do número
         cTelCerto := "3" + cTelNum
 
-        // Formata o número corrigido
+        //? Formata o número corrigido
         cTelFormat := SubStr(cTelCerto, 1, 4) + "-" + SubStr(cTelCerto, 5)
 
-        // Exibe os resultados
         FwAlertInfo("Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.")
         FwAlertInfo("Telefone corrigido sem formatação: " + cTelCerto)
         FwAlertInfo("Telefone corrigido com formatação: " + cTelFormat)
     else
-        // Mantém o número original
+        //? Mantém o número original
         cTelFormat := SubStr(cTelNum, 1, 4) + "-" + SubStr(cTelNum, 5)
         FwAlertInfo("Telefone válido: " + cTelFormat)
     endif

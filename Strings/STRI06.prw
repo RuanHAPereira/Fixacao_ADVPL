@@ -11,7 +11,7 @@ e imprima a data com o nome do mês por extenso.
 
 User Function STRI06()
 
-    Local cDataNasc := ""
+    Local cDataNasc  := ""
     Local cDataExten := ""
 
     // Solicita a data de nascimento ao usuário

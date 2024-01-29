@@ -1,53 +1,14 @@
-#INCLUDE "totvs.ch"
-
-/*/{Protheus.doc} VE019
-Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a um grande quantidade de 
-organizações:
-"Qual o melhor Sistema Operacional para uso em servidores?"
-
-As possíveis respostas são:
-
-1- Windows Server
-2- Unix
-3- Linux
-4- Netware
-5- Mac OS
-6- Outro
-Você foi contratado para desenvolver um programa que leia o resultado da enquete e informe ao final o 
-resultado da mesma. O programa deverá ler os valores até ser informado o valor 0, que encerra a entrada dos 
-dados. Não deverão ser aceitos valores além dos válidos para o programa (0 a 6). Os valores referentes a cada 
-uma das opções devem ser armazenados num vetor. Após os dados terem sido completamente informados, o programa 
-deverá calcular a percentual de cada um dos concorrentes e informar o vencedor da enquete. 
-O formato da saída foi dado pela empresa, e é o seguinte:
-Sistema Operacional     Votos   %
--------------------     -----   ---
-Windows Server           1500   17%
-Unix                     3500   40%
-Linux                    3000   34%
-Netware                   500    5%
-Mac OS                    150    2%
-Outro                     150    2%
--------------------     -----
-Total                    8800
-
-O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 40% dos votos.
-
-@type function
-@author Ruan Henrique
-@since 11/30/2023
-/*/
+#INCLUDE "TOTVS.CH"
 
 User Function TESTE19()
 
-    Local aVotos := {}
-    Local aPercentuais := {}
-    Local nTotalVotos := 0
-    Local nVoto := 0
-    Local nCont := 0
+    Local aVotos      := {}  
+    Local nTotalVotos := 0   
+    Local nVoto       := 0   
+    Local nCont       := 0  
 
     For nCont := 1 To 6
-        AAdd(aVotos, 0)
-        AAdd(aPercentuais, 0)
+        AAdd(aVotos, {Sistem(nCont), 0, 0, nCont})
     Next
 
     Do While .T.
@@ -61,8 +22,10 @@ User Function TESTE19()
             Exit
         EndIf
 
-        If ASCAN({1, 2, 3, 4, 5, 6}, nVoto) > 0
-            aVotos[nVoto]++
+        nCont := aScan(aVotos, {|linha| linha[4] == nVoto})
+
+        If nCont > 0
+            aVotos[nCont][2]++
             nTotalVotos++
         Else
             FwAlertInfo("Número inválido. Por favor, digite um número de 0 a 6.")
@@ -70,48 +33,45 @@ User Function TESTE19()
     EndDo
 
     For nCont := 1 To Len(aVotos)
-        If aVotos[nCont] > 0
-            aPercentuais[nCont] := (aVotos[nCont] / nTotalVotos) * 100
+        If aVotos[nCont][2] > 0
+            aVotos[nCont][3] := (aVotos[nCont][2] / nTotalVotos) * 100
         EndIf
     Next
 
-    Result(aVotos, nTotalVotos, aPercentuais)
+    Result(aVotos, nTotalVotos)
 
 Return
 
-Static Function Result(aVotos, nTotalVotos, aPercentuais)
+Static Function Result(aVotos, nTotalVotos)
 
-    Local nCont       := 0
-    Local nPercentual := 0
-    Local nVencedor   := 1
-    Local cResult     := ""
+    Local nCont       := 0   
+    Local nVencedor   := 1   
+    Local cResult     := ""  
 
     cResult += "Resultado da votação:" + CRLF + CRLF
 
     For nCont := 1 To Len(aVotos)
-        If aVotos[nCont] > 0
-            nPercentual := (aVotos[nCont] / nTotalVotos) * 100
-            cResult += "Sistema Operacional " + SO(nCont) + ": " + AllTrim(Str(nPercentual, 6, 2)) + "%" + CRLF +;
-                        "Total de votos: " + AllTrim(Str(aVotos[nCont])) + CRLF + CRLF
+        If aVotos[nCont][2] > 0
+            cResult += "Sistema Operacional " + aVotos[nCont][1] + ": " + AllTrim(Str(aVotos[nCont][3], 6, 2)) + "%" + CRLF +;
+                        "Total de votos: " + AllTrim(Str(aVotos[nCont][2])) + CRLF + CRLF
         EndIf
     Next
 
     For nCont := 2 To Len(aVotos)
-        If aVotos[nCont] > aVotos[nVencedor]
+        If aVotos[nCont][2] > aVotos[nVencedor][2]
             nVencedor := nCont
         EndIf
     Next
 
-    cResult += "O Sistema Operacional mais votado foi o " + SO(nVencedor) + ", com " +;
-                AllTrim(Str(aVotos[nVencedor])) + " votos, correspondendo a " +;
-                AllTrim(Str(aPercentuais[nVencedor], 6, 2)) + "% dos votos."
+    cResult += "O Sistema Operacional mais votado foi o " + aVotos[nVencedor][1] + ", com " +;
+                AllTrim(Str(aVotos[nVencedor][2])) + " votos, correspondendo a " +;
+                AllTrim(Str(aVotos[nVencedor][3], 6, 2)) + "% dos votos."
 
     FwAlertInfo(cResult)
 
 Return
 
-
-Static Function SO(nOpcao)
+Static Function Sistem(nOpcao)
 
     Local cMsg := ""
 

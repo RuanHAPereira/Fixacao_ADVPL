@@ -14,25 +14,25 @@ User Function VE024()
 
     Local aContadores := {}
     Local nCont       := 0
+    Local nResultado  := 0
+    Local nLances     := 100
     Local cMsg        := ""
-    local nLances     := 100
 
-    for nCont := 1 to nLances
-        AADD(aContadores, RANDOMIZE( 1, 6 ))
-    next 
+    For nCont := 1 To 6
+        AAdd(aContadores, {nCont, 0})
+    Next
 
-        for nCont := 1 to nLances 
-            if nCont < nLances 
-                cMsg += CVALTOCHAR( aContadores[nCont]) + ", "
-            else
-                cMsg += CVALTOCHAR( aContadores[nCont]) + ". "
-            endif
-        next
-    
+    For nCont := 1 To nLances
+        nResultado := Randomize(1, 7)
+        aContadores[nResultado][2]++
+    Next 
 
-    FwAlertInfo(cMsg, "Contem no Array!")
+    cMsg := "Resultados dos lançamentos:" + CRLF + CRLF
+
+    For nCont := 1 To Len(aContadores)
+        cMsg += "Face " + AllTrim(Str(aContadores[nCont][1])) + ": " + AllTrim(Str(aContadores[nCont][2])) + CRLF
+    Next
+
+    FwAlertInfo(cMsg, "Contagem dos Resultados")
+
 Return
-
-
-
-

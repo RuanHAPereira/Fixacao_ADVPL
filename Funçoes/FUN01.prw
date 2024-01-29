@@ -1,5 +1,5 @@
 #INCLUDE "totvs.ch"
-
+//? ALTEREI ESSE
 /*/{Protheus.doc} FUN01
 Faça um programa para imprimir:
     1
@@ -22,11 +22,20 @@ User Function FUN01()
     nNum := Val(FwInputBox("Digite um numero:"))
 
     For nCont := 1 To nNum
-        //? Replicate é usada para repetir uma sequencia de caracter em um determinado numero de vezes
-        //? Gera uma string repetida a partir de outra.
-        cMsg := cMsg + AllTrim(Str(nCont)) + Replicate(" " + AllTrim(Str(nCont)), nCont - 1) + CRLF
+        cMsg := cMsg + Linha(nCont) + CRLF
     Next
 
     FwAlertInfo(cMsg)
 
 Return
+
+Static Function Linha(nNumero)
+    Local cLinha := ""
+    local n := 0
+
+    For n := 1 To nNumero
+        cLinha += AllTrim(Str(n)) + " "
+    Next
+
+Return cLinha
+

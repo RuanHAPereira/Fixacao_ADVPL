@@ -1,5 +1,6 @@
 #INCLUDE "totvs.ch"
 
+//?ALTEREI ESSE
 /*/{Protheus.doc} FUN02
 Faça um programa para imprimir:
     1
@@ -13,22 +14,43 @@ para um n informado pelo usuário. Use uma função que receba um valor n inteiro i
 @since 12/11/2023
 /*/
 User Function FUN02()
-
+    Local nLinha := 0
+    Local nNum   := 0
+    Local cMsg   := ""
     Local nTotal := 0
+
+    nTotal := Val(FwInputBox("Digite um numero: "))
+
+    for nLinha := 1 to nTotal
+        for nNum := 1 to nLinha
+            cMsg += AllTrim(Str(nNum)) + "   "
+        next
+        cMsg += CRLF  
+    next
+
+    FwAlertInfo(cMsg) 
+
+Return
+
+Static Function Sequencia(nTotal)
     Local nLinha := 0
     Local nNum   := 0
     Local cMsg   := ""
 
-    nTotal := Val(FwInputBox("Digite um valor para n: "))
-
     for nLinha := 1 to nTotal
         for nNum := 1 to nLinha
-            cMsg += AllTrim(Str(nNum)) + ", "
+            cMsg += AllTrim(Str(nNum)) + "   "
         next
-        FwAlertInfo(cMsg)
-        cMsg := ""  //? Limpar a mensagem para a próxima linha
+        cMsg += CRLF 
     next
 
+    Return cMsg
 Return
+
+
+
+
+
+
 
 

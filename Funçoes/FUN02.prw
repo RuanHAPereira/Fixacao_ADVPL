@@ -14,22 +14,13 @@ para um n informado pelo usuário. Use uma função que receba um valor n inteiro i
 @since 12/11/2023
 /*/
 User Function FUN02()
-    Local nLinha := 0
-    Local nNum   := 0
-    Local cMsg   := ""
     Local nTotal := 0
+    Local cMsg   := ""
 
-    nTotal := Val(FwInputBox("Digite um numero: "))
+    nTotal := Val(FwInputBox("Digite um número: "))
+    cMsg := Sequencia(nTotal)
 
-    for nLinha := 1 to nTotal
-        for nNum := 1 to nLinha
-            cMsg += AllTrim(Str(nNum)) + "   "
-        next
-        cMsg += CRLF  
-    next
-
-    FwAlertInfo(cMsg) 
-
+    FwAlertInfo(cMsg)
 Return
 
 Static Function Sequencia(nTotal)
@@ -37,15 +28,15 @@ Static Function Sequencia(nTotal)
     Local nNum   := 0
     Local cMsg   := ""
 
-    for nLinha := 1 to nTotal
-        for nNum := 1 to nLinha
+    For nLinha := 1 To nTotal
+        For nNum := 1 To nLinha
             cMsg += AllTrim(Str(nNum)) + "   "
-        next
-        cMsg += CRLF 
-    next
+        Next
+        cMsg += CRLF
+    Next
 
-    Return cMsg
-Return
+Return cMsg
+
 
 
 

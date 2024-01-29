@@ -19,7 +19,7 @@ User Function FUN01()
     Local nCont := 0
     Local cMsg  := ""
 
-    nNum := Val(FwInputBox("Digite um numero:"))
+    nNum := Val(FwInputBox("Digite um número: "))
 
     For nCont := 1 To nNum
         cMsg := cMsg + Linha(nCont) + CRLF
@@ -31,11 +31,12 @@ Return
 
 Static Function Linha(nNumero)
     Local cLinha := ""
-    local n := 0
+    Local n := 0
 
     For n := 1 To nNumero
-        cLinha += AllTrim(Str(n)) + " "
+        cLinha += AllTrim(Str(nNumero)) + " " 
     Next
 
 Return cLinha
+
 

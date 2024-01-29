@@ -14,6 +14,7 @@ para um n informado pelo usuário. Use uma função que receba um valor n inteiro i
 @since 12/11/2023
 /*/
 User Function FUN02()
+
     Local nTotal := 0
     Local cMsg   := ""
 
@@ -24,6 +25,7 @@ User Function FUN02()
 Return
 
 Static Function Sequencia(nTotal)
+
     Local nLinha := 0
     Local nNum   := 0
     Local cMsg   := ""

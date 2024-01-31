@@ -49,9 +49,7 @@ Static Function FormatMes(nMes)
 
     Local aMeses := {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}
 
-    Return aMeses[nMes]
-    
-Return
+Return aMeses[nMes]
 
 Static Function FormatDt(cData)
 

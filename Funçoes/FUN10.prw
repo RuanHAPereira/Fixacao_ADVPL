@@ -54,7 +54,6 @@ static function Craps()
 
     endif
 
-    // Fim do jogo de Craps
     FwAlertInfo("Fim do jogo de Craps!")
 
 return

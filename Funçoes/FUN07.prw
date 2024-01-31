@@ -15,13 +15,13 @@ cobrar o valor da prestação. Quando houver atraso, cobrar 3% de multa, mais 0,1%
 @since 12/20/2023
 /*/
 
-user function FUN07()
+User Function FUN07()
 
-    local nQtdPrest    := 0
-    local nTotPrest    := 0
-    local nPrestacao   := 0
-    local nDiasAtraso  := 0
-    local nValorAPagar := 0
+    Local nQtdPrest    := 0
+    Local nTotPrest    := 0
+    Local nPrestacao   := 0
+    Local nDiasAtraso  := 0
+    Local nValorAPagar := 0
 
     do while .T.
         nPrestacao := Val(FwInputBox("Digite o valor da prestação (ou 0 para encerrar): "))
@@ -33,7 +33,7 @@ user function FUN07()
         nDiasAtraso := Val(FwInputBox("Digite o número de dias em atraso: "))
 
         //? Chama a função ValPag para calcular o valor a ser pago
-        nValorAPagar := ValPag(nPrestacao, nDiasAtraso)
+        nValorAPagar := CalculaValor(nPrestacao, nDiasAtraso)
 
         //? Exibe o valor a ser pago
         FwAlertInfo("Valor a ser pago: " + AllTrim(Str(nValorAPagar, 10, 2)))
@@ -46,14 +46,17 @@ user function FUN07()
     FwAlertInfo("Relatório do dia:" + CRLF + "Quantidade de prestações pagas: " + AllTrim(Str(nQtdPrest)) + CRLF +;
                  "Valor total de prestações pagas: " + AllTrim(Str(nTotPrest, 10, 2)))
 
-return
+Return
 
-static function ValPag(nPrestacao, nDiasAtraso)
+Static Function CalculaValor(nPrestacao, nDiasAtraso)
+
+    Local nValor := 0
 
     if nDiasAtraso <= 0
-        return nPrestacao
+        nValor := nPrestacao
     else
-        return nPrestacao * (1 + 0.03 + 0.001 * nDiasAtraso)
+        nValor := nPrestacao * (1 + 0.03 + 0.001 * nDiasAtraso)
     endif
 
-return
+Return nValor
+

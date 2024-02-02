@@ -14,6 +14,7 @@ custo de um item antes do imposto. A função “altera” o valor de custo para inclu
 
 user function FUN05()
 
+    local aArea   := GetArea()
     local nTxImpo := 0
     local nCusto  := 0
 
@@ -24,6 +25,7 @@ user function FUN05()
 
     FwAlertInfo("O novo custo, incluindo o imposto sobre vendas, é de: " + AllTrim(Str(nCusto, 15, 2)))
 
+    RestArea(aArea)
 return
 
 static function SomaImp(nTxImpo, nCusto)

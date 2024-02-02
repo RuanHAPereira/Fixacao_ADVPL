@@ -18,18 +18,18 @@ FULANO
 user function STRI04()
 
     local cNome   := ""
-    local nI      := 1  //? Iniciado com um para nao repetir a primeira letra
+    local nCont   := 1  //? Iniciado com um para nao repetir a primeira letra
     local cEscada := "" //? Variável para acumular os caracteres da escada
     local cMsg    := ""
  
     cNome := FwInputBox("Digite o seu nome: ")
 
-    while nI <= Len(cNome)
-        cEscada += SubStr(cNome, nI, 1)
+    while nCont <= Len(cNome)
+        cEscada += SubStr(cNome, nCont, 1)
         cMsg += cEscada + CRLF
-        nI++
+        nCont++
     enddo
 
-    FwAlertInfo(cMsg)
+    FwAlertInfo(Uper(cMsg))
 
 return

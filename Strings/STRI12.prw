@@ -18,17 +18,18 @@ Telefone corrigido com formatação: 3461-0133
 
 user function STRI12()
 
+    local aArea      := GetArea()
     local cTelefone  := ""
     local cTelNum    := ""
     local cTelCerto  := ""
     local cTelFormat := ""
-    local i := 0
+    local nI         := 0
 
     cTelefone := FwInputBox("Digite o número de telefone: ")
 
-    for i := 1 to Len(cTelefone)
-        if Substr(cTelefone, i, 1) >= "0" .and. Substr(cTelefone, i, 1) <= "9"
-            cTelNum += Substr(cTelefone, i, 1)
+    for nI := 1 to Len(cTelefone)
+        if Substr(cTelefone, nI, 1) >= "0" .and. Substr(cTelefone, nI, 1) <= "9"
+            cTelNum += Substr(cTelefone, nI, 1)
         endif
     next
 
@@ -47,4 +48,6 @@ user function STRI12()
         cTelFormat := SubStr(cTelNum, 1, 4) + "-" + SubStr(cTelNum, 5)
         FwAlertInfo("Telefone válido: " + cTelFormat)
     endif
+
+    RestArea(aArea)
 return

@@ -24,42 +24,42 @@ Digite uma letra: S
 
 user function STRI11()
 
+    local aArea       := GetArea()
     local aPalavras   := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"} //? Aqui uso array para as palavras ja que nao usei arquivo txt.
     local cPalavra    := aPalavras[Random(1, Len(aPalavras))]
-    local cPalavraAdivinhada := Replicate("_", Len(cPalavra))
+    local cAdivinhada := Replicate("_", Len(cPalavra))
     local nTentativas := 6
     local cLetra      := ""
     local lEncontrou  := .F.
     local nCont       := 0
 
-    // Loop principal do jogo
     do while nTentativas > 0
-        // Exibe a situação atual
-        ExibirStatus(cPalavraAdivinhada, nTentativas)
+        //? Exibe a situação atual
+        ExibirStatus(cAdivinhada, nTentativas)
 
-        // Solicita ao usuário uma letra
+        //? Solicita ao usuário uma letra
         cLetra := Upper(FwInputBox("Digite uma letra: "))
 
-        // Verifica se a entrada é válida
+        //? Verifica se a entrada é válida
         if Len(cLetra) == 1 .and. cLetra >= "A" .and. cLetra <= "Z"
             lEncontrou := .F.
 
-            // Verifica se a letra está na palavra
+            //? Verifica se a letra está na palavra
             for nCont := 1 to Len(cPalavra)
                 if Substr(cPalavra, nCont, 1) == cLetra
                     lEncontrou := .T.
-                    // Atualiza a palavra adivinhada com a letra correta
-                    cPalavraAdivinhada := Substr(cPalavraAdivinhada, 1, nCont - 1) + cLetra + Substr(cPalavraAdivinhada, nCont + 1)
+                    //? Atualiza a palavra adivinhada com a letra correta
+                    cAdivinhada := Substr(cAdivinhada, 1, nCont - 1) + cLetra + Substr(cAdivinhada, nCont + 1)
                 endif
             next
 
-            // Verifica se a palavra foi completamente adivinhada
-            if Alltrim(cPalavraAdivinhada) == cPalavra
+            //? Verifica se a palavra foi completamente adivinhada
+            if Alltrim(cAdivinhada) == cPalavra
                 FwAlertInfo("Você acertou a palavra: " + cPalavra, "Parabéns!" )
                 exit
             endif
 
-            // Verifica se a letra não está na palavra
+            //? Verifica se a letra não está na palavra
             if !lEncontrou
                 nTentativas--
                 FwAlertInfo("Tentativas restantes: " + Str(nTentativas),"Você errou!" )
@@ -69,15 +69,17 @@ user function STRI11()
         endif
     enddo
 
-    // Verifica se o jogador foi derrotado
-    if Alltrim(cPalavraAdivinhada) <> cPalavra
+    //? Verifica se o jogador foi derrotado
+    if Alltrim(cAdivinhada) <> cPalavra
         FwAlertInfo(" A palavra era: " + cPalavra, "Você foi derrotado!")
     endif
+
+    RestArea(aArea)
 return
 
-// Função para exibir o status atual do jogo
-static function ExibirStatus(cPalavraAdivinhada, nTentativas)
-    local cStatus := "Palavra adivinhada: " + cPalavraAdivinhada + Chr(13) + ;
+static function ExibirStatus(cAdivinhada, nTentativas)
+
+    local cStatus := "Palavra adivinhada: " + cAdivinhada + CRLF + ;
                     "Tentativas Restantes: " + Str(nTentativas)
 
     FwAlertInfo(cStatus)

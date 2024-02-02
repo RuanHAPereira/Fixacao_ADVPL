@@ -16,7 +16,7 @@ Você perde, no entanto, se tirar um 7 antes de tirar este Ponto novamente.
 
 user function FUN10()
 
-    // Inicializa o jogo de Craps
+    //? Inicializa o jogo de Craps
     Craps()
 
 return
@@ -25,13 +25,14 @@ static function Craps()
 
     local nProxJog    := 0
     local nPrimJogada := 0
-    // Inicia o jogo de Craps
+
+    //? Inicia o jogo de Craps
     FwAlertInfo("Bem-vindo ao jogo de Craps!")
     FwAlertInfo("Vamos jogar os dados!")
-    // Faz a primeira jogada
+    //? Faz a primeira jogada
     nPrimJogada := JogarDados()
 
-    // Avalia o resultado da primeira jogada
+    //? Avalia o resultado da primeira jogada
     if nPrimJogada == 7 .or. nPrimJogada == 11
         FwAlertInfo("Você tirou " + AllTrim(Str(nPrimJogada)) + ". Você ganhou!")
     elseif nPrimJogada == 2 .or. nPrimJogada == 3 .or. nPrimJogada == 12
@@ -66,6 +67,5 @@ static function JogarDados()
 
     FwAlertInfo("Você tirou " + AllTrim(Str(nDado1)) + " e " + AllTrim(Str(nDado2)) + ". Soma: " + AllTrim(Str(nSomaDados)))
 
-    return nSomaDados
+return(nSomaDados)
 
-return

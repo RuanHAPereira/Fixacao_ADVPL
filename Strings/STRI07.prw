@@ -14,6 +14,7 @@ quantas vezes aparecem as vogais a, e, i, o, u.
 
 user function STRI07()
 
+    local aArea      := GetArea()
     local cFrase     := ""
     local nEspacos   := 0
     local nVogaisA   := 0
@@ -50,7 +51,6 @@ user function STRI07()
         endif
     next
 
-    // Constrói a mensagem
     cMensagem := "Número de espaços em branco: " + AllTrim(Str(nEspacos)) + CRLF +;
                 "Número de vogais A: " + AllTrim(Str(nVogaisA)) + CRLF +;
                 "Número de vogais E: " + AllTrim(Str(nVogaisE)) + CRLF +;
@@ -58,7 +58,7 @@ user function STRI07()
                 "Número de vogais O: " + AllTrim(Str(nVogaisO)) + CRLF +;
                 "Número de vogais U: " + AllTrim(Str(nVogaisU))
 
-    // Exibe a mensagem
     FwAlertInfo(cMensagem)
 
+    RestArea(aArea)
 return

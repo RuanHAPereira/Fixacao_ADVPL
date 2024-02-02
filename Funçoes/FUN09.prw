@@ -9,6 +9,7 @@ Reverso do número. Faça uma função que retorne o reverso de um número inteiro in
 /*/
 user function FUN09()
 
+    local aArea    := GetArea()
     local nNumero  := 0
     local nReverso := 0
 
@@ -18,6 +19,7 @@ user function FUN09()
 
     FwAlertInfo("O reverso do número " + AllTrim(Str(nNumero)) + " é " + AllTrim(Str(nReverso)) + ".")
 
+    RestArea(aArea)
 return
 
 static function Reverse(nNumero)

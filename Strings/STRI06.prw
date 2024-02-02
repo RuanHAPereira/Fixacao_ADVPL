@@ -11,6 +11,7 @@ e imprima a data com o nome do mês por extenso.
 
 User Function STRI06()
 
+    Local aArea      := GetArea()
     Local cDataNasc  := ""
     Local cDataExten := ""
 
@@ -27,6 +28,7 @@ User Function STRI06()
         FwAlertInfo("Data inválida. Digite no formato DD/MM/AAAA.")
     EndIf
 
+    RestArea(aArea)
 Return
 
 Static Function ValidaData(cData)

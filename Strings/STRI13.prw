@@ -11,11 +11,12 @@ Ao final a palavra deve ser mostrada na tela, informando se o usuário ganhou ou 
 
 User Function STRI13()
 
+    local aArea       := GetArea()
     local aPalavras   := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"} //? Usando array para as palavras já que não usei arquivo txt.
-    local cPalavraOriginal := EscolherPalavraAleatoria(aPalavras)
-    local cPalavra    := EmbaralharPalavra(cPalavraOriginal)
+    local cPOriginal  := Aleatoria(aPalavras)
+    local cPalavra    := Embaralha(cPOriginal)
     local cPalavraAdivinhada := Replicate("_", Len(cPalavra))
-    local nTentativas := 6
+    local nTentativas := 6 
     local cLetra      := ""
     local lEncontrou  := .F.
     local nCont       := 0
@@ -40,7 +41,7 @@ User Function STRI13()
 
             //? Verifica se a palavra foi completamente adivinhada
             If Alltrim(cPalavraAdivinhada) == cPalavra
-                FwAlertInfo("Você acertou a palavra: " + cPalavraOriginal, "Parabéns!" )
+                FwAlertInfo("Você acertou a palavra: " + cPOriginal, "Parabéns!" )
                 Exit
             EndIf
 
@@ -55,18 +56,20 @@ User Function STRI13()
     EndDo
 
     If Alltrim(cPalavraAdivinhada) <> cPalavra
-        FwAlertInfo("A palavra era: " + cPalavraOriginal, "Você foi derrotado!")
+        FwAlertInfo("A palavra era: " + cPOriginal, "Você foi derrotado!")
     EndIf
+
+    RestArea(aArea)
 Return
 
 //? Função para escolher uma palavra aleatória da lista
-Static Function EscolherPalavraAleatoria(aPalavras)
+Static Function Aleatoria(aPalavras)
 
 Return aPalavras[Random(1, Len(aPalavras))]
 
 
 //? Função para embaralhar uma palavra
-Static Function EmbaralharPalavra(cPalavra)
+Static Function Embaralha(cPalavra)
 
     local aLetras := {}
     local nCont  := 0

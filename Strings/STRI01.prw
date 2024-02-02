@@ -17,34 +17,39 @@ As duas strings possuem conteúdo diferente.
 @since 1/16/2024
 /*/
 
-user function STRI01()
+User Function STRI01()
 
-    local cString1 := ""
-    local cString2 := ""
-    local nTamanho1 := 0
-    local nTamanho2 := 0
+    Local aArea    := GetArea()
+    Local cString1 := ""
+    Local cString2 := ""
+    Local nTamanho1 := 0
+    Local nTamanho2 := 0
+    Local cMsg      := ""
 
-    cString1 := fwinputbox("Digite a primeira string: ")
-    cString2 := fwinputbox("Digite a segunda string: ")
+    cString1 := FwInputBox("Digite a primeira string: ")
+    cString2 := FwInputBox("Digite a segunda string: ")
 
-    fwalertinfo("String 1: " + cString1)
-    fwalertinfo("String 2: " + cString2)
+    cMsg += "String 1: " + cString1 + CRLF
+    cMsg += "String 2: " + cString2 + CRLF
 
-    nTamanho1 := len(cString1)
-    nTamanho2 := len(cString2)
+    nTamanho1 := Len(cString1)
+    nTamanho2 := Len(cString2)
 
-    fwalertinfo("Tamanho de " + cString1 + ":"  + alltrim(str(nTamanho1)) + " caracteres")
-    fwalertinfo("Tamanho de " + cString2 + ":"  + alltrim(str(nTamanho2)) + " caracteres")
+    cMsg += "Tamanho da string " + cString1 + " : contém "  + AllTrim(Str(nTamanho1)) + " caracteres" + CRLF
+    cMsg += "Tamanho de string " + cString2 + " : contém "  + AllTrim(Str(nTamanho2)) + " caracteres" + CRLF
 
     if nTamanho1 == nTamanho2
-        fwalertinfo("As duas strings têm o mesmo comprimento.")
+        cMsg += "As duas strings têm o mesmo comprimento." + CRLF
     else
-        fwalertinfo("As duas strings têm comprimentos diferentes.")
+        cMsg += "As duas strings têm comprimentos diferentes." + CRLF
     endif
 
     if cString1 == cString2
-        fwalertinfo("As duas strings possuem o mesmo conteúdo.")
+        cMsg += "As duas strings possuem o mesmo conteúdo." + CRLF
     else
-        fwalertinfo("As duas strings possuem conteúdo diferente.")
+        cMsg += "As duas strings possuem conteúdo diferente." + CRLF
     endif
+
+    FwAlertInfo(cMsg)
+    RestArea(aArea)
 Return

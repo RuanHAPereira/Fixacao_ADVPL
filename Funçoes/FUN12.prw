@@ -58,4 +58,4 @@ Static Function Embaralhar(cPalavra)
         cEmbaralha += SubStr(cPalavra, aIndices[nIndex], 1)
     next
 
-return cEmbaralha
+return(cEmbaralha)

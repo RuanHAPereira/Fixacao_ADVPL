@@ -10,6 +10,7 @@ Faça uma função que informe a quantidade de dígitos de um determinado número int
 
 user function FUN08()
 
+    local aArea     := GetArea()
     local nNumero   := 0
     local nQtdDigit := 0
 
@@ -19,6 +20,7 @@ user function FUN08()
 
     FwAlertInfo("O número " + AllTrim(Str(nNumero)) + " possui " + AllTrim(Str(nQtdDigit)) + " dígitos.")
 
+    RestArea(aArea)
 return
 
 static function QtdDigito(nNumero)

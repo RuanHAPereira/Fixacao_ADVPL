@@ -11,6 +11,7 @@ Número por extenso. Escreva um programa que solicite ao usuário a digitação de u
 
 user function STRI10()
 
+    local aArea     := GetArea()
     local nNumero   := 0
     local aUnidade  := { "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove"}
     local aDezeEspe := {"Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezessete", "Dezoito", "Dezenove"}
@@ -26,7 +27,6 @@ user function STRI10()
         FwAlertInfo("Por favor, digite um número entre 1 e 99.")
     else
         
-
         if nNumero >= 1 .and. nNumero <= 9
             cExtenso := aUnidade[nNumero]
         else
@@ -44,6 +44,8 @@ user function STRI10()
             endif
         endif
 
-        FwAlertInfo("Número por extenso: " + cExtenso)
     endif
+    FwAlertInfo("Número por extenso: " + cExtenso)
+    
+    RestArea(aArea)
 return

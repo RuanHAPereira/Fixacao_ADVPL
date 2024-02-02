@@ -14,12 +14,15 @@ traduzir as letras. Depois, faça um programa que peça uma texto e transforme-o p
 //?Testado e ok.
 user function STRI14()
 
-    local cTexto := ""
+    local aArea     := GetArea()
+    local cTexto    := ""
     local cLeetText := Leet(cTexto)
     
     cTexto := FwInputBox("Digite um texto para converter para Leet Speak:")
 
     FwAlertInfo("Texto em Leet Speak: " + cLeetText)
+
+    RestArea(aArea)
 return
 
 //? Função para traduzir o texto para Leet Speak

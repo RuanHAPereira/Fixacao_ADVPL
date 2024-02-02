@@ -15,6 +15,7 @@ para um n informado pelo usuário. Use uma função que receba um valor n inteiro i
 /*/
 User Function FUN02()
 
+    Local aArea  := GetArea()
     Local nTotal := 0
     Local cMsg   := ""
 
@@ -22,6 +23,8 @@ User Function FUN02()
     cMsg := Sequencia(nTotal)
 
     FwAlertInfo(cMsg)
+
+    RestArea(aArea)
 Return
 
 Static Function Sequencia(nTotal)

@@ -17,6 +17,7 @@ cobrar o valor da prestação. Quando houver atraso, cobrar 3% de multa, mais 0,1%
 
 User Function FUN07()
 
+    Local aArea        := GetArea()
     Local nQtdPrest    := 0
     Local nTotPrest    := 0
     Local nPrestacao   := 0
@@ -46,6 +47,7 @@ User Function FUN07()
     FwAlertInfo("Relatório do dia:" + CRLF + "Quantidade de prestações pagas: " + AllTrim(Str(nQtdPrest)) + CRLF +;
                  "Valor total de prestações pagas: " + AllTrim(Str(nTotPrest, 10, 2)))
 
+    RestArea(aArea)
 Return
 
 Static Function CalculaValor(nPrestacao, nDiasAtraso)

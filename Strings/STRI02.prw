@@ -25,6 +25,6 @@ user function STRI02()
         cNomeInvert += SubStr(cNome, nI, 1)
     next
 
-    FwAlertInfo("Nome original: " + cNome + CRLF + "Nome invertido: " + cNomeInvert)
+    FwAlertInfo("Nome original: " + cNome + CRLF + "Nome invertido: " + Upper(cNomeInvert))
 return
 

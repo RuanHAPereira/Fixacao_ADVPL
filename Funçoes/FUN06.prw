@@ -15,6 +15,7 @@ que permita que o usuário repita esse cálculo para novos valores de entrada toda
 
 User Function FUN06()
 
+    Local aArea    := GetArea()
     Local nMinutos := 0
     Local nHora    := 0
     Local cRepetir := ''
@@ -40,6 +41,7 @@ User Function FUN06()
         EndIf
     EndDo
 
+    RestArea(aArea)
 Return
 
 Static Function Conversao(nHora, nMinutos)

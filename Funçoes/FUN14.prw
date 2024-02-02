@@ -25,12 +25,12 @@ User Function FUN14()
         EndIf
     Enddo
 
-    // Inicializa um vetor com os números de 1 a nOrdem^2
+    //? Inicializa um vetor com os números de 1 a nOrdem^2
     for nI := 1 To nOrdem^2
         AAdd(aNumeros, nI)
     next
 
-    // Gera todas as combinações possíveis dos números
+    //? Gera todas as combinações possíveis dos números
     Permutacoes(aNumeros, 1, Len(aNumeros))
 
 Return

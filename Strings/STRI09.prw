@@ -12,6 +12,7 @@ indique se é um número válido ou inválido através da validação dos dígitos verif
 
 user function STRI09()
 
+    local aArea      := GetArea()
     local cCPF       := ""
     local aCPF       := {}
     local cCaractere := ""
@@ -68,4 +69,5 @@ user function STRI09()
 
     FwAlertInfo(cMensagem)
 
+    RestArea(aArea)
 return

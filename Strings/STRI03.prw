@@ -19,16 +19,16 @@ O
 user function STRI03()
 
     local cNome := ""
-    local nI    := 1 //? Iniciado com 1 para que nao repita a primeira letra
+    local nCont := 1 //? Iniciado com 1 para que nao repita a primeira letra
     local cMsg  := ""
 
     cNome := FwInputBox("Digite o seu nome: ")
 
     // Loop para imprimir o nome na vertical
-    while nI <= Len(cNome)
-        cMsg +=(SubStr(cNome, nI, 1)) + CRLF
-        nI++
+    while nCont <= Len(cNome)
+        cMsg +=(SubStr(cNome, nCont, 1)) + CRLF
+        nCont++
     enddo
 
-    FwAlertInfo(cMsg)
+    FwAlertInfo(Upper(cMsg))
 return

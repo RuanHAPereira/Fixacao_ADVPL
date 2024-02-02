@@ -11,6 +11,7 @@ A função retorna o valor de caractere ‘P’, se seu argumento for positivo, e ‘N’,
 
 user function FUN04()
 
+    local aArea      := GetArea()
     local nNumero    := 0
     local cResultado := ""
 
@@ -18,7 +19,8 @@ user function FUN04()
     cResultado := Verificar(nNumero)
 
     FwAlertInfo("Resultado: " + cResultado)
-
+    
+    RestArea(aArea)
 return
 
 static function Verificar(nNumero)

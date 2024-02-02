@@ -18,6 +18,7 @@ F
 
 user function STRI05()
 
+    local aArea := GetArea()
     local cNome := ""
     local nI    := 0
     local cMsg  := ""
@@ -29,4 +30,6 @@ user function STRI05()
     next
 
     FwAlertInfo(cMsg)
+
+    RestArea(aArea)
 return

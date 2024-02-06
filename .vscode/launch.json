@@ -546,8 +546,44 @@
 		},
 		{
 			"label": "U_Stri10B"
+		},
+		{
+			"label": "U_VerBola"
+		},
+		{
+			"label": "U_TROCA"
+		},
+		{
+			"label": "U_TMB"
+		},
+		{
+			"label": "U_CorBola"
+		},
+		{
+			"label": "U_Bolinh"
+		},
+		{
+			"label": "U_Bolinha"
+		},
+		{
+			"label": "U_Modela"
+		},
+		{
+			"label": "U_Modelar"
+		},
+		{
+			"label": "U_Cl01"
+		},
+		{
+			"label": "U_Cl02"
+		},
+		{
+			"label": "U_Teste001"
+		},
+		{
+			"label": "U_LadoQuad"
 		}
 	],
-	"lastProgramExecuted": "U_STRI10",
+	"lastProgramExecuted": "U_LadoQuad",
 	"lastProgramArguments": []
 }

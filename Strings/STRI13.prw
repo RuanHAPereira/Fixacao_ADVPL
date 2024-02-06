@@ -14,7 +14,7 @@ User Function STRI13()
     local aArea       := GetArea()
     local aPalavras   := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"} //? Usando array para as palavras já que não usei arquivo txt.
     local cPOriginal  := Aleatoria(aPalavras)
-    local cPalavra    := Embaralha(cPOriginal)
+    local cPalavra    := Shuffle(cPOriginal)
     local cPalavraAdivinhada := Replicate("_", Len(cPalavra))
     local nTentativas := 6 
     local cLetra      := ""
@@ -69,7 +69,7 @@ Return aPalavras[Random(1, Len(aPalavras))]
 
 
 //? Função para embaralhar uma palavra
-Static Function Embaralha(cPalavra)
+Static Function Shuffle(cPalavra)
 
     local aLetras := {}
     local nCont  := 0

@@ -16,9 +16,11 @@ Você perde, no entanto, se tirar um 7 antes de tirar este Ponto novamente.
 
 user function FUN10()
 
+    local aArea := GetArea()
     //? Inicializa o jogo de Craps
     Craps()
 
+    RestArea(aArea)
 return
 
 static function Craps()

@@ -12,7 +12,8 @@ e retorne NULL caso a data seja inválida.
 
 User Function FUN11()
 
-    Local cData := ''
+    Local aArea      := GetArea()
+    Local cData      := ''
     Local cDataExten := ''
 
     cData := FwInputBox("Digite a data no formato DD/MM/AAAA: ")
@@ -24,6 +25,7 @@ User Function FUN11()
         FwAlertInfo("Data inválida. Digite no formato DD/MM/AAAA.")
     EndIf
 
+    RestArea(aArea)
 Return
 
 Static Function ValidaData(cData)

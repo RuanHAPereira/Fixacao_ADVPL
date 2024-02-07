@@ -2,7 +2,8 @@
 
 //? Testado e ok.
 /*/{Protheus.doc} FUN12
-Embaralha palavra. Construa uma função que receba uma string como parâmetro e devolva outra string com os caracteres embaralhados.
+Embaralha palavra. Construa uma função que receba uma string como parâmetro e devolva outra string com os caracteres
+embaralhados.
 @type function
 @author Ruan Henrique
 @since 12/21/2023
@@ -10,6 +11,7 @@ Embaralha palavra. Construa uma função que receba uma string como parâmetro e de
 
 User Function FUN12()
 
+    local aArea      := GetArea()
     local cEmbaralha := ""
     local cPalavra   := ""
     
@@ -26,6 +28,7 @@ User Function FUN12()
         FwAlertInfo("Palavra inválida.")
     EndIf
 
+    RestArea(aArea)
 Return
 
 Static Function Embaralhar(cPalavra)

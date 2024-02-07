@@ -13,6 +13,7 @@ Se valores fora da faixa forem informados, eles devem ser modificados para valor
 
 user function FUN13()
 
+    local aArea    := GetArea()
     local nLinhas  := 0
     local nColunas := 0
     local cMais    := ""
@@ -28,6 +29,7 @@ user function FUN13()
     // Chama a função estática para desenhar o retângulo
     CriaRetan(nLinhas, nColunas, cMais, cBarra, cMenos)
 
+    RestArea(aArea)
 Return
 
 static function CriaRetan(nLinhas, nColunas, cMais, cBarra, cMenos)

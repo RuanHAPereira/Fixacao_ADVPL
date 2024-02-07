@@ -11,6 +11,7 @@ Programa que identifica e mostra na tela todos os quadrados mágicos de lado 3.
 
 User Function FUN14()
 
+    local aArea    := GetArea()
     local nOrdem   := 0
     local aNumeros := {}
     local nI       := 0
@@ -33,6 +34,7 @@ User Function FUN14()
     //? Gera todas as combinações possíveis dos números
     Permutacoes(aNumeros, 1, Len(aNumeros))
 
+    RestArea(aArea)
 Return
 
 static Function Permutacoes(aNumeros, nInicio, nFim)

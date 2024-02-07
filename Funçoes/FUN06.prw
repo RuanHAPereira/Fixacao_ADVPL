@@ -31,7 +31,7 @@ User Function FUN06()
         Else
             //? Mensagem de erro para entrada inválida
             FwAlertInfo("Hora ou minutos fornecidos são inválidos. Por favor, tente novamente.")
-            loop  // Volta para o início do loop para nova entrada
+            loop  //? Volta para o início do loop para nova entrada
         EndIf
 
         //? Pergunta se o usuário deseja repetir o cálculo

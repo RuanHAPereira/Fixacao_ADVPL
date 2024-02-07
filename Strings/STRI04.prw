@@ -17,6 +17,7 @@ FULANO
 
 user function STRI04()
 
+    local aArea   := GetArea()
     local cNome   := ""
     local nCont   := 1  //? Iniciado com um para nao repetir a primeira letra
     local cEscada := "" //? Variável para acumular os caracteres da escada
@@ -32,4 +33,5 @@ user function STRI04()
 
     FwAlertInfo(Uper(cMsg))
 
+    RestArea(aArea)
 return

@@ -13,6 +13,7 @@ Dica: lembre?se que ao informar o nome o usuário pode digitar letras maiúsculas 
 
 user function STRI02()
 
+    local aArea       := GetArea()
     local cNome       := ""
     local cNomeInvert := ""
     local nTamanho    := 0
@@ -26,5 +27,7 @@ user function STRI02()
     next
 
     FwAlertInfo("Nome original: " + cNome + CRLF + "Nome invertido: " + Upper(cNomeInvert))
+
+    RestArea(aArea)
 return
 

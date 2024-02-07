@@ -18,6 +18,7 @@ O
 
 user function STRI03()
 
+    local aArea := GetArea()
     local cNome := ""
     local nCont := 1 //? Iniciado com 1 para que nao repita a primeira letra
     local cMsg  := ""
@@ -31,4 +32,5 @@ user function STRI03()
     enddo
 
     FwAlertInfo(Upper(cMsg))
+    RestArea(aArea)
 return

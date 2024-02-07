@@ -582,8 +582,29 @@
 		},
 		{
 			"label": "U_LadoQuad"
+		},
+		{
+			"label": "U_LadoRetan"
+		},
+		{
+			"label": "U_C004Pessoa"
+		},
+		{
+			"label": "U_C005CC"
+		},
+		{
+			"label": "U_C006TV"
+		},
+		{
+			"label": "U_C007Bicho"
+		},
+		{
+			"label": "U_C0015BichoPlus"
+		},
+		{
+			"label": "U_C008Macaco"
 		}
 	],
-	"lastProgramExecuted": "U_LadoQuad",
+	"lastProgramExecuted": "U_C008Macaco",
 	"lastProgramArguments": []
 }

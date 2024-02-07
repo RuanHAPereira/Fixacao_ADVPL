@@ -1,6 +1,6 @@
-#include "Protheus.ch"
+#include "totvs.ch"
 
-User Function LadoQuad()
+User Function C002Quad()
 
     Local oQuadrado
     Local nNovoLado

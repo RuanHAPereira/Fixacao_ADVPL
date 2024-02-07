@@ -1,4 +1,4 @@
-#include "Protheus.ch"
+#include "totvs.ch"
 
 Class Quadrado
 

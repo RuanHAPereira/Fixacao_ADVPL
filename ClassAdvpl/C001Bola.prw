@@ -1,5 +1,7 @@
 #include "totvs.ch"
-User Function BolaCor()
+
+User Function C001Bola()
+
     Local oBola
 
     oBola := Bola():New()

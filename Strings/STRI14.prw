@@ -12,48 +12,39 @@ traduzir as letras. Depois, faça um programa que peça uma texto e transforme-o p
 /*/
 
 //?Testado e ok.
-user function STRI14()
+User Function STRI14()
 
-    local aArea     := GetArea()
-    local cTexto    := ""
-    local cLeetText := Leet(cTexto)
+    Local aArea     := GetArea()
+    Local cTexto    := FwInputBox("Digite um texto para converter para Leet Speak:")
+    Local cLeetText := Leet(cTexto)
     
-    cTexto := FwInputBox("Digite um texto para converter para Leet Speak:")
-
     FwAlertInfo("Texto em Leet Speak: " + cLeetText)
 
     RestArea(aArea)
 return
 
-//? Função para traduzir o texto para Leet Speak
-static function Leet(cTexto)
+// Função para traduzir o texto para Leet Speak
+Static Function Leet(cTexto)
 
-    local cLeetText := ""
-    local cLetra := ""
-    local nCont1 := 0
-    local nCont2 := 0
-    local lRet := .T.
-    //? Mapeamento de letras para Leet Speak
-    local aMapa := {{"A", "4"}, {"E", "3"}, {"G", "9"}, {"L", "1"}, {"O", "0"}, {"S", "5"}, {"T", "7"}}
+    Local cLeetText := ""
+    Local cLetra := ""
+    Local nCont1 := 0
+    Local lRet := .F.
+    Local aMapa := {{"A", "4"}, {"E", "3"}, {"G", "9"}, {"L", "1"}, {"O", "0"}, {"S", "5"}, {"T", "7"}}
     
-    //? Converte cada letra do texto para Leet Speak
-    for nCont1 := 1 to Len(cTexto)
+    For nCont1 := 1 To Len(cTexto)
         cLetra := Substr(cTexto, nCont1, 1)
         lRet := .F.
 
-        //? Verifica se a letra está no mapeamento
-        for nCont2 := 1 to Len(aMapa)
-            if aMapa[nCont2][1] == Upper(cLetra)
-                cLeetText += aMapa[nCont2][2]
-                lRet := .T.
-                exit
-            endif
-        next
+        //? Verifica se a letra está no aMapa utilizando ASCAN
+        If ASCAN(aMapa, {|x| x[1] == Upper(cLetra)}) > 0
+            cLeetText += aMapa[ASCAN(aMapa, {|x| x[1] == Upper(cLetra)})][2]
+            lRet := .T.
+        EndIf
 
-        //? Se a letra não estiver no mapeamento, mantenha-a inalterada
-        if !lRet
+        If !lRet
             cLeetText += cLetra
-        endif
-    next
+        EndIf
+    Next
 
 return cLeetText

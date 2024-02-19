@@ -1,16 +1,17 @@
 #INCLUDE "Totvs.ch"
 
 //?Testado e ok.
+//? Versao com utilização de ASCAN e Array multidimensional.
 /*/{Protheus.doc} FUN11
-Data com mês por extenso. Construa uma função que receba uma data no formato DD/MM/AAAA
+Data com ms por extenso. Construa uma funo que receba uma data no formato DD/MM/AAAA
 e devolva uma string no formato D de mesPorExtenso de AAAA. Opcionalmente, valide a data
-e retorne NULL caso a data seja inválida.
+e retorne NULL caso a data seja invlida.
 @type function
 @author Ruan Henrique 
 @since 12/21/2023
 /*/
 
-User Function FUN11()
+User Function FUN11B()
 
     Local aArea      := GetArea()
     Local cData      := ''
@@ -48,24 +49,30 @@ Static Function ValidaData(cData)
 Return(lRet)
 
 Static Function FormatMes(nMes)
-    
-    Local aMeses  := {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}
-    Local aMesesM := {  {1, "Janeiro"},;
-                        {11,"Novembro"},;
-                        {9, "Setembro"},;
-                        {4, "Abril"},;
-                        {10,"Outubro"},;
-                        {8, "Agosto"},;
-                        {7, "Julho"},;
-                        {3, "Março"},;
-                        {5, "Maio"},;
-                        {6, "Junho"},;
-                        {12, "Dezembro"}}
 
-    // Retornar o nome do mês usando a função ASCAN para procurar o mês no array multidimensional aMesesM
-    // Feveiro não estará na lista - Motivo: é mês de carnaval.
+    Local aMeses := {{"01", "Janeiro"},;
+                    {"02", "Fevereiro"},;
+                    {"03", "Março"},;
+                    {"04", "Abril"},;
+                    {"05", "Maio"},;
+                    {"06", "Junho"},;
+                    {"07", "Julho"},;
+                    {"08", "Agosto"},;
+                    {"09", "Setembro"},;
+                    {"10", "Outubro"},;
+                    {"11", "Novembro"},;
+                    {"12", "Dezembro"}}
 
-Return aMeses[nMes]
+    Local cMesExtenso := ""
+    Local nIndex := 0
+
+    nIndex := ASCAN(aMeses, {|x| x[1] == AllTrim(Str(nMes))})
+
+    If nIndex > 0
+        cMesExtenso := aMeses[nIndex][2]
+    EndIf
+
+Return cMesExtenso
 
 Static Function FormatDt(cData)
 

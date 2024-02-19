@@ -1,10 +1,11 @@
 #INCLUDE "Totvs.ch"
 
 //?Testado e ok.
+//? Vers„o original do codigo
 /*/{Protheus.doc} FUN11
-Data com mÍs por extenso. Construa uma funÁ„o que receba uma data no formato DD/MM/AAAA
+Data com mùs por extenso. Construa uma funùùo que receba uma data no formato DD/MM/AAAA
 e devolva uma string no formato D de mesPorExtenso de AAAA. Opcionalmente, valide a data
-e retorne NULL caso a data seja inv·lida.
+e retorne NULL caso a data seja invùlida.
 @type function
 @author Ruan Henrique 
 @since 12/21/2023
@@ -22,7 +23,7 @@ User Function FUN11()
     If cDataExten <> ""
         FwAlertInfo("Data formatada: " + cDataExten)
     Else
-        FwAlertInfo("Data inv·lida. Digite no formato DD/MM/AAAA.")
+        FwAlertInfo("Data invùlida. Digite no formato DD/MM/AAAA.")
     EndIf
 
     RestArea(aArea)
@@ -48,22 +49,8 @@ Static Function ValidaData(cData)
 Return(lRet)
 
 Static Function FormatMes(nMes)
-    
-    Local aMeses  := {"Janeiro", "Fevereiro", "MarÁo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}
-    Local aMesesM := {  {1, "Janeiro"},;
-                        {11,"Novembro"},;
-                        {9, "Setembro"},;
-                        {4, "Abril"},;
-                        {10,"Outubro"},;
-                        {8, "Agosto"},;
-                        {7, "Julho"},;
-                        {3, "MarÁo"},;
-                        {5, "Maio"},;
-                        {6, "Junho"},;
-                        {12, "Dezembro"}}
 
-    // Retornar o nome do mÍs usando a funÁ„o ASCAN para procurar o mÍs no array multidimensional aMesesM
-    // Feveiro n„o estar· na lista - Motivo: È mÍs de carnaval.
+    Local aMeses := {"Janeiro", "Fevereiro", "Marùo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}
 
 Return aMeses[nMes]
 

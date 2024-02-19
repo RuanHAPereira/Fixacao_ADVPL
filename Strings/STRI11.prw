@@ -28,7 +28,6 @@ user function STRI11()
     local aPalavras   := {"PROGRAMACAO", "FORCA", "DESENVOLVIMENTO", "ADVPL", "JOGO"} //? Aqui uso array para as palavras ja que nao usei arquivo txt.
     local cPalavra    := aPalavras[Random(1, Len(aPalavras))]
     local cAdivinhada := Replicate("_", Len(cPalavra))
-    local nTentativas := 6
     local cLetra      := ""
     local lEncontrou  := .F.
     local nCont       := 0

@@ -16,38 +16,40 @@ Telefone corrigido com formatação: 3461-0133
 @since 1/17/2024
 /*/
 
-user function STRI12()
+User Function STRI12()
 
-    local aArea      := GetArea()
-    local cTelefone  := ""
-    local cTelNum    := ""
-    local cTelCerto  := ""
-    local cTelFormat := ""
-    local nI         := 0
+    Local cTelefone := ""
+    Local cTelNum := ""
+    Local cTelCerto := ""
+    Local cTelFormat := ""
+    Local nI := 0
+    Local nDigitos := 0
 
     cTelefone := FwInputBox("Digite o número de telefone: ")
 
-    for nI := 1 to Len(cTelefone)
-        if Substr(cTelefone, nI, 1) >= "0" .and. Substr(cTelefone, nI, 1) <= "9"
+    // Remove caracteres não numéricos do telefone
+    For nI := 1 To Len(cTelefone)
+        If Substr(cTelefone, nI, 1) >= "0" .And. Substr(cTelefone, nI, 1) <= "9"
             cTelNum += Substr(cTelefone, nI, 1)
-        endif
-    next
+        EndIf
+    Next
 
-    if Len(cTelNum) == 7
-        //? Acrescenta '3' na frente do número
+    // Verifica o número de dígitos no telefone (ignorando o caractere "-")
+    nDigitos := Len(cTelNum)
+
+    If nDigitos == 7
+        // Acrescenta '3' na frente do número
         cTelCerto := "3" + cTelNum
 
-        //? Formata o número corrigido
+        // Formata o número corrigido
         cTelFormat := SubStr(cTelCerto, 1, 4) + "-" + SubStr(cTelCerto, 5)
+    Else
+        // Mantém o número original se não tiver 7 dígitos
+        cTelFormat := SubStr(cTelNum, 1, 3) + "-" + SubStr(cTelNum, 4)
+    EndIf
 
-        FwAlertInfo("Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.")
-        FwAlertInfo("Telefone corrigido sem formatação: " + cTelCerto)
-        FwAlertInfo("Telefone corrigido com formatação: " + cTelFormat)
-    else
-        //? Mantém o número original
-        cTelFormat := SubStr(cTelNum, 1, 4) + "-" + SubStr(cTelNum, 5)
-        FwAlertInfo("Telefone válido: " + cTelFormat)
-    endif
+    // Exibe o resultado
+    FwAlertInfo("Telefone corrigido: " + cTelFormat)
 
-    RestArea(aArea)
-return
+Return
+

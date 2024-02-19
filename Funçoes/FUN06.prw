@@ -57,9 +57,7 @@ Static Function Conversao(nHora, nMinutos)
         nHora := nHora - 12
     EndIf
 
-    Return {nHora, nMinutos, cPeriodo}
-
-Return
+Return {nHora, nMinutos, cPeriodo}
 
 Static Function ExibeSaida(aResultado)
 

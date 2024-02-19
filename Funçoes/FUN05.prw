@@ -28,10 +28,10 @@ user function FUN05()
     RestArea(aArea)
 return
 
-static function SomaImp(nTxImpo, nCusto)
+static function SomaImp(nTxImpo, nX)
 
-    local nImposto := nCusto * (nTxImpo / 100)
+    local nImposto := nX * (nTxImpo / 100)
 
-    nCusto := nCusto + nImposto
+    nX := nX + nImposto
 
 return

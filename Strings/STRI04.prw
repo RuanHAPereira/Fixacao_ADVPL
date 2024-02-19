@@ -31,7 +31,7 @@ user function STRI04()
         nCont++
     enddo
 
-    FwAlertInfo(Uper(cMsg))
+    FwAlertInfo(Upper(cMsg))
 
     RestArea(aArea)
 return

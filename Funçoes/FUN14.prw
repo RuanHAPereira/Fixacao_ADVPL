@@ -16,7 +16,7 @@ User Function FUN14()
     local aNumeros := {}
     local nI       := 0
     
-    // Solicita ao usuário a ordem do quadrado mágico
+    //? Solicita ao usuário a ordem do quadrado mágico
     While .T.
         nOrdem := Val(FwInputBox("Digite a ordem do quadrado mágico (entre 3 e 9):"))
         If nOrdem >= 3 .And. nOrdem <= 9

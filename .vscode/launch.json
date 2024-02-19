@@ -603,8 +603,17 @@
 		},
 		{
 			"label": "U_C008Macaco"
+		},
+		{
+			"label": "U_FUN05B"
+		},
+		{
+			"label": "U_FUN11B"
+		},
+		{
+			"label": "U_STRI07B"
 		}
 	],
-	"lastProgramExecuted": "U_FUN12",
+	"lastProgramExecuted": "U_STRI07B",
 	"lastProgramArguments": []
 }

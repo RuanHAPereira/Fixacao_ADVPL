@@ -15,14 +15,11 @@ User Function STRI06()
     Local cDataNasc  := ""
     Local cDataExten := ""
 
-    // Solicita a data de nascimento ao usuário
     cDataNasc := FwInputBox("Digite a data de nascimento (dd/mm/aaaa): ")
 
-    // Formata a data e verifica se é válida
     cDataExten := FormatDt(cDataNasc)
 
     If cDataExten <> ""
-        // Exibe a data formatada
         FwAlertInfo("Você nasceu em " + cDataExten)
     Else
         FwAlertInfo("Data inválida. Digite no formato DD/MM/AAAA.")
@@ -38,13 +35,11 @@ Static Function ValidaData(cData)
     Local nAno := 0
     Local lRet := .F.
 
-    // Verifica o formato da data
     If Len(cData) == 10 .And. SubStr(cData, 3, 1) == "/" .And. SubStr(cData, 6, 1) == "/"
         nDia := Val(SubStr(cData, 1, 2))
         nMes := Val(SubStr(cData, 4, 2))
         nAno := Val(SubStr(cData, 7, 4))
 
-        // Verifica se a data é válida
         If nDia >= 1 .And. nDia <= 31 .And. nMes >= 1 .And. nMes <= 12 .And. nAno >= 1000
             lRet := .T.
         EndIf
@@ -54,11 +49,20 @@ Return(lRet)
 
 Static Function FormatMes(nMes)
 
-    Local aMeses := {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}
+    Local aMeses := {"Janeiro",;
+                    "Fevereiro",;
+                    "Março",;
+                    "Abril",;
+                    "Maio",;
+                    "Junho",; 
+                    "Julho",; 
+                    "Agosto",; 
+                    "Setembro",; 
+                    "Outubro",; 
+                    "Novembro",;
+                    "Dezembro"}
 
-    Return aMeses[nMes]
-
-Return
+Return aMeses[nMes]
 
 Static Function FormatDt(cData)
 
@@ -67,20 +71,16 @@ Static Function FormatDt(cData)
     Local nAno := 0
     Local cMesExtenso := ""
 
-    // Verifica se a data é válida
     If ValidaData(cData)
         nDia := Val(SubStr(cData, 1, 2))
         nMes := Val(SubStr(cData, 4, 2))
         nAno := Val(SubStr(cData, 7, 4))
 
-        // Obtém o nome do mês por extenso
         cMesExtenso := FormatMes(nMes)
 
-        // Retorna a data formatada
-        Return AllTrim(Str(nDia)) + " de " + cMesExtenso + " de " + AllTrim(Str(nAno))
+        cData := AllTrim(Str(nDia)) + " de " + cMesExtenso + " de " + AllTrim(Str(nAno))
     Else
-        // Retorna null se a data for inválida
-        Return 'null'
+        cData := 'null'
     EndIf
 
 Return(cData)

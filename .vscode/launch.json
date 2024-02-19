@@ -612,8 +612,14 @@
 		},
 		{
 			"label": "U_STRI07B"
+		},
+		{
+			"label": "U_STRI09B"
+		},
+		{
+			"label": "U_STRI12B"
 		}
 	],
-	"lastProgramExecuted": "U_STRI07B",
+	"lastProgramExecuted": "U_STRI12B",
 	"lastProgramArguments": []
 }

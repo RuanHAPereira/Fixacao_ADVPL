@@ -14,8 +14,8 @@ Class TV
 EndClass
 
 Method New() Class TV
-    ::nCanal := 1  // Canal inicial
-    ::nVolume := 50  // Volume inicial
+    ::nCanal := 1  //? Canal inicial
+    ::nVolume := 50  //? Volume inicial
 Return Self
 
 Method AlterarCanal(nNovoCanal) Class TV
@@ -27,23 +27,29 @@ Method AlterarCanal(nNovoCanal) Class TV
 Return
 
 Method AumentarVolume() Class TV
+
     If ::nVolume < 100
         ::nVolume := ::nVolume + 1
     Else
         FwAlertInfo("Volume máximo atingido.", "Atenção")
     EndIf
+
 Return
 
 Method DiminuirVolume() Class TV
+
     If ::nVolume > 0
         ::nVolume := ::nVolume - 1
     Else
         FwAlertInfo("Volume mínimo atingido.", "Atenção")
     EndIf
+
 Return
 
 Method MostrarStatus() Class TV
+
     FwAlertInfo("Canal: " + Str(::nCanal) + ", Volume: " + Str(::nVolume), "Status da TV")
+    
 Return
 
 

@@ -7,6 +7,6 @@ User Function C001Bola()
     oBola := Bola():New()
 
     oBola:MostraCor()
-    oBola:TrocarCorMaterial() // Chamada para o método de trocar cor e material
+    oBola:TrocarCorMaterial()
 
 Return

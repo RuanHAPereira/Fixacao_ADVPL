@@ -18,37 +18,35 @@ Telefone corrigido com formatação: 3461-0133
 
 User Function STRI12()
 
-    Local cTelefone := ""
-    Local cTelNum := ""
-    Local cTelCerto := ""
+    Local cTelefone  := ""
+    Local cTelNum    := ""
+    Local cTelCerto  := ""
     Local cTelFormat := ""
-    Local nI := 0
-    Local nDigitos := 0
+    Local nCont      := 0
+    Local nDigitos   := 0
 
     cTelefone := FwInputBox("Digite o número de telefone: ")
 
-    // Remove caracteres não numéricos do telefone
-    For nI := 1 To Len(cTelefone)
-        If Substr(cTelefone, nI, 1) >= "0" .And. Substr(cTelefone, nI, 1) <= "9"
-            cTelNum += Substr(cTelefone, nI, 1)
+    //? Remove caracteres não numéricos do telefone
+    For nCont := 1 To Len(cTelefone)
+        If Substr(cTelefone, nCont, 1) >= "0" .And. Substr(cTelefone, nCont, 1) <= "9"
+            cTelNum += Substr(cTelefone, nCont, 1)
         EndIf
     Next
 
-    // Verifica o número de dígitos no telefone (ignorando o caractere "-")
     nDigitos := Len(cTelNum)
 
     If nDigitos == 7
-        // Acrescenta '3' na frente do número
+        //? Acrescenta '3' na frente do número
         cTelCerto := "3" + cTelNum
 
-        // Formata o número corrigido
+        //? Formata o número corrigido
         cTelFormat := SubStr(cTelCerto, 1, 4) + "-" + SubStr(cTelCerto, 5)
     Else
-        // Mantém o número original se não tiver 7 dígitos
+        //? Mantém o número original se não tiver 7 dígitos
         cTelFormat := SubStr(cTelNum, 1, 3) + "-" + SubStr(cTelNum, 4)
     EndIf
 
-    // Exibe o resultado
     FwAlertInfo("Telefone corrigido: " + cTelFormat)
 
 Return

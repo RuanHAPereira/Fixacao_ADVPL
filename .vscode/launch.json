@@ -618,8 +618,35 @@
 		},
 		{
 			"label": "U_STRI12B"
+		},
+		{
+			"label": "U_C009PeR"
+		},
+		{
+			"label": "U_C010Bomba"
+		},
+		{
+			"label": "U_C011Carro"
+		},
+		{
+			"label": "U_C012Invest"
+		},
+		{
+			"label": "U_C013Func"
+		},
+		{
+			"label": "U_C013Colab"
+		},
+		{
+			"label": "U_C014Colab2"
+		},
+		{
+			"label": "U_C016Porta"
+		},
+		{
+			"label": "U_C017Fazenda"
 		}
 	],
-	"lastProgramExecuted": "U_STRI12B",
+	"lastProgramExecuted": "U_C017Fazenda",
 	"lastProgramArguments": []
 }

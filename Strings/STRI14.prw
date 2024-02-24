@@ -23,7 +23,7 @@ User Function STRI14()
     RestArea(aArea)
 return
 
-// Função para traduzir o texto para Leet Speak
+//? Função para traduzir o texto para Leet Speak
 Static Function Leet(cTexto)
 
     Local cLeetText := ""

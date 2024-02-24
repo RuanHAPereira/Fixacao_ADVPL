@@ -29,9 +29,7 @@ Return
 
 Method RetornarLados() Class Retangulo
 
-    Return {::nLadoA, ::nLadoB}
-
-Return 
+Return {::nLadoA, ::nLadoB}
 
 Method CalcularArea() Class Retangulo
 

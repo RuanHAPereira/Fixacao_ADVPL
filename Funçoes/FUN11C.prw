@@ -11,7 +11,7 @@ e retorne NULL caso a data seja invùlida.
 @since 12/21/2023
 /*/
 
-User Function FUN11()
+User Function FUN11C()
 
     Local aArea      := GetArea()
     Local cData      := ''

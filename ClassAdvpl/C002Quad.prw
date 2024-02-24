@@ -3,7 +3,7 @@
 User Function C002Quad()
 
     Local oQuadrado
-    Local nNovoLado
+    Local nNovoLado    := 0
     Local nLadoInicial := 10
 
     oQuadrado := Quadrado():New(nLadoInicial)

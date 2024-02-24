@@ -1,3 +1,5 @@
+#include "Totvs.ch"
+
 User Function STRI08B()
 
     Local aArea            := GetArea()

@@ -28,16 +28,13 @@ user function STRI07()
 
     cFrase := FwInputBox("Digite uma frase: ")
 
-    // Loop para percorrer cada caractere da frase
     for nI := 1 to Len(cFrase)
         cCaractere := SubStr(cFrase, nI, 1)
 
-        // Conta espaços em branco
         if cCaractere == " "
             nEspacos++
         endif
 
-        // Conta vogais
         if cCaractere == "A" .or. cCaractere == "a"
             nVogaisA++
         elseif cCaractere == "E" .or. cCaractere == "e"

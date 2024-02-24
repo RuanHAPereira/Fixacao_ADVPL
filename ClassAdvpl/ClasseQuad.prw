@@ -14,17 +14,23 @@ EndClass
 Method New(nLado) Class Quadrado
     
     ::nLado := nLado
+
 Return Self
 
 Method MudarLado(nNovoLado) Class Quadrado
+
     ::nLado := nNovoLado
+
 Return
 
 Method RetornarLado() Class Quadrado
-    Return ::nLado
-Return
+
+Return ::nLado
 
 Method CalcularArea() Class Quadrado
+
     Local nArea := ::nLado * ::nLado
+
     FwAlertInfo("A área do quadrado é: " + Str(nArea), "Área do Quadrado")
+    
 Return

@@ -60,7 +60,7 @@ Method Idade() Class Bichinho
 Return Self
 
 Method Humor() Class Bichinho
-    // O humor é uma combinação entre os atributos Fome e Saúde
+    //? O humor é uma soma entre os atributos Fome e Saúde
     Local nHumor := (::nFome + ::nSaude) / 2
 Return nHumor
 

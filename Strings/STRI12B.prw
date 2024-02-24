@@ -11,7 +11,7 @@ User Function STRI12B()
     cTelefone := StrTran(cTelefone, "-", "")
 
     If Len(cTelefone) = 7
-        cTelCorreto := "3" + cTelefone  ///? Acrescenta o '3' na frente do número
+        cTelCorreto := "3" + cTelefone  //? Acrescenta o '3' na frente do número
         cMensagem := "Telefone possui 7 dígitos. Vou acrescentar o dígito '3' na frente." + CRLF + ;
                       "Telefone corrigido sem formatação: " + cTelCorreto + CRLF + ;
                       "Telefone corrigido com formatação: " + SubStr(cTelCorreto, 1, 4) + "-" + SubStr(cTelCorreto, 5, 4)

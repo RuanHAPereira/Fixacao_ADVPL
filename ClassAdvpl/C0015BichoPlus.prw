@@ -1,35 +1,35 @@
 #include "totvs.ch"
 
+/*/{Protheus.doc} C0015BichoPlus
+Classe Bichinho Virtual++: Melhore o programa do bichinho virtual, permitindo que o usuário especifique 
+quanto de comida ele fornece ao bichinho e por quanto tempo ele brinca com o bichinho. Faça com que estes 
+valores afetem quão rapidamente os níveis de fome e tédio caem
+@type function
+@author Ruan Henrique
+@since 2/23/2024
+/*/
+
 User Function C0015BichoPlus()
 
-    Local cContinua := "S"
-    Local cNome := "Totver"
-    Local nTempoBrincadeira := 0
-    Local nComidaFornecida := 0
-    Local oBichinho := BichinhoPP():New(cNome)
+    Local oBichinhoPP
+    Local nQuantidadeComida := Val(FwInputBox("Digite a quantidade de comida fornecida:"))
+    Local nTempoBrincadeira := Val(FwInputBox("Digite o tempo de brincadeira (em horas):"))
 
-    Do While .T.
-        nTempoBrincadeira := Val(FwInputBox("Digite por quanto tempo você irá brincar com o bichinho (em minutos):"))
-        nComidaFornecida := Val(FwInputBox("Digite a quantidade de comida que você irá fornecer ao bichinho:"))
+    oBichinhoPP := BichinhoPP():New("Bichinho", 50, 80, 3)
 
-        // Exibe os valores iniciais do bichinho
-        FwAlertInfo("Nome: " + oBichinho:Nome() + ", Fome: " + Alltrim(Str(oBichinho:Fome())) + ", Saúde: " + Alltrim(Str(oBichinho:Saude())) + ", Idade: " + Alltrim(Str(oBichinho:Idade())), "Bichinho Virtual")
+    FwAlertInfo("Nome: " + oBichinhoPP:Nome() + CRLF + ;
+                "Fome: " + Str(oBichinhoPP:Fome()) + CRLF + ;
+                "Saúde: " + Str(oBichinhoPP:Saude()) + CRLF + ;
+                "Idade: " + Str(oBichinhoPP:Idade()) + CRLF + ;
+                "Humor: " + Str(oBichinhoPP:Humor()), "Bichinho Virtual")
 
-        // Simula a alimentação do bichinho e brincadeira
-        oBichinho:AltComidaForn(nComidaFornecida)
-        oBichinho:AltTempoBrinc(nTempoBrincadeira)
+    oBichinhoPP:ForneceComida(nQuantidadeComida)
+    oBichinhoPP:Brinca(nTempoBrincadeira)
 
-        // Exibe os valores atualizados do bichinho após alimentação e brincadeira
-        FwAlertInfo("Após alimentação e brincadeira - Fome: " + Alltrim(Str(oBichinho:Fome())) + ", Saúde: " + Alltrim(Str(oBichinho:Saude())), "Bichinho Virtual")
-
-        // Pergunta ao usuário se deseja continuar
-        cContinua := FwInputBox("Deseja brincar novamente com o bichinho? (S/N)")
-        If cContinua == "N"
-            Exit
-        EndIf
-    EndDo
-
-    // Exibe os valores finais do bichinho
-    FwAlertInfo("Valores finais - Fome: " + Alltrim(Str(oBichinho:Fome())) + ", Saúde: " + Alltrim(Str(oBichinho:Saude())), "Bichinho Virtual")
+    FwAlertInfo("Nome: " + oBichinhoPP:Nome() + CRLF + ;
+                "Fome: " + Str(oBichinhoPP:Fome()) + CRLF + ;
+                "Saúde: " + Str(oBichinhoPP:Saude()) + CRLF + ;
+                "Idade: " + Str(oBichinhoPP:Idade()) + CRLF + ;
+                "Humor: " + Str(oBichinhoPP:Humor()), "Bichinho Virtual")
 
 Return

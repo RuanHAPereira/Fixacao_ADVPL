@@ -1,6 +1,7 @@
 #include "totvs.ch"
 
-Class Bola
+Class xBola
+
     data cCor
     data nCircunf
     data cMaterial
@@ -11,13 +12,14 @@ Class Bola
 
 EndClass
 
-Method New() Class Bola
+Method New() Class xBola
     ::cCor := "Preta"
     ::nCircunf := 30
     ::cMaterial := "Ferro"
 Return Self
 
-Method TrocarCorMaterial() Class Bola
+Method TrocarCorMaterial() Class xBola
+
     Local cNovaCor := ""
     Local cNovoMaterial := ""
 
@@ -34,7 +36,7 @@ Method TrocarCorMaterial() Class Bola
     EndIf
 Return
 
-Method MostraCor() Class Bola
+Method MostraCor() Class xBola
     FwAlertInfo("A cor da bola é: " + Alltrim(::cCor) + CRLF + ;
                 "O material da bola é: " + Alltrim(::cMaterial) + CRLF + ;
                 "A circunferência da bola é: " + Alltrim(Str(::nCircunf)), "Atenção")

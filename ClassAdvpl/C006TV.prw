@@ -2,17 +2,19 @@
 
 User Function C006TV()
 
-    Local oTV := TV():New()
+    Local oTV
     Local aOpcoes := {{1, "Alterar canal"},;
                      {2, "Aumentar volume"},;
                      {3, "Diminuir volume"},;
                      {4, "Mostrar status"},;
                      {5, "Sair"}}
     Local nOpcao := 0
-    Local nCont := 0
+    Local nCont  := 0
     Local nNovoCanal := 0
-    Local lRet := .T.
-    Local cMsg := ''
+    Local lRet   := .T.
+    Local cMsg   := ''
+
+    oTV := TV():New()
 
     For nCont := 1 To Len(aOpcoes)
         cMsg += Alltrim(Str(aOpcoes[nCont][1])) + " - " + aOpcoes[nCont][2] + CRLF
